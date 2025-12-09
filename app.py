@@ -49,6 +49,18 @@ def home():
         return redirect("/")
     return render_template("home.html", user=session["user"])
 
+@app.route("/home_action", methods=["POST"])
+def home_action():
+    if "user" not in session:
+        return redirect("/")
+    
+    selected_option = request.form.get("selected_option")
+    if selected_option:
+        return redirect(selected_option)
+    else:
+        # Handle case where no option was selected, though a default is set in HTML
+        return redirect(url_for("home"))
+
 # 教材
 @app.route("/material")
 def material():
