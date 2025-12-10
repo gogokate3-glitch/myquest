@@ -44,6 +44,10 @@
                 {% if results %}
                     {# --- 結果表示 --- #}
                     <h3>テスト結果</h3>
+                    <div class="alert alert-info">
+                        <h4>正解数: {{ score }} / {{ total }} 問</h4>
+                        <h4>正解率: {{ percentage }}%</h4>
+                    </div>
                     <p>お疲れ様でした！結果は以下の通りです。</p>
                     <hr>
                     {% for res in results %}
@@ -61,11 +65,11 @@
                         {% endif %}
                     </div>
                     {% endfor %}
-                    <a href="/home" class="btn btn-primary mt-3">ホームに戻る</a>
 
                 {% else %}
                     {# --- 問題表示 --- #}
                     <form action="{{ url_for('submit_section_test') }}" method="post">
+                        <input type="hidden" name="category_name" value="{{ category_name }}">
                         {% for q_obj in questions %}
                         <div class="mb-4">
                             <p class="card-text fw-bold">問{{ loop.index }}: {{ q_obj.question }}</p>
@@ -95,7 +99,12 @@
         </div>
 
         <div class="mt-4">
-            <a href="/home" class="btn btn-secondary">戻る</a>
+            {% if results %}
+                <a href="{{ url_for('section_test', category=category_name) }}" class="btn btn-primary">次の問題</a>
+                <a href="/home" class="btn btn-secondary">ホームに戻る</a>
+            {% else %}
+                <a href="/home" class="btn btn-secondary">戻る</a>
+            {% endif %}
         </div>
     </div>
 

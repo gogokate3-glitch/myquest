@@ -70,31 +70,31 @@ def material():
     return render_template("material.html")
 
 # 章末テスト
-@app.route("/section_test", methods=["GET", "POST"])
-def section_test():
+@app.route("/section_test/<category>")
+def section_test(category):
     if "user" not in session:
         return redirect("/")
     
-    if request.method == "POST":
-        # home.html からのカテゴリ選択POSTの場合
-        if "category" in request.form:
-            category = request.form.get("category")
-            q_list = Question.query.filter_by(category=category).all()
-            if not q_list:
-                return f"カテゴリ「{category}」の問題がDBにありません"
-            
-            # 10問をランダムに選ぶ
-            if len(q_list) > 10:
-                q_list = random.sample(q_list, 10)
-            
-            return render_template("section_test.html", questions=q_list, category_name=category)
-
-        # 予期しないPOSTの場合はhomeに戻す
-        else:
-            return redirect(url_for("home"))
+    q_list = Question.query.filter_by(category=category).all()
+    if not q_list:
+        return f"カテゴリ「{category}」の問題がDBにありません"
     
-    # GETで直接アクセスされた場合はhomeへリダイレクト
-    return redirect(url_for("home"))
+    # 10問をランダムに選ぶ
+    if len(q_list) > 10:
+        q_list = random.sample(q_list, 10)
+    
+    return render_template("section_test.html", questions=q_list, category_name=category)
+
+@app.route("/section_test", methods=["POST"])
+def section_test_redirect():
+    if "user" not in session:
+        return redirect("/")
+    
+    category = request.form.get("category")
+    if category:
+        return redirect(url_for("section_test", category=category))
+    else:
+        return redirect(url_for("home"))
 
 
 @app.route("/submit_section_test", methods=["POST"])
@@ -103,29 +103,36 @@ def submit_section_test():
         return redirect("/")
 
     answers = request.form
+    category_name = answers.get("category_name", "")
     question_ids = [key.split('_')[1] for key in answers.keys() if key.startswith('answer_')]
     
+    if not question_ids:
+        if category_name:
+            return redirect(url_for("section_test", category=category_name))
+        else:
+            return redirect(url_for("home"))
+
     results = []
     questions = Question.query.filter(Question.id.in_(question_ids)).all()
     question_map = {str(q.id): q for q in questions}
 
+    score = 0
     for q_id in question_ids:
         question = question_map.get(q_id)
         if question:
             user_answer_val = answers.get(f'answer_{q_id}')
-            # ユーザーが回答しなかった場合
             if user_answer_val is None:
-                user_answer_val = -1 # 未回答を示す値
+                user_answer_val = -1
             else:
                 user_answer_val = int(user_answer_val)
             
             is_correct = (user_answer_val == question.correct)
+            if is_correct:
+                score += 1
 
             choices = [question.choice1, question.choice2, question.choice3, question.choice4]
             
-            # ユーザーの回答テキスト
             user_choice_text = choices[user_answer_val - 1] if 0 < user_answer_val <= 4 else "未回答"
-            # 正解のテキスト
             correct_choice_text = choices[question.correct - 1] if 0 < question.correct <= 4 else ""
 
             results.append({
@@ -137,10 +144,19 @@ def submit_section_test():
                 "is_correct": is_correct
             })
     
-    # category_name を取得するために、最初の質問のカテゴリを使用
-    category_name = questions[0].category if questions else ""
+    total = len(questions)
+    percentage = (score / total) * 100 if total > 0 else 0
+    
+    if not category_name and questions:
+        category_name = questions[0].category
 
-    return render_template("section_test.html", results=results, category_name=category_name)
+    return render_template("section_test.html", 
+        results=results, 
+        category_name=category_name,
+        score=score,
+        total=total,
+        percentage=f"{percentage:.1f}"
+    )
 
 
 @app.route("/check_answer", methods=["POST"])
