@@ -1,15 +1,40 @@
 <!DOCTYPE html>
 <html>
-<head><meta charset="UTF-8"><title>結果</title></head>
+<head>
+    <meta charset="UTF-8">
+    <title>結果</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
 <body>
-<h2>結果</h2>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">MyQuest</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">ログアウト</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-{% if ok %}
-<p style="color:green;">正解！</p>
-{% else %}
-<p style="color:red;">不正解！</p>
-{% endif %}
+    <div class="container mt-4">
+        <h2>結果</h2>
 
-<p><a href="/home">ホームに戻る</a></p>
+        {% if ok %}
+        <div class="alert alert-success" role="alert">
+            正解！
+        </div>
+        {% else %}
+        <div class="alert alert-danger" role="alert">
+            不正解！
+        </div>
+        {% endif %}
+
+        <a href="/home" class="btn btn-primary">ホームに戻る</a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

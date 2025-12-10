@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import Flask, render_template, request, redirect, url_for, session, jsonify
 from database import db
 from model import Question
 import random
@@ -40,6 +40,7 @@ def try_login():
 
 @app.route("/logout")
 def logout():
+    session.pop("user", None)
     return redirect("/")
 
 # ホーム
@@ -75,24 +76,107 @@ def section_test():
         return redirect("/")
     
     if request.method == "POST":
-        answer = int(request.form.get("choice"))
-        correct = int(request.form.get("correct"))
-        result = (answer == correct)
-        return redirect(url_for("result", ok=result))
-    
-    # DBからランダムに１問取得
-    q_list = Question.query.filter_by(category="section").all()
-    if not q_list:
-        return "章末テスト用の問題がDBにありません"
-    
-    q = random.choice(q_list)
+        # home.html からのカテゴリ選択POSTの場合
+        if "category" in request.form:
+            category = request.form.get("category")
+            q_list = Question.query.filter_by(category=category).all()
+            if not q_list:
+                return f"カテゴリ「{category}」の問題がDBにありません"
+            
+            # 10問をランダムに選ぶ
+            if len(q_list) > 10:
+                q_list = random.sample(q_list, 10)
+            
+            return render_template("section_test.html", questions=q_list, category_name=category)
 
-    return render_template(
-        "section_test.html",
-        question=q.question, 
-        choices=[q.choice1, q.choice2, q.choice3, q.choice4],
-        correct=q.correct,
-    )
+        # 予期しないPOSTの場合はhomeに戻す
+        else:
+            return redirect(url_for("home"))
+    
+    # GETで直接アクセスされた場合はhomeへリダイレクト
+    return redirect(url_for("home"))
+
+
+@app.route("/submit_section_test", methods=["POST"])
+def submit_section_test():
+    if "user" not in session:
+        return redirect("/")
+
+    answers = request.form
+    question_ids = [key.split('_')[1] for key in answers.keys() if key.startswith('answer_')]
+    
+    results = []
+    questions = Question.query.filter(Question.id.in_(question_ids)).all()
+    question_map = {str(q.id): q for q in questions}
+
+    for q_id in question_ids:
+        question = question_map.get(q_id)
+        if question:
+            user_answer_val = answers.get(f'answer_{q_id}')
+            # ユーザーが回答しなかった場合
+            if user_answer_val is None:
+                user_answer_val = -1 # 未回答を示す値
+            else:
+                user_answer_val = int(user_answer_val)
+            
+            is_correct = (user_answer_val == question.correct)
+
+            choices = [question.choice1, question.choice2, question.choice3, question.choice4]
+            
+            # ユーザーの回答テキスト
+            user_choice_text = choices[user_answer_val - 1] if 0 < user_answer_val <= 4 else "未回答"
+            # 正解のテキスト
+            correct_choice_text = choices[question.correct - 1] if 0 < question.correct <= 4 else ""
+
+            results.append({
+                "question": question,
+                "user_answer": user_answer_val,
+                "user_choice_text": user_choice_text,
+                "correct_answer": question.correct,
+                "correct_choice_text": correct_choice_text,
+                "is_correct": is_correct
+            })
+    
+    # category_name を取得するために、最初の質問のカテゴリを使用
+    category_name = questions[0].category if questions else ""
+
+    return render_template("section_test.html", results=results, category_name=category_name)
+
+
+@app.route("/check_answer", methods=["POST"])
+def check_answer():
+    if "user" not in session:
+        return jsonify({"error": "Unauthorized"}), 401
+    
+    data = request.get_json()
+    question_id = data.get("question_id")
+    user_answer = data.get("user_answer")
+
+    if not question_id or not user_answer:
+        return jsonify({"error": "Missing data"}), 400
+
+    question = Question.query.get(question_id)
+    if not question:
+        return jsonify({"error": "Question not found"}), 404
+
+    is_correct = (int(user_answer) == question.correct)
+    
+    # 正解の選択肢のテキストを取得
+    correct_choice_text = ""
+    if question.correct == 1:
+        correct_choice_text = question.choice1
+    elif question.correct == 2:
+        correct_choice_text = question.choice2
+    elif question.correct == 3:
+        correct_choice_text = question.choice3
+    elif question.correct == 4:
+        correct_choice_text = question.choice4
+
+    return jsonify({
+        "correct": is_correct,
+        "correct_answer": question.correct,
+        "correct_choice_text": correct_choice_text
+    })
 
 # 過去演習
 @app.route("/practice", methods=["GET", "POST"])

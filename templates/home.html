@@ -23,28 +23,102 @@
         <h2>ホーム</h2>
         <p>{{ user }}さん、ようこそ。</p>
 
-        <form action="/home_action" method="post">
+        <h5>メニュー</h5>
+        <div class="list-group">
+            <a href="/material" class="list-group-item list-group-item-action">教材を見る</a>
+            <a href="/practice" class="list-group-item list-group-item-action">過去問演習</a>
+            {% if user == "admin@example.com" %}
+            <a href="/admin" class="list-group-item list-group-item-action list-group-item-dark">管理者画面</a>
+            {% endif %}
+        </div>
+
+        <hr class="my-4">
+
+        <form action="/section_test" method="post">
+            <h5>章末テスト</h5>
             <div class="list-group">
+                
                 <div class="list-group-item">
-                    <input type="radio" id="material_radio" name="selected_option" value="/material" checked>
-                    <label for="material_radio" class="form-check-label">教材を見る</label>
+                    <input class="form-check-input" type="radio" name="category" id="cat-1" value="1" checked>
+                    <label class="form-check-label" for="cat-1">1. やる気を高めよう</label>
                 </div>
+                
                 <div class="list-group-item">
-                    <input type="radio" id="section_test_radio" name="selected_option" value="/section_test">
-                    <label for="section_test_radio" class="form-check-label">章末テスト</label>
+                    <input class="form-check-input" type="radio" name="category" id="cat-2" value="2">
+                    <label class="form-check-label" for="cat-2">2. Python インタプリタを使う</label>
                 </div>
+                
                 <div class="list-group-item">
-                    <input type="radio" id="practice_radio" name="selected_option" value="/practice">
-                    <label for="practice_radio" class="form-check-label">過去問演習</label>
+                    <input class="form-check-input" type="radio" name="category" id="cat-3" value="3">
+                    <label class="form-check-label" for="cat-3">3. 形式ばらない Python の紹介</label>
                 </div>
-                {% if user == "admin@example.com" %}
-                <div class="list-group-item list-group-item-dark">
-                    <input type="radio" id="admin_radio" name="selected_option" value="/admin">
-                    <label for="admin_radio" class="form-check-label">管理者画面</label>
+                
+                <div class="list-group-item">
+                    <input class="form-check-input" type="radio" name="category" id="cat-4" value="4">
+                    <label class="form-check-label" for="cat-4">4. その他の制御フローツール</label>
                 </div>
-                {% endif %}
+                
+                <div class="list-group-item">
+                    <input class="form-check-input" type="radio" name="category" id="cat-5" value="5">
+                    <label class="form-check-label" for="cat-5">5. データ構造</label>
+                </div>
+                
+                <div class="list-group-item">
+                    <input class="form-check-input" type="radio" name="category" id="cat-6" value="6">
+                    <label class="form-check-label" for="cat-6">6. モジュール</label>
+                </div>
+                
+                <div class="list-group-item">
+                    <input class="form-check-input" type="radio" name="category" id="cat-7" value="7">
+                    <label class="form-check-label" for="cat-7">7. 入力と出力</label>
+                </div>
+                
+                <div class="list-group-item">
+                    <input class="form-check-input" type="radio" name="category" id="cat-8" value="8">
+                    <label class="form-check-label" for="cat-8">8. エラーと例外</label>
+                </div>
+                
+                <div class="list-group-item">
+                    <input class="form-check-input" type="radio" name="category" id="cat-9" value="9">
+                    <label class="form-check-label" for="cat-9">9. クラス</label>
+                </div>
+                
+                <div class="list-group-item">
+                    <input class="form-check-input" type="radio" name="category" id="cat-10" value="10">
+                    <label class="form-check-label" for="cat-10">10. 標準ライブラリミニツアー</label>
+                </div>
+                
+                <div class="list-group-item">
+                    <input class="form-check-input" type="radio" name="category" id="cat-11" value="11">
+                    <label class="form-check-label" for="cat-11">11. 標準ライブラリミニツアー --- その 2</label>
+                </div>
+                
+                <div class="list-group-item">
+                    <input class="form-check-input" type="radio" name="category" id="cat-12" value="12">
+                    <label class="form-check-label" for="cat-12">12. 仮想環境とパッケージ</label>
+                </div>
+                
+                <div class="list-group-item">
+                    <input class="form-check-input" type="radio" name="category" id="cat-13" value="13">
+                    <label class="form-check-label" for="cat-13">13. さあ何を？</label>
+                </div>
+                
+                <div class="list-group-item">
+                    <input class="form-check-input" type="radio" name="category" id="cat-14" value="14">
+                    <label class="form-check-label" for="cat-14">14. 対話入力編集と履歴置換</label>
+                </div>
+                
+                <div class="list-group-item">
+                    <input class="form-check-input" type="radio" name="category" id="cat-15" value="15">
+                    <label class="form-check-label" for="cat-15">15. 浮動小数点演算、その問題と制限</label>
+                </div>
+                
+                <div class="list-group-item">
+                    <input class="form-check-input" type="radio" name="category" id="cat-16" value="16">
+                    <label class="form-check-label" for="cat-16">16. 付録</label>
+                </div>
             </div>
-            <button type="submit" class="btn btn-primary mt-3">選択して進む</button>
+            <button type="submit" class="btn btn-success mt-3">テスト開始</button>
         </form>
     </div>
 
