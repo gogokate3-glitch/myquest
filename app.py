@@ -201,23 +201,65 @@ def practice():
         return redirect("/")
 
     if request.method == "POST":
-        answer = int(request.form.get("choice"))
-        correct = int(request.form.get("correct"))
-        result = (answer == correct)
-        return redirect(url_for("result", ok=result))
-    
+        # --- 回答処理 (submit_section_testのロジックを流用) ---
+        answers = request.form
+        question_ids = [key.split('_')[1] for key in answers.keys() if key.startswith('answer_')]
+        
+        if not question_ids:
+            return redirect(url_for("practice"))
+
+        results = []
+        questions = Question.query.filter(Question.id.in_(question_ids)).all()
+        question_map = {str(q.id): q for q in questions}
+
+        score = 0
+        for q_id in question_ids:
+            question = question_map.get(q_id)
+            if question:
+                user_answer_val = answers.get(f'answer_{q_id}')
+                if user_answer_val is None:
+                    user_answer_val = -1
+                else:
+                    user_answer_val = int(user_answer_val)
+                
+                is_correct = (user_answer_val == question.correct)
+                if is_correct:
+                    score += 1
+
+                choices = [question.choice1, question.choice2, question.choice3, question.choice4]
+                
+                user_choice_text = choices[user_answer_val - 1] if 0 < user_answer_val <= 4 else "未回答"
+                correct_choice_text = choices[question.correct - 1] if 0 < question.correct <= 4 else ""
+
+                results.append({
+                    "question": question,
+                    "user_answer": user_answer_val,
+                    "user_choice_text": user_choice_text,
+                    "correct_answer": question.correct,
+                    "correct_choice_text": correct_choice_text,
+                    "is_correct": is_correct
+                })
+        
+        total = len(questions)
+        percentage = (score / total) * 100 if total > 0 else 0
+        
+        return render_template("practice.html", 
+            results=results, 
+            score=score,
+            total=total,
+            percentage=f"{percentage:.1f}"
+        )
+
+    # --- 問題表示 (GETリクエスト) ---
     q_list = Question.query.filter_by(category="practice").all()
     if not q_list:
-        return "過去問の問題がありません"
+        return render_template("practice.html", questions=[]) # 空のリストを渡す
     
-    q = random.choice(q_list)
+    # 10問をランダムに選ぶ
+    if len(q_list) > 10:
+        q_list = random.sample(q_list, 10)
 
-    return render_template(
-        "practice.html",
-        question=q.question,
-        choices=[q.choice1, q.choice2, q.choice3, q.choice4],
-        correct=q.correct,
-    )
+    return render_template("practice.html", questions=q_list)
 
 # 結果
 @app.route("/result")

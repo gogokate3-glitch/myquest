@@ -4,6 +4,22 @@
     <meta charset="UTF-8">
     <title>過去問演習</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .result-correct {
+            background-color: #d1e7dd; /* Light green */
+        }
+        .result-incorrect {
+            background-color: #f8d7da; /* Light red */
+        }
+        .correct-answer-text {
+            color: #0f5132;
+            font-weight: bold;
+        }
+        .user-answer-incorrect {
+            text-decoration: line-through;
+            color: #842029;
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -25,23 +41,69 @@
                 <h2>過去問演習</h2>
             </div>
             <div class="card-body">
-                <p class="card-text">{{ question }}</p>
-
-                <form method="post">
-                    <div class="form-check">
-                        {% for c in choices %}
-                            <input type="radio" class="form-check-input" name="choice" value="{{ loop.index }}" id="choice{{ loop.index }}">
-                            <label class="form-check-label" for="choice{{ loop.index }}">{{ c }}</label><br>
-                        {% endfor %}
+                {% if results %}
+                    {# --- 結果表示 --- #}
+                    <h3>テスト結果</h3>
+                    <div class="alert alert-info">
+                        <h4>正解数: {{ score }} / {{ total }} 問</h4>
+                        <h4>正解率: {{ percentage }}%</h4>
                     </div>
-                    <input type="hidden" name="correct" value="{{ correct }}">
-                    <button type="submit" class="btn btn-primary mt-3">回答</button>
-                </form>
+                    <p>お疲れ様でした！結果は以下の通りです。</p>
+                    <hr>
+                    {% for res in results %}
+                    <div class="mb-4 p-3 {% if res.is_correct %}result-correct{% else %}result-incorrect{% endif %}">
+                        <p class="card-text fw-bold">問{{ loop.index }}: {{ res.question.question }}</p>
+                        
+                        <p>あなたの回答: 
+                            <span class="{% if not res.is_correct %}user-answer-incorrect{% endif %}">
+                                {{ res.user_choice_text }}
+                            </span>
+                        </p>
+
+                        {% if not res.is_correct %}
+                            <p>正解: <span class="correct-answer-text">{{ res.correct_choice_text }}</span></p>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+
+                {% else %}
+                    {# --- 問題表示 --- #}
+                    <form action="{{ url_for('practice') }}" method="post">
+                        {% for q_obj in questions %}
+                        <div class="mb-4">
+                            <p class="card-text fw-bold">問{{ loop.index }}: {{ q_obj.question }}</p>
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" name="answer_{{ q_obj.id }}" value="1" id="q{{ q_obj.id }}-choice1" required>
+                                <label class="form-check-label" for="q{{ q_obj.id }}-choice1">{{ q_obj.choice1 }}</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" name="answer_{{ q_obj.id }}" value="2" id="q{{ q_obj.id }}-choice2">
+                                <label class="form-check-label" for="q{{ q_obj.id }}-choice2">{{ q_obj.choice2 }}</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" name="answer_{{ q_obj.id }}" value="3" id="q{{ q_obj.id }}-choice3">
+                                <label class="form-check-label" for="q{{ q_obj.id }}-choice3">{{ q_obj.choice3 }}</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" name="answer_{{ q_obj.id }}" value="4" id="q{{ q_obj.id }}-choice4">
+                                <label class="form-check-label" for="q{{ q_obj.id }}-choice4">{{ q_obj.choice4 }}</label>
+                            </div>
+                        </div>
+                        <hr>
+                        {% endfor %}
+                        <button type="submit" class="btn btn-primary">回答を提出する</button>
+                    </form>
+                {% endif %}
             </div>
         </div>
 
         <div class="mt-4">
-            <a href="/home" class="btn btn-secondary">戻る</a>
+            {% if results %}
+                <a href="{{ url_for('practice') }}" class="btn btn-primary">もう一度挑戦する</a>
+                <a href="/home" class="btn btn-secondary">ホームに戻る</a>
+            {% else %}
+                <a href="/home" class="btn btn-secondary">ホームに戻る</a>
+            {% endif %}
         </div>
     </div>
 
