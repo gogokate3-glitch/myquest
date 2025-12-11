@@ -1,8 +1,9 @@
 import os
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify
 from database import db
-from model import Question, User
+from model import Question, User, QuizResult
 import random
+from itertools import groupby
 
 app = Flask(__name__)
 app.secret_key = "test123"
@@ -326,6 +327,8 @@ def practice():
 
     return render_template("practice.html", questions=q_list)
 
+from itertools import groupby
+
 @app.route("/practice_incorrect", methods=["GET"])
 def practice_incorrect():
     if "user" not in session:
@@ -341,28 +344,28 @@ def practice_incorrect():
     except (ValueError, TypeError):
         num_questions = 10
 
-    # ユーザーが不正解だった問題のIDを最新の結果で取得
-    # 各question_idについて、最新の不正解レコードを取得するサブクエリ
-    subquery = db.session.query(
-        QuizResult.question_id,
-        db.func.max(QuizResult.timestamp).label('max_timestamp')
-    ).filter(
-        QuizResult.user_id == current_user.id,
-        QuizResult.is_correct == False
-    ).group_by(QuizResult.question_id).subquery()
+    # ユーザーのすべての解答履歴を問題ごと、タイムスタンプ降順で取得
+    all_results = QuizResult.query.filter_by(user_id=current_user.id).order_by(QuizResult.question_id, QuizResult.timestamp.desc()).all()
 
-    incorrect_results = db.session.query(QuizResult).join(
-        subquery,
-        db.and_(
-            QuizResult.question_id == subquery.c.question_id,
-            QuizResult.timestamp == subquery.c.max_timestamp
-        )
-    ).all()
-
-    incorrect_question_ids = [res.question_id for res in incorrect_results]
+    incorrect_question_ids = []
+    # question_id でグループ化
+    for q_id, results_group in groupby(all_results, key=lambda r: r.question_id):
+        # グループをリストに変換
+        recent_results = list(results_group)
+        
+        # 解答が2回以上あるかチェック
+        if len(recent_results) >= 2:
+            # 直近2回のうち、少なくとも1回が不正解かチェック
+            if not recent_results[0].is_correct or not recent_results[1].is_correct:
+                incorrect_question_ids.append(q_id)
+        # 解答が1回しかない場合
+        elif len(recent_results) == 1:
+            # その1回が不正解かチェック
+            if not recent_results[0].is_correct:
+                incorrect_question_ids.append(q_id)
 
     if not incorrect_question_ids:
-        return render_template("practice.html", questions=[], message="前回不正解だった問題はありません。")
+        return render_template("practice.html", questions=[], message="直近2回以上正解しなかった問題はありません。")
 
     # Questionオブジェクトを取得
     all_incorrect_questions = Question.query.filter(Question.id.in_(incorrect_question_ids)).all()
@@ -371,7 +374,7 @@ def practice_incorrect():
     num_to_sample = min(len(all_incorrect_questions), num_questions)
     q_list = random.sample(all_incorrect_questions, num_to_sample)
 
-    return render_template("practice.html", questions=q_list, title="過去問演習（前回不正解だった問題からの出題）")
+    return render_template("practice.html", questions=q_list, title="過去問演習（直近２回以上正解しなかった問題）")
 
 # 結果
 @app.route("/result")
