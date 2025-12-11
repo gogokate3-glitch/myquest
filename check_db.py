@@ -1,16 +1,44 @@
 from app import app
 from database import db
-from model import Question
+from model import Question, User
+
+def setup_database():
+    with app.app_context():
+        # すべてのテーブルを作成（Userテーブルも含まれる）
+        print("--- テーブルを作成します ---")
+        db.create_all()
+        print("--- テーブル作成完了 ---")
+
+        # 初期ユーザーを登録
+        print("--- 初期ユーザーを登録します ---")
+        student_exists = User.query.filter_by(email='student@example.com').first()
+        admin_exists = User.query.filter_by(email='admin@example.com').first()
+
+        if not student_exists:
+            student = User(email='student@example.com')
+            student.set_password('pass123')
+            db.session.add(student)
+            print("student@example.com を登録しました。")
+        else:
+            print("student@example.com は既に登録されています。")
+
+        if not admin_exists:
+            admin = User(email='admin@example.com')
+            admin.set_password('admin123')
+            db.session.add(admin)
+            print("admin@example.com を登録しました。")
+        else:
+            print("admin@example.com は既に登録されています。")
+        
+        db.session.commit()
+        print("--- 初期ユーザー登録完了 ---")
+
 
 def read_all_questions():
     with app.app_context():
-
-        #テーブルがない場合はエラー防止（なければ作成）
-        db.create_all()
-
         questions = Question.query.all()
 
-        print("=== questions テーブルの内容 ===")
+        print("\n=== questions テーブルの内容 ===")
 
         if not questions:
             print("（データなし）")
@@ -28,4 +56,5 @@ def read_all_questions():
             print(f"-" * 40)
 
 if __name__ == "__main__":
+    setup_database()
     read_all_questions()

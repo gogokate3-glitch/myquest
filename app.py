@@ -1,25 +1,21 @@
+import os
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify
 from database import db
-from model import Question
+from model import Question, User
 import random
 
 app = Flask(__name__)
 app.secret_key = "test123"
 
 # DB設定を追加
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///quiz.db"
+basedir = os.path.abspath(os.path.dirname(__file__))
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///" + os.path.join(basedir, "instance", "quiz.db")
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db.init_app(app)
 
 #起動時にテーブルだけ作成
-with app.app_context():
-    db.create_all()
-
-# 簡易ユーザー
-USERS = {
-    "student@example.com": "pass123",
-    "admin@example.com": "admin123"
-}
+# with app.app_context():
+#     db.create_all()
 
 # ログイン
 @app.route("/")
@@ -31,8 +27,10 @@ def try_login():
     email = request.form.get("email")
     pw = request.form.get("password")
 
-    if email in USERS and USERS[email] == pw:
-        session["user"] = email
+    user = User.query.filter_by(email=email).first()
+
+    if user and user.check_password(pw):
+        session["user"] = user.email
         return redirect(url_for("home"))
     else:
         return render_template("login.html", error="ログインに失敗しました")
@@ -42,6 +40,32 @@ def try_login():
 def logout():
     session.pop("user", None)
     return redirect("/")
+
+@app.route("/change_password", methods=["GET", "POST"])
+def change_password():
+    if request.method == "POST":
+        email = request.form.get("email")
+        current_password = request.form.get("current_password")
+        new_password = request.form.get("new_password")
+        confirm_password = request.form.get("confirm_password")
+        
+        user = User.query.filter_by(email=email).first()
+
+        if not user or not user.check_password(current_password):
+            return render_template("change_password.html", error="IDまたは現在のパスワードが正しくありません。")
+        
+        if not new_password or new_password != confirm_password:
+            return render_template("change_password.html", error="新しいパスワードが一致しません。")
+
+        user.set_password(new_password)
+        db.session.commit()
+        
+        # パスワード変更後はログイン画面に戻す
+        return redirect(url_for("login"))
+
+    # GET request
+    return render_template("change_password.html")
+
 
 # ホーム
 @app.route("/home")
@@ -272,7 +296,7 @@ def result():
 # 管理者画面
 @app.route("/admin")
 def admin():
-    if session.get("user") != "admin@example.com":
+    if "user" not in session or session["user"] != "admin@example.com":
         return redirect("/")
     return render_template("admin.html")
 
