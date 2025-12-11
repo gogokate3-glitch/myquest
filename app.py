@@ -14,8 +14,8 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db.init_app(app)
 
 #起動時にテーブルだけ作成
-# with app.app_context():
-#     db.create_all()
+with app.app_context():
+    db.create_all()
 
 # ログイン
 @app.route("/")
@@ -140,6 +140,12 @@ def submit_section_test():
     questions = Question.query.filter(Question.id.in_(question_ids)).all()
     question_map = {str(q.id): q for q in questions}
 
+    # 現在のユーザーのIDを取得
+    current_user_email = session["user"]
+    current_user = User.query.filter_by(email=current_user_email).first()
+    if not current_user:
+        return redirect("/") # ユーザーが見つからない場合はログインページへ
+
     score = 0
     for q_id in question_ids:
         question = question_map.get(q_id)
@@ -167,6 +173,17 @@ def submit_section_test():
                 "correct_choice_text": correct_choice_text,
                 "is_correct": is_correct
             })
+
+            # QuizResultを保存
+            from model import QuizResult # Import inside function to avoid circular dependency
+            quiz_result = QuizResult(
+                user_id=current_user.id,
+                question_id=question.id,
+                is_correct=is_correct
+            )
+            db.session.add(quiz_result)
+    
+    db.session.commit() # すべての結果をコミット
     
     total = len(questions)
     percentage = (score / total) * 100 if total > 0 else 0
@@ -232,6 +249,12 @@ def practice():
         if not question_ids:
             return redirect(url_for("practice"))
 
+        # 現在のユーザーのIDを取得
+        current_user_email = session["user"]
+        current_user = User.query.filter_by(email=current_user_email).first()
+        if not current_user:
+            return redirect("/") # ユーザーが見つからない場合はログインページへ
+
         results = []
         questions = Question.query.filter(Question.id.in_(question_ids)).all()
         question_map = {str(q.id): q for q in questions}
@@ -263,7 +286,18 @@ def practice():
                     "correct_choice_text": correct_choice_text,
                     "is_correct": is_correct
                 })
+
+                # QuizResultを保存
+                from model import QuizResult # Import inside function to avoid circular dependency
+                quiz_result = QuizResult(
+                    user_id=current_user.id,
+                    question_id=question.id,
+                    is_correct=is_correct
+                )
+                db.session.add(quiz_result)
         
+        db.session.commit() # すべての結果をコミット
+
         total = len(questions)
         percentage = (score / total) * 100 if total > 0 else 0
         
@@ -291,6 +325,53 @@ def practice():
     q_list = random.sample(all_questions, num_to_sample)
 
     return render_template("practice.html", questions=q_list)
+
+@app.route("/practice_incorrect", methods=["GET"])
+def practice_incorrect():
+    if "user" not in session:
+        return redirect("/")
+
+    current_user_email = session["user"]
+    current_user = User.query.filter_by(email=current_user_email).first()
+    if not current_user:
+        return redirect("/")
+
+    try:
+        num_questions = int(request.args.get('num', 10))
+    except (ValueError, TypeError):
+        num_questions = 10
+
+    # ユーザーが不正解だった問題のIDを最新の結果で取得
+    # 各question_idについて、最新の不正解レコードを取得するサブクエリ
+    subquery = db.session.query(
+        QuizResult.question_id,
+        db.func.max(QuizResult.timestamp).label('max_timestamp')
+    ).filter(
+        QuizResult.user_id == current_user.id,
+        QuizResult.is_correct == False
+    ).group_by(QuizResult.question_id).subquery()
+
+    incorrect_results = db.session.query(QuizResult).join(
+        subquery,
+        db.and_(
+            QuizResult.question_id == subquery.c.question_id,
+            QuizResult.timestamp == subquery.c.max_timestamp
+        )
+    ).all()
+
+    incorrect_question_ids = [res.question_id for res in incorrect_results]
+
+    if not incorrect_question_ids:
+        return render_template("practice.html", questions=[], message="前回不正解だった問題はありません。")
+
+    # Questionオブジェクトを取得
+    all_incorrect_questions = Question.query.filter(Question.id.in_(incorrect_question_ids)).all()
+
+    # 指定された問題数をランダムに選ぶ
+    num_to_sample = min(len(all_incorrect_questions), num_questions)
+    q_list = random.sample(all_incorrect_questions, num_to_sample)
+
+    return render_template("practice.html", questions=q_list, title="過去問演習（前回不正解だった問題からの出題）")
 
 # 結果
 @app.route("/result")

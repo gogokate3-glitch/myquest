@@ -28,7 +28,22 @@
             <a href="/material" class="list-group-item list-group-item-action">教材を見る</a>
             <div class="list-group-item">
                 <form action="/practice" method="GET" class="d-flex align-items-center">
-                    <span class="me-3">過去問演習</span>
+                    <span class="me-3">過去問演習（全問題からのランダム出題）</span>
+                    <div>
+                        <select name="num" class="form-select-sm me-2">
+                            <option value="10" selected>10問</option>
+                            <option value="20">20問</option>
+                            <option value="30">30問</option>
+                            <option value="40">40問</option>
+                            <option value="50">50問</option>
+                        </select>
+                        <button type="submit" class="btn btn-primary btn-sm">開始</button>
+                    </div>
+                </form>
+            </div>
+            <div class="list-group-item">
+                <form action="/practice_incorrect" method="GET" class="d-flex align-items-center">
+                    <span class="me-3">過去問演習（前回不正解からの出題）</span>
                     <div>
                         <select name="num" class="form-select-sm me-2">
                             <option value="10" selected>10問</option>
