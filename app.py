@@ -275,13 +275,20 @@ def practice():
         )
 
     # --- 問題表示 (GETリクエスト) ---
-    q_list = Question.query.filter_by(category="practice").all()
-    if not q_list:
+    # クエリパラメータから問題数を取得、デフォルトは10
+    try:
+        num_questions = int(request.args.get('num', 10))
+    except (ValueError, TypeError):
+        num_questions = 10
+
+    # 全ての問題を取得
+    all_questions = Question.query.all()
+    if not all_questions:
         return render_template("practice.html", questions=[]) # 空のリストを渡す
-    
-    # 10問をランダムに選ぶ
-    if len(q_list) > 10:
-        q_list = random.sample(q_list, 10)
+
+    # 指定された問題数をランダムに選ぶ
+    num_to_sample = min(len(all_questions), num_questions)
+    q_list = random.sample(all_questions, num_to_sample)
 
     return render_template("practice.html", questions=q_list)
 
