@@ -43,17 +43,55 @@
 
 ## 4. データベース設計 (データモデル)
 
-データベースは3つのテーブルで構成されます。
+データベースは `quiz.db` という名前のSQLiteデータベースファイルとして `instance/` ディレクトリに保存されます。
+ORMにはFlask-SQLAlchemyを使用しており、モデルは `model.py` で定義されています。
+データベースは以下の3つのテーブルで構成されます。
 
-| テーブル名 | 説明 | 主なカラム |
-| :--- | :--- | :--- |
-| `users` | ユーザー情報を管理 | `id`, `username`, `password_hash` |
-| `questions` | クイズの問題と解答を管理 | `id`, `category`, `question_text`, `choices`, `answer`, `explanation` |
-| `quiz_results` | ユーザーごとの解答履歴を管理 | `id`, `user_id` (FK), `question_id` (FK), `is_correct`, `timestamp` |
+### 4.1. `users` テーブル
 
-- **リレーション**:
-    - `quiz_results.user_id` は `users.id` に紐づきます。
-    - `quiz_results.question_id` は `questions.id` に紐づきます。
+ユーザー情報を管理します。
+
+| カラム名        | データ型          | 説明                                   | 制約                  |
+| :-------------- | :---------------- | :------------------------------------- | :-------------------- |
+| `id`            | `Integer`         | 主キー                                 | `primary_key=True`    |
+| `email`         | `String(120)`     | ユーザーのメールアドレス（ログインID） | `unique=True`, `nullable=False` |
+| `password_hash` | `String(200)`     | ハッシュ化されたパスワード             | `nullable=False`      |
+
+### 4.2. `questions` テーブル
+
+クイズの問題、選択肢、正解を管理します。
+
+| カラム名    | データ型        | 説明                           | 制約               |
+| :---------- | :-------------- | :----------------------------- | :----------------- |
+| `id`        | `Integer`       | 主キー                         | `primary_key=True` |
+| `question`  | `String(300)`   | 問題文                         | `nullable=False`   |
+| `choice1`   | `String(200)`   | 選択肢1                        |                    |
+| `choice2`   | `String(200)`   | 選択肢2                        |                    |
+| `choice3`   | `String(200)`   | 選択肢3                        |                    |
+| `choice4`   | `String(200)`   | 選択肢4                        |                    |
+| `correct`   | `Integer`       | 正解の選択肢番号 (1-4)         |                    |
+| `category`  | `String(50)`    | 問題のカテゴリ（章など）       |                    |
+
+### 4.3. `quiz_results` テーブル
+
+ユーザーごとのクイズの解答履歴を記録します。
+
+| カラム名      | データ型   | 説明                                     | 制約                               |
+| :------------ | :--------- | :--------------------------------------- | :--------------------------------- |
+| `id`          | `Integer`  | 主キー                                   | `primary_key=True`                 |
+| `user_id`     | `Integer`  | ユーザーID (`users.id`への外部キー)      | `ForeignKey('users.id')`, `nullable=False` |
+| `question_id` | `Integer`  | 問題ID (`questions.id`への外部キー)    | `ForeignKey('questions.id')`, `nullable=False` |
+| `is_correct`  | `Boolean`  | 正解したかどうか (True/False)            | `nullable=False`                   |
+| `timestamp`   | `DateTime` | 解答した日時 (UTC)                       | `nullable=False`, `default=datetime.utcnow` |
+
+### 4.4. テーブル間のリレーション
+
+-   **`users` と `quiz_results`**:
+    -   一人のユーザー (`User`) は複数の解答履歴 (`QuizResult`) を持つことができます (`1対多`)。
+    -   `User.results` からそのユーザーの全解答履歴にアクセスできます。
+-   **`questions` と `quiz_results`**:
+    -   一つの問題 (`Question`) は複数の解答履歴 (`QuizResult`) を持つことができます (`1対多`)。
+    -   `Question.results` からその問題に対する全解答履歴にアクセスできます。
 
 ## 5. プロジェクトのセットアップと実行
 
