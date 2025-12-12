@@ -93,6 +93,99 @@ ORMにはFlask-SQLAlchemyを使用しており、モデルは `model.py` で定�
     -   一つの問題 (`Question`) は複数の解答履歴 (`QuizResult`) を持つことができます (`1対多`)。
     -   `Question.results` からその問題に対する全解答履歴にアクセスできます。
 
+### 4.5. データ関連図 (ER図 - Graphviz/DOT)
+
+![alt text](graphviz.png)
+
+Graphviz (DOT言語) を使用して表現したER図です。
+
+```dot
+digraph ERD {
+    graph [
+        rankdir = "LR";
+        label = "Quiz Application ER Diagram";
+        fontsize = 16;
+        fontname = "Helvetica";
+        splines = ortho;
+    ];
+    node [
+        shape = "none";
+        fontsize = 12;
+        fontname = "Helvetica";
+    ];
+    edge [
+        arrowsize = 0.9;
+        fontsize = 10;
+        fontname = "Helvetica";
+        labeldistance = 3.0;
+        labelfontcolor = "dimgray";
+    ];
+
+    // --- Entities (Tables) ---
+    users [ label = <<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+            <TR><TD COLSPAN="2" BGCOLOR="#A8DADC"><B>users</B></TD></TR>
+            <TR><TD ALIGN="LEFT" PORT="id"><U>id (PK)</U></TD><TD ALIGN="LEFT">INTEGER</TD></TR>
+            <TR><TD ALIGN="LEFT">email</TD><TD ALIGN="LEFT">VARCHAR(120)</TD></TR>
+            <TR><TD ALIGN="LEFT">password_hash</TD><TD ALIGN="LEFT">VARCHAR(200)</TD></TR>
+        </TABLE>> ];
+
+    questions [ label = <<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+            <TR><TD COLSPAN="2" BGCOLOR="#A8DADC"><B>questions</B></TD></TR>
+            <TR><TD ALIGN="LEFT" PORT="id"><U>id (PK)</U></TD><TD ALIGN="LEFT">INTEGER</TD></TR>
+            <TR><TD ALIGN="LEFT">question</TD><TD ALIGN="LEFT">VARCHAR(300)</TD></TR>
+            <TR><TD ALIGN="LEFT">choice1</TD><TD ALIGN="LEFT">VARCHAR(200)</TD></TR>
+            <TR><TD ALIGN="LEFT">choice2</TD><TD ALIGN="LEFT">VARCHAR(200)</TD></TR>
+            <TR><TD ALIGN="LEFT">choice3</TD><TD ALIGN="LEFT">VARCHAR(200)</TD></TR>
+            <TR><TD ALIGN="LEFT">choice4</TD><TD ALIGN="LEFT">VARCHAR(200)</TD></TR>
+            <TR><TD ALIGN="LEFT">correct</TD><TD ALIGN="LEFT">INTEGER</TD></TR>
+            <TR><TD ALIGN="LEFT">category</TD><TD ALIGN="LEFT">VARCHAR(50)</TD></TR>
+        </TABLE>> ];
+
+    quiz_results [ label = <<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+            <TR><TD COLSPAN="2" BGCOLOR="#F7D8B6"><B>quiz_results</B></TD></TR>
+            <TR><TD ALIGN="LEFT"><U>id (PK)</U></TD><TD ALIGN="LEFT">INTEGER</TD></TR>
+            <TR><TD ALIGN="LEFT" PORT="user_id"><I>user_id (FK)</I></TD><TD ALIGN="LEFT">INTEGER</TD></TR>
+            <TR><TD ALIGN="LEFT" PORT="question_id"><I>question_id (FK)</I></TD><TD ALIGN="LEFT">INTEGER</TD></TR>
+            <TR><TD ALIGN="LEFT">is_correct</TD><TD ALIGN="LEFT">BOOLEAN</TD></TR>
+            <TR><TD ALIGN="LEFT">timestamp</TD><TD ALIGN="LEFT">DATETIME</TD></TR>
+        </TABLE>> ];
+
+    // --- Relationships (Crow's Foot Notation) ---
+    // A quiz_result MUST belong to ONE user.
+    // A user CAN have ZERO or MORE quiz_results.
+    quiz_results:user_id -> users:id [
+        dir = "both",
+        arrowhead = "tee",      // one
+        arrowtail = "crowodot"  // zero or more
+    ];
+
+    // A quiz_result MUST belong to ONE question.
+    // A question CAN have ZERO or MORE quiz_results.
+    quiz_results:question_id -> questions:id [
+        dir = "both",
+        arrowhead = "tee",      // one
+        arrowtail = "crowodot"  // zero or more
+    ];
+}
+```
+
+**記法の解説:**
+
+この図は、カラスの足（Crow's Foot）記法を用いて、テーブル間の関係性を示しています。
+
+-   **quiz_results -> users** の関係:
+    -   `quiz_results`側の矢印の尾 (`arrowtail`) は `crowodot` で、「0以上、多数」を意味します。
+    -   `users`側の矢印の頭 (`arrowhead`) は `tee` で、「1」を意味します。
+    -   **意味**: 1件のクイズ結果は必ず1人のユーザーに属し、1人のユーザーは0件以上のクイズ結果を持つことができます (1対多)。
+
+-   **quiz_results -> questions** の関係:
+    -   `quiz_results`側の矢印の尾 (`arrowtail`) は `crowodot` で、「0以上、多数」を意味します。
+    -   `questions`側の矢印の頭 (`arrowhead`) は `tee` で、「1」を意味します。
+    -   **意味**: 1件のクイズ結果は必ず1つの問題に属し、1つの問題は0件以上のクイズ結果を持つことができます (1対多)。
+
+-   `<U>PK</U>`: 主キー (Primary Key)
+-   `<I>FK</I>`: 外部キー (Foreign Key)
+
 ## 5. プロジェクトのセットアップと実行
 
 ### 5.1. データベースの初期化とコンテンツの投入
@@ -128,6 +221,61 @@ python app.py
 - `create_users.py`: ユーザーを新規作成するためのスクリプト。
 - `templates/`: HTMLテンプレート群。
 - `instance/quiz.db`: SQLiteデータベースファイル。
+
+## 7. 画面遷移図
+
+![alt text](<Admin Authentication and-2025-12-12-054456.png>)
+
+以下にアプリケーションの主要な画面遷移を示します。
+
+```mermaid
+stateDiagram-v2
+    direction TD
+
+    [*] --> ログイン
+
+    subgraph 認証フロー
+        ログイン --> ホーム : ログイン成功
+        ログイン : /
+        ホーム : /home
+
+        ホーム --> ログイン : ログアウト
+        ログイン --> パスワード変更 : リンククリック
+        パスワード変更 : /change_password
+        パスワード変更 --> ログイン : 変更成功 / 戻る
+    end
+
+    subgraph メイン機能 (要認証)
+        direction LR
+        ホーム --> 教材 : 教材を見る
+        教材 : /material
+        教材 --> ホーム
+
+        ホーム --> 章末テスト : 章を選択
+        章末テスト : /section_test/<category>
+        章末テスト --> 章末テスト : 解答を提出 → 結果表示
+
+        ホーム --> 練習問題 : 練習する (全問)
+        練習問題 : /practice
+        練習問題 --> 練習問題 : 解答を提出 → 結果表示
+
+        ホーム --> 苦手問題 : 苦手問題を克服
+        苦手問題 : /practice_incorrect
+        苦手問題 --> 練習問題 : 解答を提出 → 結果表示
+    end
+
+    subgraph 管理機能 (adminのみ)
+        ホーム --> 管理者
+        管理者 : /admin
+        管理者 --> ホーム
+    end
+
+    note right of ログイン
+      未認証のユーザーは
+      ほぼ全てのページから
+      ログイン画面にリダイレクトされます
+    end note
+```
 
 ---
 
