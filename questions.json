@@ -998,5 +998,492 @@
     ],
     "correct": 3,
     "category": 5
-  }
+  },
+  {
+    "question": "Pythonにおいて、定義（関数や変数）を保持し、スクリプトや対話インスタンスで再利用するためにファイルに書き出されたものを何と呼びますか？",
+    "choices": ["ライブラリ", "モジュール", "クラス", "フレームワーク"],
+    "correct": 2,
+    "category": 6
+  },
+  {
+    "question": "モジュールを定義するPythonファイルに必須の接尾語（拡張子）は何ですか？",
+    "choices": [".txt", ".pyo", ".exe", ".py"],
+    "correct": 4,
+    "category": 6
+  },
+  {
+    "question": "モジュールを初期化するための実行文は、インポート文の中でモジュール名がいつ見つかったときに実行されますか？",
+    "choices": ["常にモジュールがロードされるたび", "スクリプトとして実行されたときのみ", "最初にモジュール名が見つかったときにだけ", "定義されている関数が呼び出されたとき"],
+    "correct": 3,
+    "category": 6
+  },
+  {
+    "question": "import文を使ってモジュール（例：fibo）をインポートした後、モジュール内で定義された関数（例：fib）にアクセスするために使われる表記法はどれですか？",
+    "choices": ["fib.fibo()", "fib()", "fibo::fib()", "fibo.fib()"],
+    "correct": 4,
+    "category": 6
+  },
+  {
+    "question": "モジュール内で、そのモジュール名（文字列）を取得するために使えるグローバル変数は何ですか？",
+    "choices": ["module", "self", "name", "id"],
+    "correct": 3,
+    "category": 6
+  },
+  {
+    "question": "from fibo import fib, fib2 のように特定の名前をインポートした場合、インポートの対象となるモジュール名（fibo）はローカルな名前空間に取り込まれますか？",
+    "choices": ["取り込まれる", "取り込まれない", "常にエラーになる", "設定によって異なる"],
+    "correct": 2,
+    "category": 6
+  },
+  {
+    "question": "from fibo import * の形式でインポートする際、ローカルな名前空間に取り込まれない名前の共通の特徴は何ですか？",
+    "choices": ["大文字で始まる", "数字で始まる", "アンダースコア（_）で始まる", "クラスとして定義されている"],
+    "correct": 3,
+    "category": 6
+  },
+  {
+    "question": "Pythonモジュールを python fibo.py <arguments> のようにスクリプトとして実行した場合、モジュールの name に設定される文字列は何ですか？",
+    "choices": ["fibo", "script", "module", "main"],
+    "correct": 4,
+    "category": 6
+  },
+  {
+    "question": "Pythonがモジュールの読み込みを高速化するためにコンパイル済みのモジュールをキャッシュするディレクトリの名前は何ですか？",
+    "choices": ["cache/", "compiled_modules/", "cache/", "pycache"],
+    "correct": 4,
+    "category": 6
+  },
+  {
+    "question": "Pythonにおいて、モジュール名前空間を「ドット付きモジュール名」を使って構造化する手段は何と呼ばれますか？",
+    "choices": ["ライブラリ", "パッケージ", "クラス", "ディレクトリ"],
+    "correct": 2,
+    "category": 6
+  },
+  {
+    "question": "実行効率上の理由から、各モジュールはインタープリタの1セッションごとに何回だけインポートされますか？",
+    "choices": ["1回だけ", "必要なだけ何度でも", "モジュール名が変更されるたび", "最大10回まで"],
+    "correct": 1,
+    "category": 6
+  },
+  {
+    "question": "spamというモジュールをインポートするとき、インタープリタが最初に検索する対象は何ですか？",
+    "choices": ["sys.pathにあるspam.py", "PYTHONPATH変数内のディレクトリ", "その名前の組み込みモジュール", "カレントディレクトリにあるspam.py"],
+    "correct": 3,
+    "category": 6
+  },
+  {
+    "question": "モジュール検索パス（sys.path）の初期化において、PYTHONPATHが設定されていなかった場合に組み込みのデフォルト値に加えて、最も優先される（検索パスの先頭に追加される）場所は何ですか？",
+    "choices": ["標準ライブラリパス", "インストール方法に依存したデフォルト", "入力されたスクリプトのあるディレクトリ", "ユーザーのホームディレクトリ"],
+    "correct": 3,
+    "category": 6
+  },
+  {
+    "question": "コンパイル済みPythonファイル（.pyc）のキャッシュチェックがスキップされる2つのケースのうち、コマンドラインから直接モジュールが読み込まれた場合に該当する動作はどれですか？",
+    "choices": ["ソースモジュールがないため確認しない", "キャッシュを無視し常に再コンパイルされ結果を保存しない", "ソースの変更日時を比較する", "常に再コンパイルされるが結果を保存する"],
+    "correct": 2,
+    "category": 6
+  },
+  {
+    "question": "ディレクトリをパッケージとしてPythonに扱わせるために、例外的なケース（namespace package）を除いて必須となるファイルは何ですか？",
+    "choices": ["main.py", "setup.py", "init.py", "manifest.in"],
+    "correct": 3,
+    "category": 6
+  },
+  {
+    "question": "from package import item を使ったインポートで、itemがパッケージ内で定義されている名前でなかった場合、import文は次にitemを何であると仮定してロードを試みますか？",
+    "choices": ["クラス名", "ファイルパス", "モジュール名", "関数名"],
+    "correct": 3,
+    "category": 6
+  },
+  {
+    "question": "from package import * が実行されたときにインポートすべきモジュール名のリストとしてパッケージ作者が__init__.pyに定義する特別な変数は何ですか？",
+    "choices": ["modules", "export", "list", "all"],
+    "correct": 4,
+    "category": 6
+  },
+  {
+    "question": "sound.filters.vocoderモジュールがsound.effectsパッケージのechoモジュールを参照するために、明示的な相対importを使用する場合の正しい表記法はどれですか？",
+    "choices": ["from .echo import echo", "from .effects import echo", "from ..effects import echo", "from sound.effects import echo"],
+    "correct": 3,
+    "category": 6
+  },
+  {
+    "question": "相対import（例： from . import echo）は、現在のモジュールの何に基づいて解決されますか？",
+    "choices": ["現在のディレクトリ名", "グローバルスコープ", "現在のモジュールのパッケージ名", "PYTHONPATHの先頭"],
+    "correct": 3,
+    "category": 6
+  },
+  {
+    "question": "パッケージの init.py のコードが実行される前に、そのディレクトリ名の文字列を含んだシーケンスに初期化されるパッケージの特別な属性は何ですか？",
+    "choices": ["name", "path", "version", "file"],
+    "correct": 2,
+    "category": 6
+  },
+  {
+    "question": "Pythonの出力方法の一つで、開き引用符や三重の開き引用符の前に f または F を付けて文字列を始め、波括弧 { } の間に Python の式を書けるリテラルは何と呼ばれますか？",
+    "choices": ["ジェネレータ式", "書式指定ミニ文字列", "フォーマット済み文字列リテラル (f-string)", "アノテーション付き文字列"],
+    "correct": 3,
+    "category": 7
+  },
+  {
+    "question": "値の人間が読める表現を返すための関数で、特に文字列オブジェクトに対してクォートやバックスラッシュが追加されないのはどちらですか？",
+    "choices": ["repr()", "ascii()", "str()", "eval()"],
+    "correct": 3,
+    "category": 7
+  },
+  {
+    "question": "ファイルを開く open() 関数で、ファイルを追記用（ファイル終端に書き込む）に開くためのモード指定文字は何ですか？",
+    "choices": ["r+", "w", "a", "rb"],
+    "correct": 3,
+    "category": 7
+  },
+  {
+    "question": "ファイル操作において、処理中に例外が発生しても必ず最後にファイルを閉じることを保証するために使用が推奨されるキーワードは何ですか？",
+    "choices": ["try-finally", "except", "with", "yield"],
+    "correct": 3,
+    "category": 7
+  },
+  {
+    "question": "ファイルオブジェクトの f.read() メソッドが、オプションの size 引数を省略したり負の数にしたりした場合に読み出すのはどのようなデータですか？",
+    "choices": ["最初の1行だけ", "最大1024バイト", "ファイルの内容全て", "次の改行まで"],
+    "correct": 3,
+    "category": 7
+  },
+  {
+    "question": "Pythonのファイルオブジェクトに対してループを書く（for line in f:）方法の利点として、ソースで言及されているのは何ですか？",
+    "choices": ["ネットワーク通信を自動で処理する", "マルチスレッド環境での排他制御を提供する", "メモリを効率的に使い、高速で簡潔なコードになる", "ファイルをバイナリモードでしか開かない"],
+    "correct": 3,
+    "category": 7
+  },
+  {
+    "question": "文字列メソッドのうち、指定された幅のフィールド内に文字列が右寄せで入るように左側に空白を追加し、新しい文字列を返すものは何ですか？",
+    "choices": ["str.zfill()", "str.ljust()", "str.rjust()", "str.center()"],
+    "correct": 3,
+    "category": 7
+  },
+  {
+    "question": "Pythonのデータ階層をJSON形式の文字列表現に変換する処理は何と呼ばれますか？",
+    "choices": ["ハッシュ化", "トークン化", "シリアライズ", "パース"],
+    "correct": 3,
+    "category": 7
+  },
+  {
+    "question": "f-stringにおいて、{expression =} のように = 指定子を使用した場合、どのような形式で表示されますか？",
+    "choices": ["式の結果のみ", "式、等号、評価された文字列表現", "式と等号のみ", "評価された文字列表現と等号"],
+    "correct": 2,
+    "category": 7
+  },
+  {
+    "question": "ファイルオブジェクトが with キーワードや f.close() の呼び出しによって閉じられた後、そのオブジェクトに対して f.read() などを実行しようとすると発生する例外は何ですか？",
+    "choices": ["IOError", "FileClosedError", "ValueError", "AttributeError"],
+    "correct": 3,
+    "category": 7
+  },
+  {
+    "question": "str() 関数と repr() 関数のうち、インタープリタに読める（あるいは同値となる構文がない場合は SyntaxError になるような）表現を返すための関数はどれですか？",
+    "choices": ["str()", "print()", "format()", "repr()"],
+    "correct": 4,
+    "category": 7
+  },
+  {
+    "question": "テキストモードでファイルを開き読み取りを行う場合、プラットフォーム固有の行末記号（例: Windowsの \r\n）はデフォルトでどのように変換されますか？",
+    "choices": ["自動的に削除される", "元の形式のまま残る", "単一の改行文字 \n に変換される", "エラーとなる"],
+    "correct": 3,
+    "category": 7
+  },
+  {
+    "question": "f-stringにおいて、値をフォーマットする前に repr() 関数を適用させるために使われる変換指定子の修飾子は何ですか？",
+    "choices": ["!s", "!r", "!a", "!d"],
+    "correct": 2,
+    "category": 7
+  },
+  {
+    "question": "ファイルオブジェクトの f.seek(offset, whence) メソッドにおいて、whence の値が 1 の場合、ファイル位置の計算の参照点となるのはどこですか？",
+    "choices": ["ファイルの先頭", "ファイルの終端", "現在のファイル位置", "ランダムな位置"],
+    "correct": 3,
+    "category": 7
+  },
+  {
+    "question": "ファイルをバイナリモードで開く場合（'b'がモードにつく場合）、open() 関数で指定してはならない引数は何ですか？",
+    "choices": ["filename", "mode", "encoding", "buffering"],
+    "correct": 3,
+    "category": 7
+  },
+  {
+    "question": "str.format() メソッドで、全てのローカルな変数が入った辞書を返す組み込み関数 vars() と組み合わせて、辞書のキーをキーワード引数として参照するために使われる特別な記法は何ですか？",
+    "choices": ["*", "**", "[]", "#"],
+    "correct": 2,
+    "category": 7
+  },
+  {
+    "question": "f.readline() メソッドが空行を読み取った場合、ファイルの終端に達した場合と区別するために返される文字列の内容は何ですか？",
+    "choices": ["空の文字列 ''", "単一の改行文字 '\n'", "None", "EOF"],
+    "correct": 2,
+    "category": 7
+  },
+  {
+    "question": "f.write() を with キーワードや f.close() を使わずに呼び出した場合、プログラムが正常に終了しても発生する可能性がある警告として、ソースで指摘されているのは何ですか？",
+    "choices": ["ファイルが破損すること", "実引数がディスクに完全に書き込まれないこと", "メモリリークが発生すること", "ファイルの内容が文字化けすること"],
+    "correct": 2,
+    "category": 7
+  },
+  {
+    "question": "テキストファイルに対して f.seek(offset, whence) を実行する場合、ファイルの先頭からの相対位置に対するシークだけが許可されていますが、例外的に許可されているシーク操作は何ですか？",
+    "choices": ["seek(0, 1) で現在の位置へ", "seek(0, 2) でファイルの末尾へ", "seek(-1, 2) で末尾の1バイト前へ", "seek(0, 0) でファイルの終端へ"],
+    "correct": 2,
+    "category": 7
+  },
+  {
+    "question": "JSONとは対照的に、任意の複雑なPythonオブジェクトをシリアライズ可能だが、信頼できない送信元からのデータは安全ではない（任意のコードが実行される危険性がある）Python固有のプロトコルは何ですか？",
+    "choices": ["YAML", "XML", "JSON", "pickle"],
+    "correct": 4,
+    "category": 7
+  },
+  {
+    "question": "Pythonのエラーのうち、構文解析エラー (parsing error) としても知られ、コードの構造的な誤りによって発生するものは何ですか？",
+    "choices": ["トレースバック", "実行時エラー", "例外", "構文エラー"],
+    "correct": 4,
+    "category": 8
+  },
+  {
+    "question": "文や式が構文的に正しくても、実行中に検出される可能性のあるエラーで、常に致命的とは限らないものは何と呼ばれますか？",
+    "choices": ["例外 (exception)", "セグメンテーション違反", "アサーションエラー", "構文エラー"],
+    "correct": 1,
+    "category": 8
+  },
+  {
+    "question": "例外処理を行う try 文において、例外が発生しなかった場合に、全ての except 節よりも後ろに置かれて実行されるオプションの節は何ですか？",
+    "choices": ["finally 節", "else 節", "except 節", "raise 節"],
+    "correct": 2,
+    "category": 8
+  },
+  {
+    "question": "try 文において、例外の発生有無に関わらず、try 文が終わる前の最後の処理として必ず実行されることが保証されている節は何ですか？",
+    "choices": ["except 節", "else 節", "with 節", "finally 節"],
+    "correct": 4,
+    "category": 8
+  },
+  {
+    "question": "例外を明示的に発生させるために使用され、例外インスタンスまたは例外クラスを引数として取る文は何ですか？",
+    "choices": ["throw", "send", "raise", "yield"],
+    "correct": 3,
+    "category": 8
+  },
+  {
+    "question": "ファイルやネットワーク接続のような外部リソースが、利用の成否にかかわらず不要になった際に、即座に正しくクリーンアップされることを保証する文は何ですか？",
+    "choices": ["while 文", "with 文", "for 文", "try 文"],
+    "correct": 2,
+    "category": 8
+  },
+  {
+    "question": "組み込み例外のうち、すべての例外に共通する基底クラスは何ですか？",
+    "choices": ["Exception", "Error", "BaseException", "SystemExit"],
+    "correct": 3,
+    "category": 8
+  },
+  {
+    "question": "except 節で例外名を指定した後、例外インスタンスを変数に紐づけるために使用されるキーワードは何ですか？",
+    "choices": ["to", "bind", "as", "is"],
+    "correct": 3,
+    "category": 8
+  },
+  {
+    "question": "Pythonにおいて、未定義の名前を参照しようとしたときに発生する組み込み例外は何ですか？",
+    "choices": ["ZeroDivisionError", "TypeError", "NameError", "AttributeError"],
+    "correct": 3,
+    "category": 8
+  },
+  {
+    "question": "except 節で特定の例外を指定しない場合（ワイルドカードとして）、ほぼ全ての致命的でない例外を捕捉するために使用されるクラスは何ですか？",
+    "choices": ["SystemError", "RuntimeError", "Exception", "BaseError"],
+    "correct": 3,
+    "category": 8
+  },
+  {
+    "question": "try文における except 節の例外マッチングについて、以下のうち正しい記述はどれですか？",
+    "choices": ["派生クラスが書かれた except 節は、その基底クラスのインスタンスにマッチする", "基底クラスが書かれた except 節は、その派生クラスのインスタンスにマッチする", "except 節は、その例外と完全に一致するインスタンスにしかマッチしない", "except 節でタプルを使うと、マッチング順序が自動で最適化される"],
+    "correct": 2,
+    "category": 8
+  },
+  {
+    "question": "raise 文に例外クラス（例: ValueError）が渡された場合、例外が実際に送出される前にインタープリタが行う暗黙的な処理は何ですか？",
+    "choices": ["例外クラスが None に変換される", "args 属性が空のタプルで初期化される", "引数無しのコンストラクタが呼び出されインスタンス化される", "BaseException に変換され送出される"],
+    "correct": 3,
+    "category": 8
+  },
+  {
+    "question": "例外の連鎖において、except 節の中で未処理の例外が発生した場合、新しい例外のエラーメッセージに古い例外の情報を含めるためのデフォルトの動作は何ですか？",
+    "choices": ["古い例外は完全に無視され新しい例外のみが表示される", "from 句を使って明示的に連鎖させる必要がある", "古い例外は処理された例外のエラーメッセージに自動的に含まれる", "自動的に from None が適用される"],
+    "correct": 3,
+    "category": 8
+  },
+  {
+    "question": "明示的な例外の連鎖を無効にし、前の例外の詳細を新しい例外のエラーメッセージに含ませたくない場合、raise 文に from 句で指定する値は何ですか？",
+    "choices": ["pass", "None", "False", "NoLink"],
+    "correct": 2,
+    "category": 8
+  },
+  {
+    "question": "ユーザー定義例外を作成する際、ソースで推奨されている一般的な命名規則は何ですか？",
+    "choices": ["動詞で始まる名前にする", "Exceptionで終わる名前にする", "クラス名がErrorで終わるようにする", "アンダースコアで始まる名前にする"],
+    "correct": 3,
+    "category": 8
+  },
+  {
+    "question": "例外の発生後に、エラーに関する付加的な情報（文字列）を例外インスタンスに追加するために使用されるメソッドは何ですか？",
+    "choices": ["append_info()", "set_traceback()", "add_note()", "attach_message()"],
+    "correct": 3,
+    "category": 8
+  },
+  {
+    "question": "複数の関連しない例外を一つにまとめ、同時に送出できるようにする組み込みのクラスは何ですか？",
+    "choices": ["AggregateException", "ExceptionList", "ExceptionGroup", "MultiError"],
+    "correct": 3,
+    "category": 8
+  },
+  {
+    "question": "ExceptionGroupを捕捉する際に使用され、グループの中にある特定の型に一致した例外だけを選択して処理できる構文は何ですか？",
+    "choices": ["except if", "except for", "except*", "catch group"],
+    "correct": 3,
+    "category": 8
+  },
+  {
+    "question": "finally 節の実行中に、try節またはexcept節で処理されなかった例外が発生していた場合、finally 節の処理が終わった後、その例外はどうなりますか？",
+    "choices": ["その例外は破棄される", "その例外は自動的にログに記録される", "その例外は再送出される", "finally 節内のコードが中断される"],
+    "correct": 3,
+    "category": 8
+  },
+  {
+    "question": "finally 節で break, continue, または return 文を実行することが非推奨とされている理由は何ですか？",
+    "choices": ["常にメモリリークを引き起こすため", "実行環境によって動作が不安定になるため", "例外の再送出が抑制され混乱を招くため", "Python 3.14 より前のバージョンではサポートされていないため"],
+    "correct": 3,
+    "category": 8
+  },
+  {
+    "question": "Pythonにおいて、クラス定義によって作成される新しいオブジェクトの「型」は、通常何と呼ばれますか？", 
+    "choices": ["データメンバ", "クラス", "インスタンス", "モジュール"], 
+    "correct": 2, 
+    "category": 9 
+  },
+  {
+    "question": "Pythonのクラス機構が提供する、データと機能を組み合わせる方法は何と呼ばれますか？",
+    "choices": ["継承", "クラス", "スコープ", "名前空間"],
+    "correct": 2,
+    "category": 9
+  },
+  {
+    "question": "Pythonのクラスメソッドの宣言で、メソッドが作用するオブジェクト自体を表すために明示しなければならない第一引数の一般的な慣習名は？",
+    "choices": ["this", "obj", "current", "self"],
+    "correct": 4,
+    "category": 9
+  },
+  {
+    "question": "Pythonのスコープにおいて、名前が参照される際に最初に探される、最も内側のスコープは何ですか？",
+    "choices": ["外側の関数スコープ", "ローカルスコープ", "グローバルスコープ", "ビルトインスコープ"],
+    "correct": 2,
+    "category": 9
+  },
+  {
+    "question": "クラス定義から正常に抜けると、クラス定義で作成された名前空間の内容をくるむラッパーとして生成されるオブジェクトは何ですか？",
+    "choices": ["モジュールオブジェクト", "インスタンスオブジェクト", "関数オブジェクト", "クラスオブジェクト"],
+    "correct": 4,
+    "category": 9
+  },
+  {
+    "question": "クラスオブジェクトに対して、新しいインスタンスを生成するために使われる記法は、関数記法の形式で何を呼び出すのと同等ですか？",
+    "choices": ["メソッド", "クラス", "属性", "デコレータ"],
+    "correct": 2,
+    "category": 9
+  },
+  {
+    "question": "クラスのインスタンス化の際に、新しく作られたインスタンスに対して自動的に呼び出され、初期状態をカスタマイズするために使用される特殊メソッドは何ですか？",
+    "choices": ["new()", "main()", "init()", "del()"],
+    "correct": 3, 
+    "category": 9
+  },
+  {
+    "question": "リストや辞書のような変更可能な（mutable）オブジェクトがクラス変数として使われた場合、どのような問題が起こる可能性がありますか？",
+    "choices": ["実行速度が極端に低下する", "インスタンスが作成できなくなる", "全てのインスタンスによってそのデータが共有されてしまう", "デバッガで追跡できなくなる"],
+    "correct": 3,
+    "category": 9
+  },
+  {
+    "question": "Pythonにおいて、コンテナオブジェクトにわたってループを行う for 文の裏側で、要素に一つずつアクセスするために使用されるプロトコルは何ですか？",
+    "choices": ["ジェネレータプロトコル", "イテレータプロトコル", "オブジェクトプロトコル", "オーバーロードプロトコル"], 
+    "correct": 2,
+    "category": 9
+  },
+  {
+    "question": "イテレータがこれ以上要素がないことを通知するために送出する例外は何ですか？",
+    "choices": ["IndexError", "GeneratorExit", "StopIteration", "ValueError"],
+    "correct": 3,
+    "category": 9
+  },
+  {
+    "question": "関数内でローカルでもグローバルでもない外側のスコープの変数に再束縛するために使用される文は何ですか？",
+    "choices": ["global", "outer", "nonlocal", "enclosing"],
+    "correct": 3,
+    "category": 9
+  },
+  {
+    "question": "Pythonで、オブジェクトに対する代入がデータをコピーしないのは、他の言語で何として知られている現象と関係していますか？",
+    "choices": ["オーバーライド", "参照渡し", "別名づけ (alias)", "名前マングリング"],
+    "correct": 3, 
+    "category": 9
+  }, 
+  {
+    "question": "Pythonにおける属性検索において、インスタンス変数とクラス変数が同じ名前を持っていた場合、どちらが優先されますか？",
+    "choices": ["インスタンス属性", "クラス属性", "最初に定義された方", "エラーが発生する"],
+    "correct": 1,
+    "category": 9
+  },
+  {
+    "question": "派生クラスが基底クラスのメソッドを上書き（オーバーライド）した場合、PythonではそのメソッドはC++でいうところのどのような性質を持ちますか？",
+    "choices": ["static", "friend", "abstract", "virtual (仮想関数)"],
+    "correct": 4,
+    "category": 9
+  },
+  {
+    "question": "Pythonのメソッドにおいて、インスタンスの非データ属性が参照された際、インスタンスオブジェクトと関数オブジェクトの両方への参照がパックされて生成されるオブジェクトは何ですか？",
+    "choices": ["クラスオブジェクト", "データ属性", "メソッドオブジェクト", "ジェネレータオブジェクト"],
+    "correct": 3,
+    "category": 9
+  },
+  {
+    "question": "Pythonの多重継承におけるメソッド解決順序（MRO）を線形化する動的アルゴリズムの主要な要件として、基底クラスが複数回アクセスされないように順序を線形化し、かつ崩さない順序は何ですか？",
+    "choices": ["右から左への順序", "左から右への順序", "深さ優先の順序", "幅優先の順序"],
+    "correct": 2,
+    "category": 9
+  },
+  {
+    "question": "Pythonで「プライベート変数」として扱われる慣習として、先頭に二個以上の下線文字（__spam）を持つ識別子に対して行われる、名前のテキスト置換の仕組みは何と呼ばれますか？",
+    "choices": ["データ抽象化", "名前マッピング", "名前マングリング", "動的解決"],
+    "correct": 3,
+    "category": 9
+  },
+  {
+    "question": "名前マングリング（__spam）が識別子に対してテキスト置換される際、classnameをクラス名として、どのように変換されますか？",
+    "choices": ["classname__spam", "classname__spam", "public_classname_spam", "_private_spam"],
+    "correct": 1,
+    "category": 9
+  },
+  {
+    "question": "ジェネレータがイテレータを作成するために使用し、何らかのデータを返すときに使う文は何ですか？",
+    "choices": ["return", "emit", "yield", "next"],
+    "correct": 3,
+    "category": 9
+  },
+  {
+    "question": "ジェネレータ式が、同じ内容を返すリスト内包表記と比較して持つ利点は何ですか？",
+    "choices": ["処理速度が常に速い", "より多くの柔軟性がある", "メモリに優しいことが多い", "定義構文が角括弧を使用する"],
+    "correct": 3,
+    "category": 9
+  },
+  { "question": "os モジュールで提供されている、現在の作業ディレクトリを返す関数は何ですか？", "choices": ["os.getdir()", "os.pwd()", "os.getcwd()", "os.currentdir()"], "correct": 3, "category": 10 }, { "question": "os モジュールと組み込み関数の open() との間で名前が競合するのを避けるために推奨されているインポート形式は何ですか？", "choices": ["import os", "from os import *", "import os as operating_system", "import open as os_open"], "correct": 1, "category": 10 }, { "question": "ファイルやディレクトリの日常的な管理作業のために、コピーや移動といった高水準のインターフェースを提供するモジュールは何ですか？", "choices": ["os", "sys", "shutil", "glob"], "correct": 3, "category": 10 }, { "question": "ディレクトリのワイルドカード検索からファイルのリストを生成するための関数を提供するモジュールは何ですか？", "choices": ["re", "glob", "os.path", "sys.files"], "correct": 2, "category": 10 }, { "question": "コマンドライン引数がリストとして保存される sys モジュールの属性は何ですか？", "choices": ["sys.args", "sys.params", "sys.cli", "sys.argv"], "correct": 4, "category": 10 }, { "question": "sys モジュールの属性のうち、警告やエラーメッセージを出力するために便利で、stdout がリダイレクトされた場合でも読めるようにするために存在するものは何ですか？", "choices": ["sys.stdin", "sys.stderr", "sys.input", "sys.log"], "correct": 2, "category": 10 }, { "question": "スクリプトを終了させる最も直接的な方法である sys モジュールの関数は何ですか？", "choices": ["sys.stop()", "sys.abort()", "sys.terminate()", "sys.exit()"], "correct": 4, "category": 10 }, { "question": "より高度な文字列処理のために正規表現を提供し、複雑な一致検索や操作に対して簡潔な解決策を提供するモジュールは何ですか？", "choices": ["string", "re", "regex", "search"], "correct": 2, "category": 10 }, { "question": "浮動小数点演算のための C 言語ライブラリ関数にアクセスする手段を提供するモジュールは何ですか？", "choices": ["float", "decimal", "math", "numeric"], "correct": 3, "category": 10 }, { "question": "数値データの基礎的な統計的特性（平均、中央値、分散等）を計算するモジュールは何ですか？", "choices": ["random", "stats", "statistics", "analysis"], "correct": 3, "category": 10 }, { "question": "日付や時刻を操作するためのクラスを提供し、タイムゾーン対応オブジェクトもサポートしているモジュールは何ですか？", "choices": ["time", "calendar", "datetime", "clock"], "correct": 3, "category": 10 }, { "question": "一般的なデータアーカイブと圧縮形式（zlib, gzip, bz2, lzmaなど）によってサポートされている機能は何ですか？", "choices": ["データ暗号化", "データ検証", "データ圧縮", "データ変換"], "correct": 3, "category": 10 }, { "question": "Pythonコードのパフォーマンスを計測するために、小さい粒度での計測を提供するモジュールは何ですか？", "choices": ["profile", "pstats", "unittest", "timeit"], "correct": 4, "category": 10 }, { "question": "プログラムのdocstringに埋め込まれたテストの評価を行うためのツールを提供し、使用例をドキュメントに追加するアプローチをサポートするモジュールは何ですか？", "choices": ["unittest", "testtools", "doctest", "pycheck"], "correct": 3, "category": 10 }, { "question": "Pythonの「バッテリー同梱」哲学を体現し、遠隔手続き呼び出し (remote procedure call) をサポートするために提供されているモジュールは何ですか？", "choices": ["xml.sax", "xmlrpc.client", "poplib", "json"], "correct": 2, "category": 10 }, { "question": "コマンドライン引数を処理するための洗練された仕組みを提供し、ファイル名やオプション（例: --lines）の設定を可能にするモジュールは何ですか？", "choices": ["sys", "getopt", "argparse", "commander"], "correct": 3, "category": 10 }, { "question": "URLからデータを取得するためのモジュールは何ですか？", "choices": ["httplib", "urllib.request", "requests", "ftplib"], "correct": 2, "category": 10 }, { "question": "ランダムモジュールにおいて、[0.0, 1.0) の区間内のランダムな float を返す関数は何ですか？", "choices": ["random.randfloat()", "random.uniform(0, 1)", "random.random()", "random.integer()"], "correct": 3, "category": 10 }, { "question": "unittest モジュールが doctest よりも優れている点として、ソースで言及されているのは何ですか？", "choices": ["よりシンプルな構文で記述できる", "docstringに埋め込む必要がない", "より網羅的なテストセットを別のファイルで管理できる", "自動的にテストカバレッジを計算できる"], "correct": 3, "category": 10 }, { "question": "SQLite データベースライブラリのラッパーであり、永続的なデータベース接続を提供するモジュールは何ですか？", "choices": ["mysql.connector", "postgresql", "sqlite3", "dbm"], "correct": 3, "category": 10 },
+  { "question": "reprlib モジュールが提供する機能は、主にどのような種類のオブジェクトを扱う際に役立ちますか？", "choices": ["日時オブジェクト", "数値演算の結果", "大きなコンテナや深くネストしたコンテナ", "ファイルオブジェクト"], "correct": 3, "category": 11 }, { "question": "pprint モジュールの pretty printer が、組み込み型やユーザ定義型をわかりやすく表示するために行うことは何ですか？", "choices": ["出力を単一行に強制する", "文字列の引用符を削除する", "改行とインデントを追加してデータ構造を明確にする", "バイナリデータをテキストに変換する"], "correct": 3, "category": 11 }, { "question": "textwrap モジュールが提供する fill() メソッドの主な用途は何ですか？", "choices": ["バイナリデータを構造化する", "指定したスクリーン幅に文章を調整する", "数値の桁区切りを設定する", "文字列内のプレースホルダを置換する"], "correct": 2, "category": 11 }, { "question": "locale モジュールがアクセスするデータベースは、どのような情報を含んでいますか？", "choices": ["標準ライブラリのモジュールリスト", "ハードウェア設定", "文化により異なるデータ表現形式", "ネットワーク接続情報"], "correct": 3, "category": 11 }, { "question": "string モジュールに含まれる Template クラスが提供する、エンドユーザーが簡単に編集できる簡単な構文を備えたものは何ですか？", "choices": ["正規表現", "関数定義", "文字列テンプレート", "クラス定義"], "correct": 3, "category": 11 }, { "question": "string.Template を使用する際、プレースホルダの後ろにスペースを挟まずに英数文字を続けるために、プレースホルダの周りを囲む記号は何ですか？", "choices": ["[]", "()", "<>", "{}"], "correct": 4, "category": 11 }, { "question": "string.Template の substitute() メソッドが、プレースホルダに相当する値がない場合に送出する例外は何ですか？", "choices": ["ValueError", "TypeError", "KeyError", "AttributeError"], "correct": 3, "category": 11 }, { "question": "string.Template の safe_substitute() メソッドが、欠落したデータがある場合にどのように動作しますか？", "choices": ["エラーメッセージを出力し、処理を停止する", "欠落したプレースホルダをそのままにして出力する", "None を挿入する", "プレースホルダを空文字列に置換する"], "correct": 2, "category": 11 }, { "question": "struct モジュールが提供する pack() や unpack() といった関数が操作するデータの形式は何ですか？", "choices": ["JSONデータ", "テキストデータ", "バイナリレコード形式", "XMLデータ"], "correct": 3, "category": 11 }, { "question": "struct モジュールで、バイトオーダーがリトルエンディアンであることを示すパック符号は何ですか？", "choices": [">", "@", "=", "<"], "correct": 4, "category": 11 }, { "question": "threading モジュールの主な目的として、ソースで述べられているのは何ですか？", "choices": ["外部ファイルの圧縮", "データ永続化の管理", "非依存の複数のタスクを分割すること", "正規表現の処理"], "correct": 3, "category": 11 }, { "question": "マルチスレッドアプリケーションにおいて、データやリソースを共有するスレッド間の調整の問題を解決するために、threading モジュールが提供するものは何ですか？", "choices": ["ジェネレータ", "デコレータ", "同期プリミティブ (ロック、イベント、セマフォなど)", "名前マングリング"], "correct": 3, "category": 11 }, { "question": "スレッド間の通信や調整において、設計が容易になり、可読性が高まり、信頼性が増すとして推奨されているオブジェクトは何ですか？", "choices": ["Dictionary オブジェクト", "Queue オブジェクト", "Set オブジェクト", "List オブジェクト"], "correct": 2, "category": 11 }, { "question": "logging モジュールにおいて、デフォルトで出力が抑制され、標準エラーに送信されないメッセージのプライオリティレベルはどれですか？", "choices": ["WARNING と ERROR", "ERROR と CRITICAL", "DEBUG と INFO", "CRITICAL のみ"], "correct": 3, "category": 11 }, { "question": "Pythonがオブジェクトのメモリ管理を行う仕組みとして、ほとんどのオブジェクトで用いられている方式は何ですか？", "choices": ["マーク＆スイープ", "コピーGC", "参照カウント方式", "世代別ガベージコレクション"], "correct": 3, "category": 11 }, { "question": "weakref モジュールが提供するツールは、オブジェクトへの参照を作らずに何を行うことを可能にしますか？", "choices": ["オブジェクトの属性を変更する", "オブジェクトの型を検証する", "オブジェクトを追跡する", "オブジェクトをシリアライズする"], "correct": 3, "category": 11 }, { "question": "array モジュールが提供する array オブジェクトは、組み込みリストと比べて、主にどのような特徴を持っていますか？", "choices": ["バイナリ整数のみを格納する", "同種のデータのみをよりコンパクトに格納する", "左端からの追加と取り出しが速い", "オブジェクトへの弱参照をサポートする"], "correct": 2, "category": 11 }, { "question": "collections モジュールが提供する deque オブジェクトが、特に向いている実装は何ですか？", "choices": ["ヒープソート", "木構造の幅優先探索", "バイナリデータの読み書き", "正規表現による検索"], "correct": 2, "category": 11 }, { "question": "heapq モジュールがリストをヒープとして操作する際に、最も低い値を持つエントリがつねに配置されるリストの位置は何ですか？", "choices": ["末尾", "中央", "ランダムな位置", "ゼロの位置 (インデックス 0)"], "correct": 4, "category": 11 }, { "question": "decimal モジュールが提供する Decimal データ型が、組み込みの float に比べて特に有用なアプリケーションの例として挙げられているのは何ですか？", "choices": ["科学計算", "3Dグラフィックス", "ゲーム開発", "財務アプリケーション"], "correct": 4, "category": 11 },
+  { "question": "Pythonアプリケーションが標準ライブラリ以外のパッケージやモジュールを利用する際、異なるアプリケーション間でバージョンの競合が発生する問題を解決するための手段は何ですか？", "choices": ["グローバル環境のアップグレード", "仮想環境", "pip の --global オプション", "標準ライブラリの削除"], "correct": 2, "category": 12 }, { "question": "仮想環境の作成・管理に使われるモジュール名は次のうちどれですか？", "choices": ["env", "virtualenv", "venv", "pipenv"], "correct": 3, "category": 12 }, { "question": "仮想環境を作成する際に、実行された Python のバージョンがインストールされることを確認するために利用できるオプションは何ですか？", "choices": ["--install", "--version", "--copy", "--system-site-packages"], "correct": 2, "category": 12 }, { "question": "Unix または Mac OS で、仮想環境を有効化するために bash shell で実行するスクリプトを含むディレクトリと、そのスクリプト名は何ですか？", "choices": ["/usr/bin/activate", "/etc/venv/activate", "/bin/activate.sh", "tutorial-env/bin/activate"], "correct": 4, "category": 12 }, { "question": "仮想環境を有効化すると、シェルのプロンプトに表示されるようになる情報は何ですか？", "choices": ["現在のディレクトリのパス", "利用中の仮想環境", "Pythonのバージョン", "利用可能なメモリ量"], "correct": 2, "category": 12 }, { "question": "仮想環境を無効化するためにターミナルに入力するコマンドは何ですか？", "choices": ["exit", "deactivate", "env_stop", "disable"], "correct": 2, "category": 12 }, { "question": "パッケージをインストール、アップグレード、削除するために使用されるプログラムは何ですか？", "choices": ["setup", "PyPI", "conda", "pip"], "correct": 4, "category": 12 }, { "question": "特定のバージョンのパッケージ（例：requests）をインストールするために、パッケージ名のあとに続けて指定する記法は何ですか？", "choices": ["@2.6.0", "=2.6.0", "->2.6.0", "==2.6.0"], "correct": 4, "category": 12 }, { "question": "パッケージを最新版に更新するために pip コマンドで使うオプションは何ですか？", "choices": ["--latest", "--update", "--upgrade", "--new"], "correct": 3, "category": 12 }, { "question": "pip のサブコマンドのうち、仮想環境にインストールされた全てのパッケージを表示するものは何ですか？", "choices": ["show", "list", "check", "info"], "correct": 2, "category": 12 }, { "question": "Python Package Index からパッケージをインストールする際に pip がデフォルトで使用するリポジトリは何ですか？", "choices": ["PyPI (Python Package Index)", "GitHub", "Anaconda Cloud", "pip index"], "correct": 1, "category": 12 }, { "question": "仮想環境は、アプリケーションAがバージョン1.0のモジュールを要求し、アプリケーションBがバージョン2.0を要求するといった、モジュールのバージョン間の何を解決しますか？", "choices": ["パフォーマンスの不一致", "命名規則の不一致", "要求の衝突", "セキュリティの脆弱性"], "correct": 3, "category": 12 }, { "question": "venv モジュールを使って仮想環境を作成する際に、仮想環境を置くディレクトリの一般的な場所として推奨されている名前は何ですか？", "choices": [".venv", "env_cache", "virtual_dir", "python_env"], "correct": 1, "category": 12 }, { "question": "venv によって作成された .venv ディレクトリが、一部のツールでサポートされているどの環境変数定義ファイルとのクラッシュを防止すると述べられていますか？", "choices": [".bin", ".config", ".env", ".cache"], "correct": 3, "category": 12 }, { "question": "Windowsで仮想環境を有効化するために実行するスクリプトのパスは、UnixやMac OSとは異なり、どのサブディレクトリ内にありますか？", "choices": ["bin", "Executables", "Scripts", "Libs"], "correct": 3, "category": 12 }, { "question": "仮想環境が有効化された状態で python を実行すると、どの Python インタプリタが実行されるようになりますか？", "choices": ["システムのデフォルトの Python", "標準ライブラリの Python", "仮想環境の Python", "最新版の Python"], "correct": 3, "category": 12 }, { "question": "pip のサブコマンドのうち、インストールされたパッケージ一覧を、 pip install が解釈するフォーマットで生成するものは何ですか？", "choices": ["list", "generate", "freeze", "export"], "correct": 3, "category": 12 }, { "question": "pip freeze で生成されたインストール済みパッケージのリストを保存するための一般的な慣習ファイル名は何ですか？", "choices": ["packages.txt", "install_list.txt", "requirements.txt", "dependencies.txt"], "correct": 3, "category": 12 }, { "question": "requirements.txt ファイルを使って必要なパッケージを一括でインストールするために、 pip install とともに使用されるオプションは何ですか？", "choices": ["--batch", "-a", "-r", "--file"], "correct": 3, "category": 12 }, { "question": "python -m pip show コマンドを実行した際に表示される情報に含まれる属性のうち、パッケージのバージョンを示すフィールドは何ですか？", "choices": ["Name", "Summary", "Version", "Location"], "correct": 3, "category": 12 },
+  { "question": "Pythonのチュートリアルを読み終えた後、型、関数、標準ライブラリのモジュールについて完全なリファレンスとしてざっと眺めておくことが推奨されているドキュメントは何ですか？", "choices": ["Python モジュールのインストール", "Python 標準ライブラリ", "Python 言語リファレンス", "Python クックブック"], "correct": 2, "category": 13 }, { "question": "標準的なPython配布物に含まれる多数の追加コードは、以下のうちどのようなタスクのためのモジュールを含んでいますか？", "choices": ["仮想環境の作成", "OSカーネルのカスタマイズ", "HTTPによるドキュメント取得", "3Dグラフィックス描画"], "correct": 3, "category": 13 }, { "question": "他のPythonユーザによって書かれた追加モジュールをどうやってインストールするかを説明しているリソースは何ですか？", "choices": ["Python モジュールのインストール", "Python 標準ライブラリ", "さらなる Python に関するリソース", "Python 言語リファレンス"], "correct": 1, "category": 13 }, { "question": "Pythonの文法とセマンティクスを詳しく説明しており、「読むのは大変ですが、言語の完全なガイドとして有用」とされているドキュメントは何ですか？", "choices": ["Python 標準ライブラリ", "Python クックブック", "Python 言語リファレンス", "Python FAQ"], "correct": 3, "category": 13 }, { "question": "有名なPythonのWebサイトであり、コードやドキュメント、Pythonに関するWebページへのポインターを含むサイトのURLはどれですか？", "choices": ["https://docs.python.org", "https://scipy.org", "https://www.python.org", "https://pypi.org"], "correct": 3, "category": 13 }, { "question": "ユーザ作成のダウンロードできる Python モジュールの索引であり、以前は Cheese Shop という愛称で呼ばれていたウェブサイトのURLはどれですか？", "choices": ["https://pypi.org", "https://pyvideo.org", "https://code.activestate.com/recipes/langs/python/", "https://docs.python.org"], "correct": 1, "category": 13 }, { "question": "コード例、モジュール、実用的なスクリプトの巨大なコレクションであり、同名の書籍にも収録されているリソースは何ですか？", "choices": ["Python 言語リファレンス", "Python クックブック", "Python 標準ライブラリ", "Python FAQ"], "correct": 2, "category": 13 }, { "question": "学会やユーザグループの会合から Python 関連のビデオのリンクを集めているウェブサイトのURLはどれですか？", "choices": ["https://pyvideo.org", "https://docs.python.org", "https://www.python.org", "https://pypi.org"], "correct": 1, "category": 13 }, { "question": "配列の高速な計算・操作モジュールに加え、線形代数や非線形ソルバーなどの多くのパッケージを提供しているプロジェクトは何ですか？", "choices": ["Scientific Python プロジェクト", "Python クックブック", "Python パッケージインデックス", "Python 標準ライブラリ"], "correct": 1, "category": 13 }, { "question": "Python 関連の質問や問題の報告について、ニュースグループ comp.lang.python とゲートウェイされているメーリングリストのアドレスは何ですか？", "choices": ["python-dev@python.org", "python-users@python.org", "python-list@python.org", "python-announce@python.org"], "correct": 3, "category": 13 }, { "question": "Python 標準ライブラリのリファレンスが提供する完全なリファレンスには含まれていますが、以下のうち Python 言語リファレンスで詳しく説明されているのは何ですか？", "choices": ["乱数の生成方法", "コマンドラインオプションの構文解析", "Pythonの文法とセマンティクス", "Unix メールボックスの読み込み"], "correct": 3, "category": 13 }, { "question": "Python パッケージインデックス (PyPI) の以前の愛称「Cheese Shop」は、どのコメディグループのスケッチに由来していますか？", "choices": ["The Three Stooges", "Monty Python", "Kids in the Hall", "Firesign Theatre"], "correct": 2, "category": 13 }, { "question": "python-list メーリングリストに投稿する前に、繰り返し取り上げられる多くの質問に答えているため、必ずチェックすることが推奨されているリソースは何ですか？", "choices": ["Python 標準ライブラリ", "Python 言語リファレンス", "メーリングリストのアーカイブ", "よくある質問 (FAQ)"], "correct": 4, "category": 13 }, { "question": "Pythonのチュートリアルを読んだ後、現実世界の問題を解決するためにPythonを適用するために、最初に何が必要だと述べられていますか？", "choices": ["高性能なIDE", "インターネット接続", "Pythonを使ってみようという関心", "Python言語リファレンスの完全な読破"], "correct": 3, "category": 13 }, { "question": "Scientific Python プロジェクト (scipy.org) が提供するモジュール群に含まれないものはどれですか？", "choices": ["線形代数", "フーリエ変換", "乱数分布", "3Dグラフィックスレンダリング"], "correct": 4, "category": 13 }, { "question": "Pythonの標準ライブラリが含むタスクとして、以下のうち明示的に言及されているのはどれですか？", "choices": ["電子署名の検証", "データ圧縮", "グラフの可視化", "機械学習モデルの訓練"], "correct": 2, "category": 13 }, { "question": "メーリングリスト (python-list) やニュースグループ (comp.lang.python) への投稿内容として、ソースで言及されているものは何ですか？", "choices": ["新しいライセンス形態の議論", "ハードウェア互換性のテスト結果", "質問と回答、新しい機能の提案、新しいモジュールの発表", "コンパイラ最適化のバグ報告"], "correct": 3, "category": 13 }, { "question": "Python Software Foundation のライセンスバージョンは何ですか？", "choices": ["Version 1", "Version 2", "Version 3", "Version 3.14"], "correct": 2, "category": 13 }, { "question": "Python Software Foundation のライセンスとは別に、ドキュメント内のサンプルやレシピのコードに追加的にライセンスされているライセンスは何ですか？", "choices": ["MITライセンス", "Apacheライセンス", "Zero Clause BSDライセンス", "GPLライセンス"], "correct": 3, "category": 13 }, { "question": "python-list メーリングリストのアーカイブは、主にどのドメイン名のサイトで利用可能ですか？", "choices": ["python.org", "pypi.org", "mail.python.org", "docs.python.org"], "correct": 3, "category": 13 },
+  { "question": "Pythonの対話型インタープリタで、現在の入力行の編集機能や履歴置換機能を実装するために利用されているライブラリは何ですか？", "choices": ["GNU Readline ライブラリ", "Korn シェルライブラリ", "GNU Bash シェルライブラリ", "Python History ライブラリ"], "correct": 1, "category": 14 }, { "question": "Pythonの対話型インタープリタにおいて、変数名やモジュール名の補完機能を呼び出すためのキーは何ですか？", "choices": ["Enter キー", "Ctrl キー", "Tab キー", "Shift キー"], "correct": 3, "category": 14 }, { "question": "Pythonの対話型インタープリタのタブ補完機能が、ドットで区切られた式（例: string.a）に対して補完候補を示すために行うことは何ですか？", "choices": ["式の評価をスキップする", "最後の '.' までの式を評価し、結果オブジェクトの属性を検索する", "全ての利用可能なモジュール名を検索する", "現在のローカル変数を全てリストする"], "correct": 2, "category": 14 }, { "question": "Pythonの対話型インタープリタのデフォルト設定において、履歴が保存されるファイルの名前は何ですか？", "choices": [".bash_history", "history.log", ".python_history", "python.cache"], "correct": 3, "category": 14 }, { "question": "履歴ファイル（.python_history）は、どのディレクトリに保存されますか？", "choices": ["システムのテンポラリディレクトリ", "現在の作業ディレクトリ", "インタプリタがインストールされたディレクトリ", "ユーザーディレクトリ"], "correct": 4, "category": 14 }, { "question": "対話的インタープリタの代替の一つとして挙げられており、タブ補完、オブジェクト探索、先進的な履歴管理といった機能を持つものは何ですか？", "choices": ["bpython", "IDLE", "PyCharm", "IPython"], "correct": 4, "category": 14 }, { "question": "代替インタープリタの一つである IPython の特徴として、ソースで言及されているのは何ですか？", "choices": ["グラフィカルなデバッガ機能", "行を継続するときの正しいインデント提示", "他のアプリケーションにカスタマイズされたり、組み込まれたりすること", "コードの自動最適化機能"], "correct": 3, "category": 14 }, { "question": "もう一つの優れた対話的インターフェースとして、IPythonと並んで挙げられているのは何ですか？", "choices": ["Jupyter", "bpython", "PyDev", "Thonny"], "correct": 2, "category": 14 }, { "question": "現在の対話型インタープリタの機能について、まだ改善の要望が残されている点として挙げられている、パーサが次の行で INDENT トークンが必要かどうかを知っている機能は何ですか？", "choices": ["行を継続するときに正しいインデントを提示すること", "シンボルテーブルを使った補完機構の改善", "括弧やクォートなどの対応チェック", "履歴置換機能の強化"], "correct": 1, "category": 14 }, { "question": "ドットで区切られた式（例：obj.attr）のタブ補完において、式に getattr() メソッドを持ったオブジェクトが含まれている場合に注意すべき点は何ですか？", "choices": ["補完候補が空になること", "補完機能が機能しなくなること", "getattr() がアプリケーション定義のコードを実行するかもしれないこと", "履歴が保存されなくなること"], "correct": 3, "category": 14 }, { "question": "GNU Readline ライブラリによって実装されている、編集機能や履歴置換機能が似ているとされているシェルは何ですか？", "choices": ["Z シェル (Zsh) と C シェル (Csh)", "Korn シェルと GNU Bash シェル", "Fish シェルと Tcsh", "PowerShell と CMD"], "correct": 2, "category": 14 }, { "question": "現在のインタープリタの要望として残されている機能のうち、括弧やクォートなどの対応をチェックする（あるいは指示する）コマンドは、どのような点で有用だと述べられていますか？", "choices": ["バグ報告の自動化のため", "コードの可読性を高めるため", "対話的なコード入力を容易にするため", "メモリ使用量を削減するため"], "correct": 3, "category": 14 }, { "question": "タブ補完と履歴編集は、Pythonインタプリタの起動時にどのような状態で有効化されますか？", "choices": ["ユーザーが手動で設定ファイルを編集する", "デフォルトで無効化されている", "自動的に有効化される", "環境変数に依存する"], "correct": 3, "category": 14 }, { "question": "一度保存された履歴ファイルは、いつ再び利用することができますか？", "choices": ["Pythonを再インストールした後", "次回、対話的なインタープリタのセッションで", "同じディレクトリでスクリプトを実行したとき", "インタープリタを再起動した後、手動でロードしたとき"], "correct": 2, "category": 14 }, { "question": "「次のトピックへ」として指定されている、15章のタイトルは何ですか？", "choices": ["クラスと継承", "ジェネレータの使い方", "浮動小数点演算、その問題と制限", "モジュールのデバッグ"], "correct": 3, "category": 14 }, { "question": "このドキュメントが最後に更新された日付は何ですか？", "choices": ["2024年1月1日", "2025年12月09日", "2001年12月09日", "2023年10月27日"], "correct": 2, "category": 14 }, { "question": "このページ（Python チュートリアルの14章）がライセンスされているバージョンは何ですか？", "choices": ["Zero Clause BSDライセンス", "MITライセンス", "Python Software Foundation License Version 2", "GNU GPL v3"], "correct": 3, "category": 14 }, { "question": "このドキュメントを構築するために使用されたツールは何ですか？", "choices": ["reStructuredText", "Sphinx", "LaTeX", "MkDocs"], "correct": 2, "category": 14 }, { "question": "対話的インタープリタの補完機構の改善要望として、インタープリタの何を使ってもよいかもしれないと述べられていますか？", "choices": ["OSの環境変数", "ローカルファイルのインデックス", "インタープリタのシンボルテーブル", "外部データベース"], "correct": 3, "category": 14 }, { "question": "Pythonの対話型インタープリタの現在の機能は、初期の版のインタープリタと比べてどのような進歩だと見なされていますか？", "choices": ["セキュリティの強化", "グラフィック機能の追加", "大きな進歩", "互換性の向上"], "correct": 3, "category": 14 },
+  { "question": "コンピュータのハードウェア上で浮動小数点数が表される形式は何ですか？", "choices": ["10進数の整数", "2進数の分数", "文字列データ", "10進数の分数"], "correct": 2, "category": 15 }, { "question": "ほとんどの小数を2進法の分数として正確に表すことができない結果、10進の浮動小数点数はどのようにマシンに記憶されますか？", "choices": ["2進法の浮動小数点数で厳密に格納される", "10進数としてそのまま格納される", "2進法の浮動小数点数で近似されて格納される", "自動的に整数に変換されて格納される"], "correct": 3, "category": 15 }, { "question": "10進数の 0.1 を2進法の小数で表現しようとすると、どのような形式になりますか？", "choices": ["有限小数", "純粋な整数", "循環小数 (repeating fraction)", "エラーとなる"], "correct": 3, "category": 15 }, { "question": "近年のほとんどのコンピュータで float 型が近似される二進小数は、最上位ビットから数えて最初の何ビットを分子として使用しますか？", "choices": ["32ビット", "53ビット", "64ビット", "128ビット"], "correct": 2, "category": 15 }, { "question": "Pythonの対話型インタープリタで 0.1 のような浮動小数点数を表示する際、ほとんどの人が必要とするよりも多すぎる桁数を避けるために行われる処理は何ですか？", "choices": ["四捨五入して整数にする", "切り捨てて最も近い整数にする", "丸めた値を表示する", "16進数に変換して表示する"], "correct": 3, "category": 15 }, { "question": "Python 3.1から、浮動小数点数の表示についてどのような改善が行われましたか？", "choices": ["常に17桁の有効数字を表示するようになった", "2進近似値をそのまま表示するようになった", "最も短い桁数の10進数の値を選ぶようになった", "表示桁数が固定された"], "correct": 3, "category": 15 }, { "question": "0.1 + 0.1 + 0.1 == 0.3 のような浮動小数点数の比較が False になる現象は、何に起因するものですか？", "choices": ["Pythonのバグ", "ハードウェアの浮動小数点演算から受け継いだエラー", "丸め関数 round() の誤動作", "整数オーバーフロー"], "correct": 2, "category": 15 }, { "question": "不正確な浮動小数点数の値を比較するために、丸め誤差を考慮して便利な関数として推奨されているのは何ですか？", "choices": ["math.isclose()", "abs()", "round()", "float.compare()"], "correct": 1, "category": 15 }, { "question": "正確な10進数表現が必要となる財務や会計アプリケーションに適した、10進数の計算を実装しているモジュールは何ですか？", "choices": ["math", "float", "fractions", "decimal"], "correct": 4, "category": 15 }, { "question": "浮動小数点数の値を有理数として表現する float オブジェクトのメソッドは何ですか？", "choices": ["float.to_fraction()", "float.rational_form()", "float.as_integer_ratio()", "float.to_rational()"], "correct": 3, "category": 15 }, { "question": "表現エラー (Representation error) は、主にどのような事実に関係していますか？", "choices": ["計算機が常に整数演算を優先するため", "10進の小数が2進法の分数として表現できないこと", "浮動小数点数が常にメモリ不足を引き起こすこと", "Pythonが独自の数値形式を使用していること"], "correct": 2, "category": 15 }, { "question": "現代のほぼすべてのマシンで、Pythonの浮動小数点型が対応付けられている IEEE 754 の規格は何ですか？", "choices": ["binary32 (単精度)", "decimal128", "binary64 (倍精度)", "binary16"], "correct": 3, "category": 15 }, { "question": "IEEE 754 binary64 値が持つ精度は何ビットですか？", "choices": ["52ビット", "53ビット", "64ビット", "128ビット"], "correct": 2, "category": 15 }, { "question": "IEEE 754の倍精度における 1/10 の取りえる最良の近似値の分母は、分子と分母を2で割って小さくする前の段階で何になりますか？", "choices": ["253", "255", "256", "264"], "correct": 3, "category": 15 }, { "question": "float.hex() メソッドが返す16進数表現の利点として、ソースで言及されているのは何ですか？", "choices": ["より短い文字列で表現できる", "より高い精度で近似できる", "元の float 値を正確に復元できる", "OSに依存しない形式である"], "correct": 3, "category": 15 }, { "question": "float.hex() 表現が、異なるプラットフォームやバージョンのPython間、またはJavaやC99などの他の言語との間で正確に値をやり取りするために利用できる理由は何ですか？", "choices": ["グローバル標準に準拠しているから", "正確な値を表現できるから", "常に短い桁数に丸められるから", "テキストとして保存できるから"], "correct": 2, "category": 15 }, { "question": "累計加算中の丸めに拡張精度を使用することで、合計処理における精度のロスを緩和してくれる組み込み関数は何ですか？", "choices": ["total()", "accumulate()", "math.fsum()", "sum()"], "correct": 4, "category": 15 }, { "question": "合計処理において、実行は遅いものの、結果が単一の丸め誤差のみを持つように全ての「失われた桁」を追跡することで、高い精度を保証する math モジュールの関数は何ですか？", "choices": ["math.total()", "math.fsum()", "math.sum_exact()", "math.round_sum()"], "correct": 2, "category": 15 }, { "question": "有理数に基づく計算を実装しており、1/3 のような数を正確に表すことができるモジュールは何ですか？", "choices": ["decimal", "math", "fractions", "rational"], "correct": 3, "category": 15 }, { "question": "浮動小数点演算のヘビーユーザー向けに、NumPyパッケージなどの数学用パッケージを提供しているプロジェクトは何ですか？", "choices": ["Python クックブック", "SciPy プロジェクト", "Python Package Index (PyPI)", "IEEE 754 委員会"], "correct": 2, "category": 15 },
+  { "question": "WindowsやcursesをサポートするUnix系システムにおいて、Python 3.13以降でデフォルトで使われている、色付けや複数行編集をサポートするシェルは何ですか？", "choices": ["クラシックな基本インタープリタ", "新しい対話型シェル", "GNU Bash シェル", "IPython"], "correct": 2, "category": 16 }, { "question": "新しい対話型シェルで、コマンドライン履歴を、出力やプロンプトを表示せずにブラウズするために使用されるファンクションキーは何ですか？", "choices": ["F1", "F2", "F3", "F4"], "correct": 2, "category": 16 }, { "question": "新しい対話型シェルで、大きなブロックコードの貼り付けを簡単にするために使用される「ペーストモード」に入るファンクションキーは何ですか？", "choices": ["F1", "F2", "F3", "F4"], "correct": 3, "category": 16 }, { "question": "新しい対話型シェルで、シェルを終了するために呼び出し括弧を追加せずに打つことができるコマンドは何ですか？", "choices": ["quit()", "sys.exit()", "exit または quit", "end"], "correct": 3, "category": 16 }, { "question": "新しい対話型シェルを望まない場合、無効にするために設定できる環境変数は何ですか？", "choices": ["PYTHON_BASIC_REPL", "PYTHON_NO_REPL", "PYTHON_OLD_SHELL", "PYTHON_DISABLE_COLORS"], "correct": 1, "category": 16 }, { "question": "Pythonのインタープリタがファイルから実行されたとき、try文のexcept節で処理されない例外が発生した場合、インタープリタはどのように終了しますか？", "choices": ["例外を無視して成功終了する", "スタックトレースを表示してゼロ以外の終了ステータスで終了する", "元のプロンプトに戻る", "警告メッセージを出力して終了する"], "correct": 2, "category": 16 }, { "question": "エラーメッセージが書き込まれる標準出力ストリームは何ですか？", "choices": ["標準入力", "標準出力", "標準エラー出力", "ファイル出力"], "correct": 3, "category": 16 }, { "question": "対話モードにおいて、割り込み文字 (通常 Control-C または Delete) をタイプすると、入力が取り消されてどうなりますか？", "choices": ["KeyboardInterrupt 例外が送出される", "プログラムが致命的に終了する", "元のプロンプトに戻る", "対話モードが終了する"], "correct": 3, "category": 16 }, { "question": "BSD風のUnixシステムで、Pythonスクリプトをシェルスクリプトのように直接実行可能にするために、スクリプトの先頭に置くべき行は何ですか？", "choices": ["#!/bin/python", "#!/usr/local/bin/python", "#!/usr/bin/env python3", "#!/python3"], "correct": 3, "category": 16 }, { "question": "Python スクリプトに実行可能モードを設定するために Unix で使用されるコマンドは何ですか？", "choices": ["ls -l", "chmod +x", "mkdir", "./"], "correct": 2, "category": 16 }, { "question": "Pythonが対話的に使われるたびに実行されるコマンドが入ったファイル名を指すために設定できる環境変数は何ですか？", "choices": ["PYTHON_PATH", "PYTHON_HOME", "PYTHONSTARTUP", "PYTHON_RC"], "correct": 3, "category": 16 }, { "question": "PYTHONSTARTUP ファイルは、Pythonがスクリプトからコマンドを読み出しているときに読み出されますか？", "choices": ["読み出される", "読み出されない", "OSの設定に依存する", "セキュリティ設定に依存する"], "correct": 2, "category": 16 }, { "question": "PYTHONSTARTUP ファイル内で定義されたり import されたオブジェクトは、対話セッション内でどのように使えますか？", "choices": ["global キーワードを使用して呼び出す必要がある", "そのまま使うことができる", "使用前に再インポートが必要", "常にエラーとなる"], "correct": 2, "category": 16 }, { "question": "対話セッションでプロンプトを変更するために、起動時実行ファイルの中で変更できる sys モジュールの属性は何ですか？", "choices": ["sys.version", "sys.platform", "sys.ps1 および sys.ps2", "sys.path"], "correct": 3, "category": 16 }, { "question": "現在のディレクトリから追加でスタートアップファイルを読み出したい場合に、グローバルのスタートアップファイルの中に書くことができるコマンドの例として示されているものは何ですか？", "choices": ["read .pythonrc.py", "import .pythonrc.py", "if os.path.isfile('.pythonrc.py'): exec(open('.pythonrc.py').read())", "os.load('.pythonrc.py')"], "correct": 3, "category": 16 }, { "question": "Pythonが提供する、ユーザーがPythonをカスタマイズするための2つのフックモジュールは何ですか？", "choices": ["customize と usercustomize", "initfile と userinit", "sitecustomize と usercustomize", "startconfig と userconfig"], "correct": 3, "category": 16 }, { "question": "ユーザーの site-packages ディレクトリの場所を見つけるために実行できるモジュールと関数は何ですか？", "choices": ["import sys; sys.get_packages()", "import os; os.site_packages()", "import site; site.getusersitepackages()", "import config; config.get_site_path()"], "correct": 3, "category": 16 }, { "question": "全ての Python の起動時に自動実行されることを無効にするために使用できるオプションは何ですか？", "choices": ["-s オプション", "-i オプション", "-d オプション", "-v オプション"], "correct": 1, "category": 16 }, { "question": "コンピューターの管理者によってグローバルの site-packages ディレクトリに作成され、usercustomize モジュールよりも先にインポートされるカスタマイズモジュールは何ですか？", "choices": ["admincustomize", "sitecustomize", "globalcustomize", "configfile"], "correct": 2, "category": 16 }, { "question": "新しい対話型シェルで、対話型ヘルプブラウザ pydoc に入るために使用されるファンクションキーは何ですか？", "choices": ["F1", "F2", "F3", "F4"], "correct": 1, "category": 16 }
 ]
