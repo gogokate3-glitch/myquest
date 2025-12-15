@@ -1,380 +1,1592 @@
 [
+    {
+        "question": "Pythonの言語名の由来は何ですか？",
+        "choices": [
+            "巨大な蛇",
+            "BBCのショー番組",
+            "開発者のペットの名前",
+            "神話の怪物"
+        ],
+        "correct": 2,
+        "category": 1,
+        "hint": "BBCのショー番組「モンティパイソンの空飛ぶサーカス」から取られたもので、爬虫類とは関係ありません。",
+        "url": "https://docs.python.org/ja/3/tutorial/appetite.html"
+    },
+    {
+        "question": "Pythonはどのような種類の言語として説明されていますか？",
+        "choices": [
+            "コンパイラ言語",
+            "アセンブリ言語",
+            "インタプリタ言語",
+            "機械語"
+        ],
+        "correct": 3,
+        "category": 1,
+        "hint": "Pythonはインタプリタ言語であり、コンパイルやリンクが不要なため開発時間を節約できます。",
+        "url": "https://docs.python.org/ja/3/tutorial/appetite.html"
+    },
+    {
+        "question": "Pythonでプログラムを分割して再利用可能にするための単位は何ですか？",
+        "choices": [
+            "関数",
+            "クラス",
+            "モジュール",
+            "パッケージ"
+        ],
+        "correct": 3,
+        "category": 1,
+        "hint": "Pythonではプログラムをモジュールに分割し、他のPythonプログラムで再利用できます。",
+        "url": "https://docs.python.org/ja/3/tutorial/appetite.html"
+    },
+    {
+        "question": "PythonがC言語やJavaのプログラムよりも短くなる理由として、挙げられていないものはどれですか？",
+        "choices": [
+            "高レベルのデータ型",
+            "インデントによるグループ化",
+            "変数や引数の宣言が不要",
+            "すべての処理が一行で書ける"
+        ],
+        "correct": 4,
+        "category": 1,
+        "hint": "高レベルデータ型、インデント、宣言不要などが理由として挙げられていますが、「すべての処理が一行で書ける」わけではありません。",
+        "url": "https://docs.python.org/ja/3/tutorial/appetite.html"
+    },
+    {
+        "question": "Pythonが「超高級言語(very-high-level language)」と呼ばれる理由の一つは何ですか？",
+        "choices": [
+            "学習難易度が非常に高いから",
+            "可変長配列や辞書などの高級な型を組込みで持つから",
+            "コンピュータのハードウェアを直接操作するから",
+            "科学技術計算に特化しているから"
+        ],
+        "correct": 2,
+        "category": 1,
+        "hint": "Pythonは可変長配列や辞書などの高級な型を組込みで持つため、超高級言語と呼ばれます。",
+        "url": "https://docs.python.org/ja/3/tutorial/appetite.html"
+    },
+    {
+        "question": "Pythonの拡張性について、正しい説明はどれですか？",
+        "choices": [
+            "Pythonでしか拡張機能は書けない",
+            "C言語で新たな組み込み関数やモジュールを追加できる",
+            "拡張はできるがパフォーマンスは常に低下する",
+            "拡張言語として他のアプリケーションに組み込むことはできない"
+        ],
+        "correct": 2,
+        "category": 1,
+        "hint": "C言語でプログラムを書く方法を知っていれば、新たな組み込み関数やモジュールをインタプリタに追加できます。",
+        "url": "https://docs.python.org/ja/3/tutorial/appetite.html"
+    },
+    {
+        "question": "Pythonが適しているとされている作業として、本文で言及されていないものはどれですか？",
+        "choices": [
+            "たくさんのテキストファイルでの検索-置換操作",
+            "専用のGUIアプリケーションやシンプルなゲームの作成",
+            "オペレーティングシステムのカーネル開発",
+            "C/C++/Javaライブラリのテスト"
+        ],
+        "correct": 3,
+        "category": 1,
+        "hint": "テキスト操作、GUIアプリ、ライブラリのテストなどは例として挙げられていますが、OSカーネル開発は言及されていません。",
+        "url": "https://docs.python.org/ja/3/tutorial/appetite.html"
+    },
+    {
+        "question": "Pythonプログラムの実行文のグループ化は、何によって行われますか？",
+        "choices": [
+            "括弧 {}",
+            "begin/endキーワード",
+            "インデント",
+            "セミコロン ;"
+        ],
+        "correct": 3,
+        "category": 1,
+        "hint": "実行文のグループ化は、開始や終了の括弧ではなくインデントで行われます。",
+        "url": "https://docs.python.org/ja/3/tutorial/appetite.html"
+    },
+    {
+        "question": "Pythonには、プログラム作成の基盤として利用できる何が付属していますか？",
+        "choices": [
+            "限定的な標準モジュール",
+            "膨大な標準モジュール",
+            "専用の統合開発環境(IDE)",
+            "有料のライブラリマーケット"
+        ],
+        "correct": 2,
+        "category": 1,
+        "hint": "Pythonには膨大な標準モジュールが付属しており、ファイルI/Oやシステムコールなどの機能を提供します。",
+        "url": "https://docs.python.org/ja/3/tutorial/appetite.html"
+    },
+    {
+        "question": "インタプリタを対話的に使う利点として、本文で挙げられているものはどれですか？",
+        "choices": [
+            "大規模なアプリケーションの最終ビルド",
+            "言語の機能を実験したり、関数をテストしたりできる",
+            "実行速度が最も速くなる",
+            "複数人での同時コーディング"
+        ],
+        "correct": 2,
+        "category": 1,
+        "hint": "対話的に使うことで、言語の機能を実験したり、書き捨てのプログラムを書いたり、関数をテストしたりすることが簡単にできます。",
+        "url": "https://docs.python.org/ja/3/tutorial/appetite.html"
+    },
+    {
+        "question": "シェルスクリプトと比較した場合のPythonの主な優位性は何ですか？",
+        "choices": [
+            "ファイル操作が唯一可能な点",
+            "GUIアプリケーションやゲーム開発にも適している汎用性",
+            "常にシェルスクリプトより実行速度が速い点",
+            "Windowsでしか動作しない点"
+        ],
+        "correct": 2,
+        "category": 1,
+        "hint": "シェルスクリプトはファイル操作には向いていますが、GUIアプリケーションやゲームには向いていません。Pythonはより汎用性が高いです。",
+        "url": "https://docs.python.org/ja/3/tutorial/appetite.html"
+    },
+    {
+        "question": "C/C++/Javaと比較してPythonの開発サイクルが速いとされる主な理由は何ですか？",
+        "choices": [
+            "コンパイルやリンクの必要がないインタプリタ言語だから",
+            "静的型付け言語でコンパイル時にエラーが見つかるから",
+            "メモリ管理を手動で行う必要があるから",
+            "ライブラリが少ないため選択に迷わないから"
+        ],
+        "correct": 1,
+        "category": 1,
+        "hint": "Pythonはインタプリタ言語であるため、コンパイルやリンクが不要で、通常の編集/コンパイル/テスト/再コンパイルのサイクルを短縮できます。",
+        "url": "https://docs.python.org/ja/3/tutorial/appetite.html"
+    },
+    {
+        "question": "Pythonの設計思想（インデントによるブロック、宣言不要など）がもたらす直接的なメリットは何ですか？",
+        "choices": [
+            "プログラムの実行速度がC言語を上回る",
+            "プログラムがコンパクトで読みやすくなる",
+            "ハードウェアへのアクセスが容易になる",
+            "すべてのバグをコンパイル時に検出できる"
+        ],
+        "correct": 2,
+        "category": 1,
+        "hint": "これらの特徴により、Pythonで書かれたプログラムは同じ機能のC、C++、Javaのプログラムよりもはるかに短く、コンパクトで読みやすくなります。",
+        "url": "https://docs.python.org/ja/3/tutorial/appetite.html"
+    },
+    {
+        "question": "「PythonはAwkやPerlなどよりも汎用的なデータ型を備えており、より多くの領域で利用できます」という記述から、Pythonのどのような特徴が推測できますか？",
+        "choices": [
+            "特定のタスクに特化している",
+            "特定のデータ型しか扱えない",
+            "データ構造の柔軟性が高く、応用範囲が広い",
+            "文字列処理の性能が他の言語より低い"
+        ],
+        "correct": 3,
+        "category": 1,
+        "hint": "汎用的なデータ型を持つことは、様々な問題領域に適用できる柔軟性があることを意味します。",
+        "url": "https://docs.python.org/ja/3/tutorial/appetite.html"
+    },
+    {
+        "question": "ある開発者が、既存のC言語製ライブラリの処理速度を活かしつつ、手軽なスクリプトでその機能を呼び出したいと考えています。この状況でPythonが最適な理由は何ですか？",
+        "choices": [
+            "PythonはC言語のコードを自動的に生成するから",
+            "PythonはC言語のライブラリを一切利用できないから",
+            "Pythonの拡張性によりC言語のライブラリをリンクできるから",
+            "PythonはC言語よりも常に高速だから"
+        ],
+        "correct": 3,
+        "category": 1,
+        "hint": "Pythonの拡張性を利用して、C言語で書かれたライブラリをPythonにリンクし、高速な処理と簡単なスクリプティングを両立できます。",
+        "url": "https://docs.python.org/ja/3/tutorial/appetite.html"
+    },
+    {
+        "question": "「PythonはCよりたくさんのエラーチェックを実行時に行う」という記述が意味することは何ですか？",
+        "choices": [
+            "Pythonプログラムはバグが一切発生しない",
+            "開発の初期段階で型に関する間違いなどに気づきやすい",
+            "実行速度が常にC言語より速くなる",
+            "コンパイル時にすべてのエラーが検出される"
+        ],
+        "correct": 2,
+        "category": 1,
+        "hint": "実行時エラーチェックは、プログラムを実行してみることで多くの一般的なエラーを発見できることを意味し、開発を容易にします。",
+        "url": "https://docs.python.org/ja/3/tutorial/appetite.html"
+    },
+    {
+        "question": "なぜPythonは「便利な電卓にもなります」と表現されているのでしょうか？",
+        "choices": [
+            "GUIの電卓アプリケーションが標準で付属しているから",
+            "対話モードで直接式を評価し、結果を得られるから",
+            "数学的な計算が一切できないから",
+            "金融計算専用の機能しか持たないから"
+        ],
+        "correct": 2,
+        "category": 1,
+        "hint": "インタプリタを対話的に使えるため、数式を直接入力して結果をすぐに確認でき、電卓のように手軽に利用できます。",
+        "url": "https://docs.python.org/ja/3/tutorial/appetite.html"
+    },
+    {
+        "question": "Pythonの標準モジュールがプログラミング学習者にとって有用な理由は何ですか？",
+        "choices": [
+            "すべてのモジュールが有料だから",
+            "コードが非公開で謎解きのように学べるから",
+            "プログラム作成の基盤として、また学習のためのサンプルとして利用できるから",
+            "モジュールの数が少なく、すぐに全て覚えられるから"
+        ],
+        "correct": 3,
+        "category": 1,
+        "hint": "膨大な標準モジュールは、すぐに使える機能を提供するだけでなく、その実装を読むことでPythonプログラミングのサンプルとして学べます。",
+        "url": "https://docs.python.org/ja/3/tutorial/appetite.html"
+    },
+    {
+        "question": "あるアプリケーションに拡張機能を追加するために、新しいプログラミング言語を設計・実装したくない開発者にとって、Pythonが解決策となるのはなぜですか？",
+        "choices": [
+            "Pythonは拡張言語として使えないから",
+            "PythonをCで書かれたアプリケーションに組み込み、拡張言語として利用できるから",
+            "Pythonを使うとアプリケーションのサイズが必ず小さくなるから",
+            "Pythonはどのアプリケーションにも自動で組み込まれるから"
+        ],
+        "correct": 2,
+        "category": 1,
+        "hint": "Pythonインタプリタを既存のアプリケーションにリンクすることで、そのアプリケーションの拡張言語や命令言語として利用でき、新たな言語を開発する手間を省けます。",
+        "url": "https://docs.python.org/ja/3/tutorial/appetite.html"
+    },
+    {
+        "question": "本文全体から読み取れる、Pythonという言語の最も中心的な哲学は何ですか？",
+        "choices": [
+            "複雑な問題をより複雑に解決すること",
+            "開発者の仕事を素早く、簡単にするための実用性",
+            "特定のOSやプラットフォームへの依存",
+            "厳格な規則でプログラマを縛ること"
+        ],
+        "correct": 2,
+        "category": 1,
+        "hint": "開発の時間を節約し、簡単に使え、仕事をすばやく片付ける助けになるという点が繰り返し強調されており、実用性が中心的な哲学であることがわかります。",
+        "url": "https://docs.python.org/ja/3/tutorial/appetite.html"
+    },
+    {
+        "question": "対話モードにおいて、コマンドを入力するよう促す一次プロンプトは、通常どの記号で表示されますか？",
+        "choices": [
+            "`...`",
+            "`$$$`",
+            "`>>>`",
+            "`---`"
+        ],
+        "correct": 3,
+        "category": 2,
+        "hint": "一次プロンプトは普通、三つの「大なり記号」 (`>>>`) です。",
+        "url": "https://docs.python.org/ja/3/tutorial/interpreter.html"
+    },
+    {
+        "question": "スクリプト名や引数は、どのモジュールのどの変数にリストとして格納されますか？",
+        "choices": [
+            "`os.args`",
+            "`sys.argv`",
+            "`argparse.args`",
+            "`main.argv`"
+        ],
+        "correct": 2,
+        "category": 2,
+        "hint": "スクリプト名や引数は、`sys`モジュールの`argv`変数に文字列のリストとして格納されます。",
+        "url": "https://docs.python.org/ja/3/tutorial/interpreter.html"
+    },
+    {
+        "question": "Pythonのソースコードがデフォルトで扱われるエンコーディングは何ですか？",
+        "choices": [
+            "ASCII",
+            "Shift-JIS",
+            "EUC-JP",
+            "UTF-8"
+        ],
+        "correct": 4,
+        "category": 2,
+        "hint": "デフォルトでは、PythonのソースコードはUTF-8でエンコードされているものとして扱われます。",
+        "url": "https://docs.python.org/ja/3/tutorial/interpreter.html"
+    },
+    {
+        "question": "デフォルト以外のエンコーディングを使用したい場合、ソースファイルのどこに特別なコメントを記述する必要がありますか？",
+        "choices": [
+            "ファイルの末尾",
+            "ファイルの先頭（1行目または2行目）",
+            "任意の行",
+            "コメント内には記述できない"
+        ],
+        "correct": 2,
+        "category": 2,
+        "hint": "エンコーディング宣言は、ファイルの先頭（shebang行がなければ1行目、あれば2行目）に記述する必要があります。",
+        "url": "https://docs.python.org/ja/3/tutorial/interpreter.html"
+    },
+    {
+        "question": "インタプリタを終了させるためのファイル終端文字として、Unixで使われるものはどれですか？",
+        "choices": [
+            "Control-C",
+            "Control-Z",
+            "Control-D",
+            "Control-X"
+        ],
+        "correct": 3,
+        "category": 2,
+        "hint": "UnixではControl-D、DOSやWindowsではControl-Zを入力するとインタプリタが終了します。",
+        "url": "https://docs.python.org/ja/3/tutorial/interpreter.html"
+    },
+    {
+        "question": "コマンドラインから `python -c command` のようにインタプリタを起動した場合、`sys.argv[0]` の値は何になりますか？",
+        "choices": [
+            "スクリプト名",
+            "`'-c'`",
+            "`command`の内容",
+            "空の文字列"
+        ],
+        "correct": 2,
+        "category": 2,
+        "hint": "`-c command` を使うと、`sys.argv[0]` は `'-c'` になります。",
+        "url": "https://docs.python.org/ja/3/tutorial/interpreter.html"
+    },
+    {
+        "question": "スクリプトの実行が完了した後、対話モードに入るためのコマンドラインオプションは何ですか？",
+        "choices": [
+            "`-i`",
+            "`-c`",
+            "`-m`",
+            "`-s`"
+        ],
+        "correct": 1,
+        "category": 2,
+        "hint": "`-i` をスクリプト名の前に追加すると、スクリプト実行後に対話モードに入ることができます。",
+        "url": "https://docs.python.org/ja/3/tutorial/interpreter.html"
+    },
+    {
+        "question": "対話モードで複数行の構文を入力する際に表示される二次プロンプトは、デフォルトでどの記号ですか？",
+        "choices": [
+            "`>>>`",
+            "`...`",
+            "`---`",
+            "`+++`"
+        ],
+        "correct": 2,
+        "category": 2,
+        "hint": "継続行では、インタプリタは二次プロンプトを表示します。二次プロンプトは、デフォルトでは三つのドット (`...`) です。",
+        "url": "https://docs.python.org/ja/3/tutorial/interpreter.html"
+    },
+    {
+        "question": "エンコーディング宣言の正しい書式はどれですか？",
+        "choices": [
+            "`# encoding: utf-8`",
+            "`// -*- coding: utf-8 -*-`",
+            "`/* coding: utf-8 */`",
+            "`# -*- coding: utf-8 -*-`"
+        ],
+        "correct": 4,
+        "category": 2,
+        "hint": "書式は `# -*- coding: encoding -*-` です。`utf-8` を指定する場合は `# -*- coding: utf-8 -*-` となります。",
+        "url": "https://docs.python.org/ja/3/tutorial/interpreter.html"
+    },
+    {
+        "question": "`python -m module` のように起動した場合、何が実行されますか？",
+        "choices": [
+            "モジュールのドキュメントが表示される",
+            "モジュールが対話モードで開かれる",
+            "モジュールのソースファイルがスクリプトとして実行される",
+            "モジュールがアンインストールされる"
+        ],
+        "correct": 3,
+        "category": 2,
+        "hint": "`-m module` を使うと、モジュールのソースファイルをフルパスで指定して起動したかのように実行できます。",
+        "url": "https://docs.python.org/ja/3/tutorial/interpreter.html"
+    },
+    {
+        "question": "`python script.py arg1` と実行した場合、`sys.argv` の内容はどうなりますか？",
+        "choices": [
+            "`['arg1']`",
+            "`['script.py', 'arg1']`",
+            "`['python', 'script.py', 'arg1']`",
+            "`['']`"
+        ],
+        "correct": 2,
+        "category": 2,
+        "hint": "`sys.argv`はリストで、最初の要素(`sys.argv[0]`)はスクリプト名、それ以降が引数となります。",
+        "url": "https://docs.python.org/ja/3/tutorial/interpreter.html"
+    },
+    {
+        "question": "コマンドラインオプション `-c` と `-m` の共通点は何ですか？",
+        "choices": [
+            "どちらも実行後に必ず対話モードに入る",
+            "どちらも `sys.argv[0]` にスクリプトファイル名が格納される",
+            "どちらもそれ以降のオプションはPythonインタプリタに無視される",
+            "どちらも標準入力からコードを読み込む"
+        ],
+        "correct": 3,
+        "category": 2,
+        "hint": "`-c command` や `-m module` の後ろに指定したオプションはインタプリタには無視されますが、`sys.argv` を通じてスクリプトやモジュールからアクセスすることは可能です。",
+        "url": "https://docs.python.org/ja/3/tutorial/interpreter.html"
+    },
+    {
+        "question": "`#!/usr/bin/env python3` のようなshebang行が存在するファイルで、UTF-8以外のエンコーディング（例: cp1252）を指定する場合、エンコーディング宣言はどこに記述するのが正しいですか？",
+        "choices": [
+            "1行目のshebang行より前",
+            "1行目のshebang行の直後",
+            "2行目",
+            "ファイルの末尾"
+        ],
+        "correct": 3,
+        "category": 2,
+        "hint": "shebang行がある場合、エンコーディング宣言はファイルの2行目に追加する必要があります。",
+        "url": "https://docs.python.org/ja/3/tutorial/interpreter.html"
+    },
+    {
+        "question": "スクリプト名も引数も指定せずに `python` とだけ実行して対話モードに入った場合、`sys.argv[0]` はどうなりますか？",
+        "choices": [
+            "`'python'`",
+            "`None`",
+            "`sys`モジュールが存在しないためエラー",
+            "空の文字列 `''`"
+        ],
+        "correct": 4,
+        "category": 2,
+        "hint": "スクリプト名も引数も指定しなければ、`sys.argv[0]` は空の文字列になります。",
+        "url": "https://docs.python.org/ja/3/tutorial/interpreter.html"
+    },
+    {
+        "question": "なぜ、非ASCII文字（例：日本語）を含むPythonソースコードでは、エンコーディング宣言が重要になるのでしょうか？",
+        "choices": [
+            "プログラムの実行速度を上げるため",
+            "インタプリタがソースコードを正しく解釈できるようにするため",
+            "ファイルサイズを小さくするため",
+            "すべてのコンピュータで同じ見た目のフォントで表示するため"
+        ],
+        "correct": 2,
+        "category": 2,
+        "hint": "デフォルトのUTF-8以外のエンコーディングで保存されたファイルをインタプリタが正しく読み解くためには、どのエンコーディングが使われているかを明示的に伝える必要があります。",
+        "url": "https://docs.python.org/ja/3/tutorial/interpreter.html"
+    },
+    {
+        "question": "`python -i script.py` というコマンドの挙動として最も正確な説明はどれですか？",
+        "choices": [
+            "`script.py` を無視して対話モードを起動する",
+            "`script.py` の構文チェックのみ行い終了する",
+            "`script.py` を実行し、完了後、その実行環境を引き継いだまま対話モードに入る",
+            "`script.py` を対話的に一行ずつ実行する"
+        ],
+        "correct": 3,
+        "category": 2,
+        "hint": "`-i` オプションは、スクリプトを実行した後に、スクリプト内で定義された変数や関数が利用可能な状態で対話モードを開始します。",
+        "url": "https://docs.python.org/ja/3/tutorial/interpreter.html"
+    },
+    {
+        "question": "`python -m my_module arg1` と実行したとき、`sys.argv` はどのようになりますか？",
+        "choices": [
+            "`['my_module', 'arg1']`",
+            "`['my_moduleのフルパス', 'arg1']`",
+            "`['-m', 'my_module', 'arg1']`",
+            "`['arg1']`"
+        ],
+        "correct": 2,
+        "category": 2,
+        "hint": "`-m module` を使用した場合、`sys.argv[0]` はモジュールのフルパスになり、その後に引数が続きます。",
+        "url": "https://docs.python.org/ja/3/tutorial/interpreter.html"
+    },
+    {
+        "question": "インタプリタの対話モードは、どのような状況で特に有効ですか？",
+        "choices": [
+            "完成した大規模なアプリケーションを配布する時",
+            "関数の動作を素早くテストしたり、言語の機能を試したりする時",
+            "OSのカーネルをデバッグする時",
+            "ユーザーインターフェースのデザインを作成する時"
+        ],
+        "correct": 2,
+        "category": 2,
+        "hint": "対話モードは、コンパイルやファイル作成の手間なく、短いコードスニペットを試行錯誤するのに非常に便利です。",
+        "url": "https://docs.python.org/ja/3/tutorial/interpreter.html"
+    },
+    {
+        "question": "`sys.argv` にアクセスするために `import sys` が必要なのはなぜですか？",
+        "choices": [
+            "`argv`はPythonの予約語だから",
+            "`argv`は`sys`という標準モジュールで定義されている変数だから",
+            "パフォーマンスを向上させるため",
+            "`import`しないとリストとして扱えないから"
+        ],
+        "correct": 2,
+        "category": 2,
+        "hint": "`argv` は組み込みの変数ではなく、インタプリタや実行環境とやりとりするための機能を提供する `sys` モジュールの一部です。",
+        "url": "https://docs.python.org/ja/3/tutorial/interpreter.html"
+    },
+    {
+        "question": "GNU Readline ライブラリがPythonインタプリタに提供する主な機能は何ですか？",
+        "choices": [
+            "ソースコードの自動フォーマット",
+            "実行時のエラーチェック",
+            "対話的な行編集やヒストリ置換",
+            "グラフィカルなデバッグ機能"
+        ],
+        "correct": 3,
+        "category": 2,
+        "hint": "GNU Readlineライブラリをサポートしているシステムでは、コマンド履歴を遡ったり、入力行を編集したりする高度な機能が利用できます。",
+        "url": "https://docs.python.org/ja/3/tutorial/interpreter.html"
+    },
+    {
+        "question": "オペレーティングシステムと対話するための多くの関数（カレントディレクトリの取得など）を提供しているモジュールは何ですか？",
+        "choices": [
+            "sys",
+            "os",
+            "shutil",
+            "glob"
+        ],
+        "correct": 2,
+        "category": 10,
+        "hint": "`os` モジュールは、オペレーティングシステムと対話するための多くの関数を提供しています。`os.getcwd()` でカレントディレクトリを取得できます。",
+        "url": "https://docs.python.org/ja/3/tutorial/stdlib.html"
+    },
+    {
+        "question": "`*.py` のように、ディレクトリのワイルドカード検索からファイルのリストを生成する機能を提供しているモジュールは何ですか？",
+        "choices": [
+            "re",
+            "os",
+            "glob",
+            "sys"
+        ],
+        "correct": 3,
+        "category": 10,
+        "hint": "`glob` モジュールは、ワイルドカードを使ってファイルのリストを生成する `glob()` 関数を提供します。",
+        "url": "https://docs.python.org/ja/3/tutorial/stdlib.html"
+    },
+    {
+        "question": "コマンドライン引数をリストとして保持している、`sys`モジュールの属性名は何ですか？",
+        "choices": [
+            "args",
+            "params",
+            "argv",
+            "inputs"
+        ],
+        "correct": 3,
+        "category": 10,
+        "hint": "コマンドライン引数は `sys` モジュールの `argv` 属性にリストとして保存されています。",
+        "url": "https://docs.python.org/ja/3/tutorial/stdlib.html"
+    },
+    {
+        "question": "文字列に対して、正規表現を用いた高度なパターンマッチング機能を提供しているモジュールは何ですか？",
+        "choices": [
+            "string",
+            "re",
+            "text",
+            "match"
+        ],
+        "correct": 2,
+        "category": 10,
+        "hint": "`re` モジュールは、より高度な文字列処理のための正規表現を提供しています。",
+        "url": "https://docs.python.org/ja/3/tutorial/stdlib.html"
+    },
+    {
+        "question": "`cos()` や `log()` など、浮動小数点演算のためのC言語ライブラリ関数へのアクセスを提供するモジュールは何ですか？",
+        "choices": [
+            "math",
+            "numpy",
+            "statistics",
+            "random"
+        ],
+        "correct": 1,
+        "category": 10,
+        "hint": "`math` モジュールは、三角関数や対数関数など、C言語ライブラリ由来の数学関数を提供します。",
+        "url": "https://docs.python.org/ja/3/tutorial/stdlib.html"
+    },
+    {
+        "question": "リストからランダムに要素を選択したり、乱数を生成したりする機能を持つモジュールは何ですか？",
+        "choices": [
+            "statistics",
+            "math",
+            "random",
+            "itertools"
+        ],
+        "correct": 3,
+        "category": 10,
+        "hint": "`random` モジュールは、`choice()` や `sample()`、`random()` といった乱数に基づいた選択や生成のためのツールを提供しています。",
+        "url": "https://docs.python.org/ja/3/tutorial/stdlib.html"
+    },
+    {
+        "question": "日付や時刻を操作するためのクラスを提供し、日付間の演算もサポートしているモジュールは何ですか？",
+        "choices": [
+            "time",
+            "calendar",
+            "datetime",
+            "dateutil"
+        ],
+        "correct": 3,
+        "category": 10,
+        "hint": "`datetime` モジュールは、日付や時刻を操作するための `date` などのクラスを提供し、日付の算術演算もサポートしています。",
+        "url": "https://docs.python.org/ja/3/tutorial/stdlib.html"
+    },
+    {
+        "question": "データの圧縮や展開を行う `compress()` や `decompress()` 関数を提供しているモジュールはどれですか？",
+        "choices": [
+            "zipfile",
+            "tarfile",
+            "gzip",
+            "zlib"
+        ],
+        "correct": 4,
+        "category": 10,
+        "hint": "`zlib` モジュールは、データ圧縮と展開のための関数を直接的にサポートしています。",
+        "url": "https://docs.python.org/ja/3/tutorial/stdlib.html"
+    },
+    {
+        "question": "プログラムのdocstringに埋め込まれたテストを自動的に評価するツールを提供しているモジュールは何ですか？",
+        "choices": [
+            "unittest",
+            "doctest",
+            "pytest",
+            "profile"
+        ],
+        "correct": 2,
+        "category": 10,
+        "hint": "`doctest` モジュールは、docstring内のサンプルコードをテストとして実行する機能を提供します。",
+        "url": "https://docs.python.org/ja/3/tutorial/stdlib.html"
+    },
+    {
+        "question": "`import os` 形式が `from os import *` よりも推奨される理由は何ですか？",
+        "choices": [
+            "実行速度が速くなるから",
+            "メモリ使用量が少なくなるから",
+            "組み込み関数 `open()` が `os.open()` で遮蔽されるのを避けられるから",
+            "常に短いコードが推奨されるから"
+        ],
+        "correct": 3,
+        "category": 10,
+        "hint": "`from os import *` を使うと、名前空間が汚染され、動作が大きく異なる組み込み関数 `open()` が `os.open()` によって上書きされてしまう可能性があります。",
+        "url": "https://docs.python.org/ja/3/tutorial/stdlib.html"
+    },
+    {
+        "question": "あるディレクトリ内のすべての `.txt` ファイルを処理したい場合、ファイル名のリストを取得するのに最も適したモジュールはどれですか？",
+        "choices": [
+            "os",
+            "glob",
+            "sys",
+            "re"
+        ],
+        "correct": 2,
+        "category": 10,
+        "hint": "`glob.glob('*.txt')` を使うことで、ワイルドカードに一致するファイル名のリストを簡単に取得できます。これは `os` モジュールでディレクトリをリストし、ループでフィルタリングするより直接的です。",
+        "url": "https://docs.python.org/ja/3/tutorial/stdlib.html"
+    },
+    {
+        "question": "スクリプトに `--lines=10` のようなオプション引数と、複数のファイル名引数を渡す複雑なコマンドライン引数を処理したい場合、`sys.argv` を直接使うより適したモジュールは何ですか？",
+        "choices": [
+            "getopt",
+            "os.environ",
+            "argparse",
+            "sys.stdin"
+        ],
+        "correct": 3,
+        "category": 10,
+        "hint": "`argparse` モジュールは、オプション引数や位置引数の定義、ヘルプメッセージの自動生成など、`sys.argv` の手動パースよりも洗練された仕組みを提供します。",
+        "url": "https://docs.python.org/ja/3/tutorial/stdlib.html"
+    },
+    {
+        "question": "ある関数のドキュメントとして簡単な使用例を示し、その使用例が実際に正しいかを自動で検証したい場合、`unittest` と `doctest` のどちらがより手軽で適切ですか？",
+        "choices": [
+            "`unittest`: テストケースをクラスとして厳密に定義できるから",
+            "`doctest`: docstringに例を書くだけでテストになるから",
+            "どちらも同じくらい手軽である",
+            "どちらもこの目的には使えない"
+        ],
+        "correct": 2,
+        "category": 10,
+        "hint": "`doctest` は、ドキュメントとテストを一体化させるアプローチで、docstringに呼び出し例と期待される結果をカット＆ペーストするだけで簡単にテストを作成できます。",
+        "url": "https://docs.python.org/ja/3/tutorial/stdlib.html"
+    },
+    {
+        "question": "`data.db` というファイルを `archive.db` という名前でコピーする、という日常的なファイル管理作業を行う際に、`os` モジュールよりも高水準で簡単なインターフェースを提供するモジュールはどれですか？",
+        "choices": [
+            "sys",
+            "io",
+            "shutil",
+            "pathlib"
+        ],
+        "correct": 3,
+        "category": 10,
+        "hint": "`shutil` モジュールは、ファイルのコピー (`copyfile`) や移動 (`move`) といった、より高水準で簡単に使えるファイル・ディレクトリ管理機能を提供します。",
+        "url": "https://docs.python.org/ja/3/tutorial/stdlib.html"
+    },
+    {
+        "question": "2つの異なるコード片の実行速度をマイクロ秒単位で比較測定したい場合、最も適したモジュールはどれですか？",
+        "choices": [
+            "profile",
+            "pstats",
+            "timeit",
+            "datetime"
+        ],
+        "correct": 3,
+        "category": 10,
+        "hint": "`timeit` モジュールは、小さいコードブロックの実行時間を精密に測定するために設計されており、パフォーマンスの比較に最適です。`profile` はより大きなコードのボトルネック分析に使われます。",
+        "url": "https://docs.python.org/ja/3/tutorial/stdlib.html"
+    },
+    {
+        "question": "複雑な文字列の一致検索や置換を行いたいが、正規表現を使うほどではない単純な置換（例：「too」を「two」に）の場合、`re` モジュールよりも推奨される方法はどれですか？",
+        "choices": [
+            "文字列のスライスと結合",
+            "文字列の `replace()` メソッド",
+            "`re.sub()` を使う",
+            "`os` モジュールを使う"
+        ],
+        "correct": 2,
+        "category": 10,
+        "hint": "最小限の機能だけが必要な場合、読みやすくデバッグしやすい文字列メソッド（例: `replace()`）の方が正規表現よりも推奨されます。",
+        "url": "https://docs.python.org/ja/3/tutorial/stdlib.html"
+    },
+    {
+        "question": "XML形式のデータを解析する必要がある場合、「バッテリー同梱」の哲学に基づき、Python標準ライブラリの中でどのモジュールグループが役立つと期待できますか？",
+        "choices": [
+            "json",
+            "csv",
+            "xml.etree.ElementTree",
+            "sqlite3"
+        ],
+        "correct": 3,
+        "category": 10,
+        "hint": "本文には「`xml.etree.ElementTree`、`xml.dom` ならびに `xml.sax` パッケージは XML の処理をサポートしています」と明記されており、これらがXML処理用のモジュールです。",
+        "url": "https://docs.python.org/ja/3/tutorial/stdlib.html"
+    },
+    {
+        "question": "数値データのリストから平均値、中央値、分散といった基本的な統計量を計算したい場合、どのモジュールを使うのが最も直接的ですか？",
+        "choices": [
+            "math",
+            "random",
+            "statistics",
+            "itertools"
+        ],
+        "correct": 3,
+        "category": 10,
+        "hint": "`statistics` モジュールは、`mean()` (平均), `median()` (中央値), `variance()` (分散) といった、基礎的な統計的特性を計算する関数を提供します。",
+        "url": "https://docs.python.org/ja/3/tutorial/stdlib.html"
+    },
+    {
+        "question": "`unittest` モジュールのテスト作成アプローチは、`doctest` と比較してどのような特徴がありますか？",
+        "choices": [
+            "docstring内にテストを記述する",
+            "テストを別のファイルで網羅的に管理できる",
+            "より気楽に使える",
+            "ドキュメントの自動生成に特化している"
+        ],
+        "correct": 2,
+        "category": 10,
+        "hint": "`unittest` は `doctest` ほど気楽ではありませんが、テストケースをクラスとして体系的にまとめ、より網羅的なテストセットを別のファイルで管理することができます。",
+        "url": "https://docs.python.org/ja/3/tutorial/stdlib.html"
+    },
+    {
+        "question": "URLを指定してインターネット上のリソースからデータを取得する、というタスクに最も適したモジュールはどれですか？",
+        "choices": [
+            "smtplib",
+            "http.server",
+            "urllib.request",
+            "socket"
+        ],
+        "correct": 3,
+        "category": 10,
+        "hint": "`urllib.request` モジュールは、URLからデータを取得するための最も単純なモジュールの一つとして紹介されています。`smtplib` はメール送信用です。",
+        "url": "https://docs.python.org/ja/3/tutorial/stdlib.html"
+    },
+    {
+        "question": "大きなリストや深くネストした辞書などを、省略して分かりやすく表示するための `repr()` の代替を提供しているモジュールは何ですか？",
+        "choices": [
+            "pprint",
+            "reprlib",
+            "textwrap",
+            "string"
+        ],
+        "correct": 2,
+        "category": 11,
+        "hint": "`reprlib` モジュールは、大きなコンテナや深くネストしたコンテナを省略して表示するバージョンの `repr()` を提供しています。",
+        "url": "https://docs.python.org/ja/3/tutorial/stdlib2.html"
+    },
+    {
+        "question": "データ構造が複数行にわたる場合、改行やインデントを追加して、より明確に印字（pretty-print）する機能を提供しているモジュールは何ですか？",
+        "choices": [
+            "reprlib",
+            "pprint",
+            "locale",
+            "textwrap"
+        ],
+        "correct": 2,
+        "category": 11,
+        "hint": "`pprint` モジュールは、データ構造がより明確になるように改行やインデントを追加して印字する、洗練された制御手段を提供します。",
+        "url": "https://docs.python.org/ja/3/tutorial/stdlib2.html"
+    },
+    {
+        "question": "長い文字列を指定した幅で自動的に折り返し、段落を整形する機能を持つモジュールは何ですか？",
+        "choices": [
+            "string",
+            "re",
+            "textwrap",
+            "pprint"
+        ],
+        "correct": 3,
+        "category": 11,
+        "hint": "`textwrap` モジュールは、`fill()` や `wrap()` メソッドを使って、文章を指定したスクリーン幅に収まるように調整します。",
+        "url": "https://docs.python.org/ja/3/tutorial/stdlib2.html"
+    },
+    {
+        "question": "`$village` や `${cause}` のようなプレースホルダを持つ文字列に、後から値を埋め込むための `Template` クラスを提供しているモジュールは何ですか？",
+        "choices": [
+            "re",
+            "string",
+            "textwrap",
+            "format"
+        ],
+        "correct": 2,
+        "category": 11,
+        "hint": "`string` モジュールには、簡単な構文を備えた `Template` クラスが入っています。",
+        "url": "https://docs.python.org/ja/3/tutorial/stdlib2.html"
+    },
+    {
+        "question": "スレッド間の調整を目的として、他のスレッドからのリクエストを安全に受け渡すために設計された、キューオブジェクトを提供するモジュールは何ですか？",
+        "choices": [
+            "threading",
+            "multiprocessing",
+            "queue",
+            "asyncio"
+        ],
+        "correct": 3,
+        "category": 11,
+        "hint": "タスク間調整では `queue` モジュールを使い、スレッド間の通信や調整を行うと、設計が容易になり、信頼性が増すと説明されています。",
+        "url": "https://docs.python.org/ja/3/tutorial/stdlib2.html"
+    },
+    {
+        "question": "DEBUG、INFO、WARNING、ERROR、CRITICALといったレベルでログメッセージを記録し、ファイルやコンソールなど様々な場所に出力できるシステムを提供するモジュールは何ですか？",
+        "choices": [
+            "print",
+            "sys.stderr",
+            "logging",
+            "traceback"
+        ],
+        "correct": 3,
+        "category": 11,
+        "hint": "`logging` モジュールは、数多くの機能をそなえた柔軟性のあるログ記録システムを提供しています。",
+        "url": "https://docs.python.org/ja/3/tutorial/stdlib2.html"
+    },
+    {
+        "question": "オブジェクトへの恒久的な参照を作らずにオブジェクトを追跡する「弱参照」を作成するためのツールを提供しているモジュールは何ですか？",
+        "choices": [
+            "gc",
+            "sys",
+            "weakref",
+            "ctypes"
+        ],
+        "correct": 3,
+        "category": 11,
+        "hint": "`weakref` モジュールは、オブジェクトへの参照を作らずに追跡するためのツールを提供し、キャッシュの実装などに利用されます。",
+        "url": "https://docs.python.org/ja/3/tutorial/stdlib2.html"
+    },
+    {
+        "question": "リストに似ているが、データの追加（append）と左端からの取り出し（popleft）が高速な `deque` オブジェクトを提供しているモジュールは何ですか？",
+        "choices": [
+            "array",
+            "list",
+            "collections",
+            "heapq"
+        ],
+        "correct": 3,
+        "category": 11,
+        "hint": "`collections` モジュールは、キューや幅優先探索の実装に向いている `deque` オブジェクトを提供しています。",
+        "url": "https://docs.python.org/ja/3/tutorial/stdlib2.html"
+    },
+    {
+        "question": "通常のリストをヒープ（常に最小値が先頭に来るデータ構造）として扱うための `heapify`, `heappush`, `heappop` といった関数を提供しているモジュールは何ですか？",
+        "choices": [
+            "bisect",
+            "heapq",
+            "array",
+            "collections"
+        ],
+        "correct": 2,
+        "category": 11,
+        "hint": "`heapq` モジュールは、通常のリストでヒープを実装するための関数を提供しています。",
+        "url": "https://docs.python.org/ja/3/tutorial/stdlib2.html"
+    },
+    {
+        "question": "財務アプリケーションなどで正確な10進表記が必要な場合に、組み込みの `float` 型の代わりに使われる `Decimal` データ型を提供しているモジュールは何ですか？",
+        "choices": [
+            "math",
+            "float",
+            "numbers",
+            "decimal"
+        ],
+        "correct": 4,
+        "category": 11,
+        "hint": "`decimal` モジュールは、10進浮動小数の算術演算をサポートする `Decimal` データ型を提供しています。",
+        "url": "https://docs.python.org/ja/3/tutorial/stdlib2.html"
+    },
+    {
+        "question": "70セントの電話代に5%の税金をかける計算で、`float` (.70 * 1.05) では結果が `0.73` に丸められるのに対し、`Decimal` では `Decimal('0.74')` となるのはなぜですか？",
+        "choices": [
+            "`Decimal`は常に切り上げを行うから",
+            "`float`は2進浮動小数点数であり、10進小数を正確に表現できないことがあるから",
+            "`Decimal`は整数しか扱えないから",
+            "`float`の方が常に精度が高いから"
+        ],
+        "correct": 2,
+        "category": 11,
+        "hint": "`Decimal`は手計算と同じ方法で計算し、2進浮動小数点数が持つ10進数の表現誤差の問題を回避するため、金融計算などで期待通りの正確な結果が得られます。",
+        "url": "https://docs.python.org/ja/3/tutorial/stdlib2.html"
+    },
+    {
+        "question": "マルチスレッドプログラミングで、複数のスレッドが共有データにアクセスする際、`threading` モジュールのロック等を直接使うよりも `queue` モジュールを使うことが推奨される主な理由は何ですか？",
+        "choices": [
+            "`queue`の方が実行速度が圧倒的に速いから",
+            "設計が容易になり、可読性と信頼性が増すから",
+            "`queue`はロック機能を持たないから",
+            "`threading`モジュールは非推奨だから"
+        ],
+        "correct": 2,
+        "category": 11,
+        "hint": "`Queue` オブジェクトを使うことで、スレッド間の複雑な同期処理を単純なメッセージの受け渡しに置き換えることができ、設計上の欠陥による再現困難な問題を避けやすくなります。",
+        "url": "https://docs.python.org/ja/3/tutorial/stdlib2.html"
+    },
+    {
+        "question": "`string.Template` の `substitute()` メソッドと `safe_substitute()` メソッドの主な違いは何ですか？",
+        "choices": [
+            "`safe_substitute()` の方が処理速度が速い",
+            "`substitute()` はプレースホルダに対応する値がないと `KeyError` を送出するが、`safe_substitute()` はプレースホルダをそのまま残す",
+            "`substitute()` は辞書しか受け付けないが `safe_substitute()` はキーワード引数も使える",
+            "`safe_substitute()` は `$$` をエスケープできない"
+        ],
+        "correct": 2,
+        "category": 11,
+        "hint": "ユーザ入力などデータが不完全な可能性がある場合、エラーで停止する `substitute()` ではなく、`safe_substitute()` を使う方がアプリケーションとして適切です。",
+        "url": "https://docs.python.org/ja/3/tutorial/stdlib2.html"
+    },
+    {
+        "question": "`weakref` モジュールは、Pythonのどのようなメモリ管理の仕組みを前提として、その必要性が生じるのでしょうか？",
+        "choices": [
+            "手動でのメモリ解放が必要な仕組み",
+            "すべてのオブジェクトが永続化される仕組み",
+            "参照カウント方式とガベージコレクションによる自動メモリ管理",
+            "メモリ管理を行わない仕組み"
+        ],
+        "correct": 3,
+        "category": 11,
+        "hint": "Pythonは参照がなくなるとオブジェクトを自動で解放しますが、オブジェクトを追跡するためだけに参照を持つと、そのオブジェクトは解放されなくなってしまいます。`weakref` はこの問題を解決するためにあります。",
+        "url": "https://docs.python.org/ja/3/tutorial/stdlib2.html"
+    },
+    {
+        "question": "`collections.deque` がリスト型と比較して「中間にある値の参照は遅くなります」とされているのはなぜだと推測できますか？",
+        "choices": [
+            "`deque`は内部的に連結リストのような構造で実装されており、両端へのアクセスは速いが、インデックスによるアクセスは要素を辿る必要があるから",
+            "`deque`はディスクにデータを保存するから",
+            "`deque`は要素を常にソートされた状態に保つから",
+            "`deque`は文字列しか格納できないから"
+        ],
+        "correct": 1,
+        "category": 11,
+        "hint": "両端からの追加・削除が高速であるという特性は、連結リストのようなデータ構造を示唆しており、その場合、特定の位置へのランダムアクセスはリスト（内部的には動的配列）よりも遅くなります。",
+        "url": "https://docs.python.org/ja/3/tutorial/stdlib2.html"
+    },
+    {
+        "question": "ログレベルがデフォルト設定の時、`logging.info('message')` を実行しても何も出力されないのはなぜですか？",
+        "choices": [
+            "infoレベルは存在しないから",
+            "デフォルトではWARNING以上のレベルのメッセージのみが出力されるから",
+            "`print()` を使わなければ出力されないから",
+            "ファイルへの出力がデフォルトだから"
+        ],
+        "correct": 2,
+        "category": 11,
+        "hint": "本文には「デフォルトでは、info() と debug() による出力は抑制され」と明記されており、これはデフォルトのログレベルがWARNINGであることを意味します。",
+        "url": "https://docs.python.org/ja/3/tutorial/stdlib2.html"
+    },
+    {
+        "question": "`locale` モジュールを使用して数値を桁区切りでフォーマットする例が示す、このモジュールの主な役割は何ですか？",
+        "choices": [
+            "数値計算の精度を高めること",
+            "地域や文化に固有のデータ表現（通貨、数値区切りなど）に対応すること",
+            "文字列のエンコーディングを変換すること",
+            "日付と時刻の計算を行うこと"
+        ],
+        "correct": 2,
+        "category": 11,
+        "hint": "`locale` モジュールは、国や言語によって異なる通貨記号や桁区切り文字といった「ロケール」情報を扱い、国際化に対応したアプリケーション開発を支援します。",
+        "url": "https://docs.python.org/ja/3/tutorial/stdlib2.html"
+    },
+    {
+        "question": "0.1を10回足し合わせる計算で、`float` では `1.0` との比較が `False` になるのに対し、`Decimal` では `True` になるのは、`Decimal` のどのような特性によるものですか？",
+        "choices": [
+            "計算誤差を意図的に無視する特性",
+            "厳密な10進数表現で計算を行い、2進数表現に起因する丸め誤差を発生させない特性",
+            "すべての計算を文字列として処理する特性",
+            "常に整数に丸める特性"
+        ],
+        "correct": 2,
+        "category": 11,
+        "hint": "`float`の0.1は2進数では循環小数となり正確に表現できないため、足し合わせると誤差が蓄積します。`Decimal`は10進数をそのまま扱うため、このような問題が起きません。",
+        "url": "https://docs.python.org/ja/3/tutorial/stdlib2.html"
+    },
+    {
+        "question": "`array` モジュールが通常のリストよりもコンパクトにデータを格納できるのはなぜですか？",
+        "choices": [
+            "データを圧縮して格納するから",
+            "同種のデータのみを、Pythonオブジェクトのオーバーヘッドなしで生のバイナリ値として格納するから",
+            "ポインタのみを格納するから",
+            "格納できる要素の数に上限があるから"
+        ],
+        "correct": 2,
+        "category": 11,
+        "hint": "`array` は指定されたタイプコード（例：「H」は2バイト符号無し整数）のデータを格納します。一方、Pythonのリストは、値だけでなく型情報など多くの追加情報を持つ汎用的なPythonオブジェクトを格納するため、より多くのメモリを消費します。",
+        "url": "https://docs.python.org/ja/3/tutorial/stdlib2.html"
+    },
+    {
+        "question": "`string.Template` のサブクラスを作成して `delimiter` 属性を変更する例が示唆している、このクラスの設計上の利点は何ですか？",
+        "choices": [
+            "パフォーマンスが向上する",
+            "構文（プレースホルダの記号）をユースケースに合わせてカスタマイズできる柔軟性",
+            "変更できるのは `delimiter` 属性のみである",
+            "サブクラス化しないと使えない"
+        ],
+        "correct": 2,
+        "category": 11,
+        "hint": "デフォルトの `$` 以外の記号（例: `%`）をプレースホルダとして使いたい場合に、サブクラス化によって簡単かつクリーンに振る舞いを変更できる拡張性の高さが利点です。",
+        "url": "https://docs.python.org/ja/3/tutorial/stdlib2.html"
+    },
+    {
+        "question": "異なるアプリケーションが同じライブラリの異なるバージョンを要求する場合の衝突を解決するための仕組みは何ですか？",
+        "choices": [
+            "グローバルインストール",
+            "仮想環境 (virtual environment)",
+            "Dockerコンテナ",
+            "単一のPythonインストール"
+        ],
+        "correct": 2,
+        "category": 12,
+        "hint": "仮想環境を作ることで、アプリケーションごとに独立したPython環境とパッケージを持つことができ、バージョンの衝突を解決できます。",
+        "url": "https://docs.python.org/ja/3/tutorial/venv.html"
+    },
+    {
+        "question": "仮想環境を作成・管理するための標準モジュールの名前は何ですか？",
+        "choices": [
+            "virtualenv",
+            "conda",
+            "pipenv",
+            "venv"
+        ],
+        "correct": 4,
+        "category": 12,
+        "hint": "仮想環境の作成・管理に使われる標準モジュールは `venv` と呼ばれます。",
+        "url": "https://docs.python.org/ja/3/tutorial/venv.html"
+    },
+    {
+        "question": "`tutorial-env` という名前の仮想環境を作成するための正しいコマンドはどれですか？",
+        "choices": [
+            "python -m venv create tutorial-env",
+            "python -m venv tutorial-env",
+            "venv new tutorial-env",
+            "python new venv tutorial-env"
+        ],
+        "correct": 2,
+        "category": 12,
+        "hint": "仮想環境を作るには、`python -m venv <ディレクトリ名>` の形式でコマンドを実行します。",
+        "url": "https://docs.python.org/ja/3/tutorial/venv.html"
+    },
+    {
+        "question": "UnixやmacOSで `tutorial-env` という仮想環境を有効化（activate）するためのコマンドはどれですか？",
+        "choices": [
+            "tutorial-env/bin/activate",
+            "run tutorial-env/bin/activate",
+            "source tutorial-env/bin/activate",
+            "exec tutorial-env/bin/activate"
+        ],
+        "correct": 3,
+        "category": 12,
+        "hint": "UnixやmacOSでは `source` コマンドを使って `activate` スクリプトを実行し、現在のシェルセッションの環境を変更します。",
+        "url": "https://docs.python.org/ja/3/tutorial/venv.html"
+    },
+    {
+        "question": "仮想環境を無効化（deactivate）するためのコマンドは何ですか？",
+        "choices": [
+            "exit",
+            "quit",
+            "deactivate",
+            "disable"
+        ],
+        "correct": 3,
+        "category": 12,
+        "hint": "仮想環境を無効化するには、ターミナルに `deactivate` と入力します。",
+        "url": "https://docs.python.org/ja/3/tutorial/venv.html"
+    },
+    {
+        "question": "Pythonのパッケージをインストール、アップグレード、削除するために使われるプログラムの名前は何ですか？",
+        "choices": [
+            "python-get",
+            "pkg-manager",
+            "pip",
+            "install-py"
+        ],
+        "correct": 3,
+        "category": 12,
+        "hint": "`pip` というプログラムでパッケージをインストール、アップグレード、削除することができます。",
+        "url": "https://docs.python.org/ja/3/tutorial/venv.html"
+    },
+    {
+        "question": "`requests` パッケージのバージョン `2.6.0` を正確に指定してインストールするコマンドはどれですか？",
+        "choices": [
+            "pip install requests-2.6.0",
+            "pip install requests 2.6.0",
+            "pip install requests==2.6.0",
+            "pip install requests --version 2.6.0"
+        ],
+        "correct": 3,
+        "category": 12,
+        "hint": "パッケージ名のあとに `==` とバージョン番号を付けることで、特定のバージョンのパッケージをインストールできます。",
+        "url": "https://docs.python.org/ja/3/tutorial/venv.html"
+    },
+    {
+        "question": "インストールされているパッケージの一覧を、`pip install` が解釈できるフォーマットで出力する `pip` のサブコマンドは何ですか？",
+        "choices": [
+            "list",
+            "show",
+            "freeze",
+            "requirements"
+        ],
+        "correct": 3,
+        "category": 12,
+        "hint": "`pip freeze` はインストールされたパッケージを `パッケージ名==バージョン` の形式で出力します。",
+        "url": "https://docs.python.org/ja/3/tutorial/venv.html"
+    },
+    {
+        "question": "一般的な慣習として、`pip freeze` の出力結果を保存するファイル名は何ですか？",
+        "choices": [
+            "packages.txt",
+            "dependencies.json",
+            "requirements.txt",
+            "pip.conf"
+        ],
+        "correct": 3,
+        "category": 12,
+        "hint": "`pip freeze` のリストを `requirements.txt` というファイルに保存するのが一般的な慣習です。",
+        "url": "https://docs.python.org/ja/3/tutorial/venv.html"
+    },
+    {
+        "question": "`requirements.txt` ファイルにリストされたすべてのパッケージを一度にインストールするためのコマンドはどれですか？",
+        "choices": [
+            "pip install requirements.txt",
+            "pip install -r requirements.txt",
+            "pip load requirements.txt",
+            "pip requirements.txt"
+        ],
+        "correct": 2,
+        "category": 12,
+        "hint": "`install -r` オプションを使うことで、指定したファイルから必要なパッケージをインストールできます。",
+        "url": "https://docs.python.org/ja/3/tutorial/venv.html"
+    },
+    {
+        "question": "なぜ仮想環境はプロジェクト間の依存関係の衝突を根本的に解決できるのですか？",
+        "choices": [
+            "すべてのパッケージを最新バージョンに強制的に更新するから",
+            "各プロジェクトが、システム全体のPythonとは隔離された、独自のPython実行環境とライブラリを持つから",
+            "パッケージのインストールを禁止するから",
+            "コンピュータ上に一つしか仮想環境を作れないように制限するから"
+        ],
+        "correct": 2,
+        "category": 12,
+        "hint": "仮想環境は、Pythonインタプリタのコピーと独自の `site-packages` ディレクトリを持つ独立したディレクトリ構造です。これにより、プロジェクトごとに異なるバージョンのライブラリをインストールしても互いに影響しなくなります。",
+        "url": "https://docs.python.org/ja/3/tutorial/venv.html"
+    },
+    {
+        "question": "仮想環境を有効化すると、シェルのプロンプトが変化し、`python` コマンドの挙動が変わるのはなぜですか？",
+        "choices": [
+            "システムの `PATH` 環境変数が変更され、仮想環境内の `python` 実行ファイルが優先的に検索されるようになるから",
+            "コンピュータが再起動されるから",
+            "Pythonのソースコードが書き換えられるから",
+            "シェルの設定ファイルが恒久的に変更されるから"
+        ],
+        "correct": 1,
+        "category": 12,
+        "hint": "有効化スクリプトは、シェルの動作を変更し、`python`コマンドがグローバルなインタプリタではなく、仮想環境内のインタプリタを指すようにします。",
+        "url": "https://docs.python.org/ja/3/tutorial/venv.html"
+    },
+    {
+        "question": "`pip freeze > requirements.txt` を実行し、このファイルをバージョン管理システム（例: Git）に含めるワークフローの最大の利点は何ですか？",
+        "choices": [
+            "プロジェクトのバックアップが取れること",
+            "他の開発者が、`pip install -r requirements.txt` を実行するだけで、プロジェクトの依存関係を正確に再現できること",
+            "プロジェクトの実行速度が速くなること",
+            "ライブラリのライセンス情報を一覧できること"
+        ],
+        "correct": 2,
+        "category": 12,
+        "hint": "`requirements.txt` は、プロジェクトが依存するパッケージとそのバージョンを正確に記録した「レシピ」の役割を果たします。これにより、チームメンバー間や異なる環境間で、同じ開発環境を簡単に構築できます。",
+        "url": "https://docs.python.org/ja/3/tutorial/venv.html"
+    },
+    {
+        "question": "あるプロジェクトで `pip install novas` を実行しました。このプロジェクトを別のマシンでセットアップする場合、`pip install novas` と再度実行するのではなく、`requirements.txt` を使う方が望ましいのはなぜですか？",
+        "choices": [
+            "`requirements.txt` を使う方がインストールが速いから",
+            "`pip install novas` では将来的に新しいバージョンの `novas` がインストールされ、予期せぬ動作の変更を引き起こす可能性があるから",
+            "`pip install novas` は有料だから",
+            "`requirements.txt` はnovas以外のパッケージはインストールしないから"
+        ],
+        "correct": 2,
+        "category": 12,
+        "hint": "`pip install <パッケージ名>` は常に最新版をインストールしようとします。`requirements.txt` にバージョンを固定 (`novas==3.1.1.3` のように) して記録することで、開発時と全く同じバージョンのパッケージがインストールされることを保証し、再現性を高めます。",
+        "url": "https://docs.python.org/ja/3/tutorial/venv.html"
+    },
+    {
+        "question": "`venv` モジュールを使って仮想環境を作成する際、その仮想環境にインストールされるPythonのバージョンは何によって決まりますか？",
+        "choices": [
+            "利用可能な最新のPythonバージョン",
+            "`venv` コマンドを実行したPythonインタプリタのバージョン",
+            "OSによって定められたデフォルトバージョン",
+            "常にPython 3.12"
+        ],
+        "correct": 2,
+        "category": 12,
+        "hint": "本文には「`venv` は、コマンドが実行された Python のバージョン (`--version` オプションで表示される) をインストールします」と明記されています。",
+        "url": "https://docs.python.org/ja/3/tutorial/venv.html"
+    },
+    {
+        "question": "`pip list` と `pip freeze` の出力は似ていますが、`requirements.txt` を作成する目的では `pip freeze` が使われるのはなぜですか？",
+        "choices": [
+            "`pip list` はバージョン番号を表示しないから",
+            "`pip freeze` の出力形式 (`パッケージ名==バージョン`) が、`pip install -r` で直接解釈できる形式だから",
+            "`pip list` は `pip` 自体のような編集不可能なパッケージを表示しないから",
+            "`pip freeze` の方がアルファベット順に並んでいるから"
+        ],
+        "correct": 2,
+        "category": 12,
+        "hint": "`pip freeze` は意図的に `pip install` コマンドが要求するフォーマットで出力するように設計されています。一方、`pip list` は人間が読みやすいように情報を表示することを主目的としています。",
+        "url": "https://docs.python.org/ja/3/tutorial/venv.html"
+    },
+    {
+        "question": "なぜ仮想環境の一般的なディレクトリ名として `.venv` が推奨されるのでしょうか？",
+        "choices": [
+            "名前が短いから",
+            "`.`で始まる名前は通常シェルで隠され、`.env` ファイルとの衝突も避けられるから",
+            "検索が速くなるから",
+            "特殊なアクセス権が設定されるから"
+        ],
+        "correct": 2,
+        "category": 12,
+        "hint": "`.` で始まることで邪魔になりにくく、また環境変数を定義する `.env` ファイルと名前が衝突するのを防ぐという実用的な理由があります。",
+        "url": "https://docs.python.org/ja/3/tutorial/venv.html"
+    },
+    {
+        "question": "仮想環境はPythonの「インストール」と表現されていますが、これは具体的に何を意味しますか？",
+        "choices": [
+            "Python言語の全く新しいバージョンをコンパイルしている",
+            "Pythonインタプリタの実行ファイルや標準ライブラリのコピーまたはシンボリックリンクを含むディレクトリを作成している",
+            "OS全体に新しいPythonを登録している",
+            "Pythonのドキュメントのみをコピーしている"
+        ],
+        "correct": 2,
+        "category": 12,
+        "hint": "仮想環境ディレクトリ内には、独立して動作可能なPythonの実行環境一式が（コピーまたはリンクとして）配置されます。これが「特定のバージョンの Python...を含んだ...インストール」と表現される理由です。",
+        "url": "https://docs.python.org/ja/3/tutorial/venv.html"
+    },
+    {
+        "question": "パッケージを `pip install --upgrade requests` で更新する行為が、仮想環境を使っている場合に安全なのはなぜですか？",
+        "choices": [
+            "アップグレードは常にバグを修正するため",
+            "他のプロジェクトに影響を与えることなく、現在のプロジェクトの`requests`だけを更新できるから",
+            "--upgradeオプションはダウングレードも可能だから",
+            "料金が発生しないから"
+        ],
+        "correct": 2,
+        "category": 12,
+        "hint": "仮想環境が提供する隔離のおかげで、あるプロジェクトでのライブラリ更新が、別のプロジェクト（古いバージョンに依存しているかもしれない）を破壊する心配がありません。",
+        "url": "https://docs.python.org/ja/3/tutorial/venv.html"
+    },
+    {
+        "question": "Python Package Index (PyPI) と `pip` の関係性についての最も正確な説明はどれですか？",
+        "choices": [
+            "`pip`はPyPIを閲覧するためのウェブブラウザである",
+            "`pip`はデフォルトで、PyPIという公的なリポジトリからパッケージを検索し、ダウンロードしてインストールするツールである",
+            "PyPIは`pip`の代替となるパッケージインストーラである",
+            "`pip`はPyPIにパッケージをアップロードするためだけのツールである"
+        ],
+        "correct": 2,
+        "category": 12,
+        "hint": "PyPIはコミュニティによって維持されている膨大な数のPythonパッケージの保管庫であり、`pip` はその保管庫からパッケージを簡単に利用するためのクライアントツールです。",
+        "url": "https://docs.python.org/ja/3/tutorial/venv.html"
+    },
+    {
+        "question": "Pythonインタプリタの対話入力編集や履歴置換機能の実装に使われている、外部ライブラリの名前は何ですか？",
+        "choices": [
+            "GNU Readline",
+            "libedit",
+            "ncurses",
+            "zlib"
+        ],
+        "correct": 1,
+        "category": 14,
+        "hint": "この機能は、GNU Readline ライブラリを使って実装されています。",
+        "url": "https://docs.python.org/ja/3/tutorial/interactive.html"
+    },
+    {
+        "question": "インタプリタの対話モードで、変数名やモジュール名の補完を呼び出すためのキーは何ですか？",
+        "choices": [
+            "Enterキー",
+            "Spaceキー",
+            "Tabキー",
+            "Escキー"
+        ],
+        "correct": 3,
+        "category": 14,
+        "hint": "Tabキーは補完機能を呼び出し、Pythonの文の名前、ローカル変数、モジュール名を検索します。",
+        "url": "https://docs.python.org/ja/3/tutorial/interactive.html"
+    },
+    {
+        "question": "対話セッションのコマンド履歴を保存する、デフォルトのファイル名は何ですか？",
+        "choices": [
+            ".history",
+            ".python_history",
+            "history.log",
+            ".pyhistory"
+        ],
+        "correct": 2,
+        "category": 14,
+        "hint": "デフォルトの設定では、ユーザーディレクトリの `.python_history` という名前のファイルに履歴を保存します。",
+        "url": "https://docs.python.org/ja/3/tutorial/interactive.html"
+    },
+    {
+        "question": "標準のPythonインタプリタの代替として挙げられている、より優れた対話的インタープリタの一つは何ですか？",
+        "choices": [
+            "PyCharm",
+            "VS Code",
+            "IPython",
+            "Sublime Text"
+        ],
+        "correct": 3,
+        "category": 14,
+        "hint": "より優れた対話的インタープリタの代替の一つに IPython があります。",
+        "url": "https://docs.python.org/ja/3/tutorial/interactive.html"
+    },
+    {
+        "question": "IPythonの他に、もう一つの優れた対話的インタープリタとして挙げられているものは何ですか？",
+        "choices": [
+            "Jupyter",
+            "bpython",
+            "PyDev",
+            "Spyder"
+        ],
+        "correct": 2,
+        "category": 14,
+        "hint": "別の優れたインタラクティブ環境としては bpython があります。",
+        "url": "https://docs.python.org/ja/3/tutorial/interactive.html"
+    },
+    {
+        "question": "タブ補完機能は、どのような名前を検索対象としていますか？",
+        "choices": [
+            "Pythonの文の名前、現在のローカル変数、利用可能なモジュール名",
+            "インターネット上のすべてのPythonパッケージ名",
+            "ファイルシステム上のすべてのファイル名",
+            "ヘルプドキュメント内のキーワード"
+        ],
+        "correct": 1,
+        "category": 14,
+        "hint": "補完機能は、Pythonの文の名前、現在のローカル変数、および利用可能なモジュール名を検索します。",
+        "url": "https://docs.python.org/ja/3/tutorial/interactive.html"
+    },
+    {
+        "question": "`string.a` のようなドットで区切られた式でTabキーを押した場合、補完候補はどのように決定されますか？",
+        "choices": [
+            "常にエラーになる",
+            "`string`という名前のモジュールの内容を推測する",
+            "`string`の部分を評価し、結果のオブジェクトの属性から候補を示す",
+            "ファイル名 `string.a` を探す"
+        ],
+        "correct": 3,
+        "category": 14,
+        "hint": "最後の'.'までの式を評価し、結果として得られたオブジェクトの属性から補完候補を示します。",
+        "url": "https://docs.python.org/ja/3/tutorial/interactive.html"
+    },
+    {
+        "question": "コマンド履歴がファイルに保存されることの利点は何ですか？",
+        "choices": [
+            "ディスク容量を節約できる",
+            "次回の対話セッションで再び利用することができる",
+            "プログラムの実行が速くなる",
+            "他のユーザーと履歴を共有できる"
+        ],
+        "correct": 2,
+        "category": 14,
+        "hint": "履歴はファイルに保存され、次回の対話的なインタプリタのセッションで再び利用することができます。",
+        "url": "https://docs.python.org/ja/3/tutorial/interactive.html"
+    },
+    {
+        "question": "ドット区切りの式のタブ補完において、`__getattr__()` メソッドを持つオブジェクトが含まれている場合に、特に注意すべき点として本文で述べられていることは何ですか？",
+        "choices": [
+            "補完が非常に遅くなる",
+            "アプリケーション定義のコードが実行される可能性がある",
+            "メモリリークが発生する",
+            "インタプリタがフリーズする"
+        ],
+        "correct": 2,
+        "category": 14,
+        "hint": "本文では、`__getattr__()` がアプリケーション定義のコードを実行するかもしれないので注意するよう促しています。",
+        "url": "https://docs.python.org/ja/3/tutorial/interactive.html"
+    },
+    {
+        "question": "`IPython` や `bpython` のような代替インタプリタが提供する機能として、本文で挙げられているものはどれですか？",
+        "choices": [
+            "Webアプリケーションのデプロイ",
+            "GUIのデザイン",
+            "タブ補完、オブジェクト探索、先進的な履歴管理",
+            "コードの自動コンパイル"
+        ],
+        "correct": 3,
+        "category": 14,
+        "hint": "IPythonは、タブ補完、オブジェクト探索や先進的な履歴管理といった機能を持っています。",
+        "url": "https://docs.python.org/ja/3/tutorial/interactive.html"
+    },
+    {
+        "question": "タブ補完が式を『評価』する仕様は、どのような予期せぬ副作用を引き起こす可能性がありますか？",
+        "choices": [
+            "シンボルテーブルが破壊され、変数が利用できなくなる",
+            "__getattr__() のような特殊メソッドが呼び出され、意図しないコード（計算、I/Oなど）が実行される",
+            "インタプリタがクラッシュし、セッションが終了する",
+            "補完候補が一切表示されなくなる"
+        ],
+        "correct": 2,
+        "category": 14,
+        "hint": "補完機能は、単に名前を静的に検索するのではなく、'.' の前の式を実際に評価します。この評価プロセス中に、__getattr__()のようなメソッドが呼び出されると、そのメソッド内に書かれた任意のコードが実行される可能性があります。",
+        "url": "https://docs.python.org/ja/3/tutorial/interactive.html"
+    },
+    {
+        "question": "標準インタプリタと比較して、`IPython` や `bpython` のような代替インタプリタが「より優れている」とされる理由として、本文から推測できることは何ですか？",
+        "choices": [
+            "実行速度が常に10倍以上速い",
+            "標準インタプリタにはない、より生産性を高める追加機能（インデント補助、括弧の対応チェックなど）を提供しているから",
+            "Pythonの文法が異なるから",
+            "標準ライブラリが付属していないから"
+        ],
+        "correct": 2,
+        "category": 14,
+        "hint": "本文では「行を継続するときに正しいインデントが提示されたら快適でしょう」「括弧やクォートなどの対応をチェックするコマンドも有用でしょう」といった要望を挙げた後で、代替インタプリタを紹介しており、これらがその要望に応える機能を持つことを示唆しています。",
+        "url": "https://docs.python.org/ja/3/tutorial/interactive.html"
+    },
+    {
+        "question": "タブ補完が「インタプリタのシンボルテーブルを使ってもよいかもしれません」という記述が意味することは何ですか？",
+        "choices": [
+            "補完機能は現在のスコープで定義されている変数や関数を認識し、候補として提示できるということ",
+            "シンボルテーブルを破壊する危険性があるということ",
+            "補完が利用できるのはシンボルだけであるということ",
+            "補完を使うとメモリ使用量が増えるということ"
+        ],
+        "correct": 1,
+        "category": 14,
+        "hint": "シンボルテーブルは、変数名や関数名とその実体を対応付けるデータ構造です。補完機構がこれを利用することで、現在利用可能なオブジェクトの名前を正確にリストアップできます。",
+        "url": "https://docs.python.org/ja/3/tutorial/interactive.html"
+    },
+    {
+        "question": "「対話入力編集と履歴置換」機能が、特にどのようなユーザーにとって価値があると考えられますか？",
+        "choices": [
+            "GUIアプリケーションの一般ユーザー",
+            "ライブラリやAPIを試行錯誤しながら学ぶ開発者",
+            "大規模なバッチ処理を実行するシステム管理者",
+            "ドキュメントだけを読む人"
+        ],
+        "correct": 2,
+        "category": 14,
+        "hint": "これらの機能は、コマンドを頻繁に入力し、タイプミスを修正したり、過去のコマンドを再利用したりする対話的な作業の効率を大幅に向上させます。これは、試行錯誤が中心となる学習やデバッグの場面で特に有効です。",
+        "url": "https://docs.python.org/ja/3/tutorial/interactive.html"
+    },
+    {
+        "question": "`~/.python_history` ファイルにコマンド履歴が保存される仕組みは、どのような利便性をもたらしますか？",
+        "choices": [
+            "インタプリタを再起動しても、以前のセッションで実行した複雑なコマンドを矢印キーで呼び出して再利用できる",
+            "すべてのPythonスクリプトが自動的に実行される",
+            "セキュリティが向上する",
+            "Pythonのバージョンが自動的に更新される"
+        ],
+        "correct": 1,
+        "category": 14,
+        "hint": "この永続化機能により、一度閉じたターミナルを再度開いてPythonインタプリタを起動しても、前回の作業の続きから（コマンド履歴を再利用して）スムーズに再開できます。",
+        "url": "https://docs.python.org/ja/3/tutorial/interactive.html"
+    },
+    {
+        "question": "GNU Readlineライブラリは、Pythonに特化したものではなく、他の多くのシェル（例: Bash）でも利用されています。この事実から何が言えますか？",
+        "choices": [
+            "Pythonインタプリタの操作感は、使い慣れたシェルの操作感と似ている部分がある",
+            "PythonはBashスクリプトしか実行できない",
+            "すべてのシェルはPythonで書かれている",
+            "PythonはReadlineライブラリがないと動作しない"
+        ],
+        "correct": 1,
+        "category": 14,
+        "hint": "共通のライブラリを利用しているため、Bashなどでのコマンドライン編集（Ctrl-Aで行頭へ、Ctrl-Eで行末へ移動など）に慣れているユーザーは、Pythonの対話モードでも同じキーバインドが使えることが多く、学習コストが低くなります。",
+        "url": "https://docs.python.org/ja/3/tutorial/interactive.html"
+    },
+    {
+        "question": "標準インタプリタに欠けていると指摘されている「括弧やクォートなどの対応をチェックする機能」は、どのような問題を未然に防ぐのに役立ちますか？",
+        "choices": [
+            "ネットワーク接続のエラー",
+            "`SyntaxError`（構文エラー）",
+            "`TypeError`（型エラー）",
+            "`NameError`（名前エラー）"
+        ],
+        "correct": 2,
+        "category": 14,
+        "hint": "長いコード行やネストしたデータ構造を入力する際に、括弧やクォートの閉じ忘れはよくあるミスです。これをリアルタイムでチェックできれば、Enterキーを押して構文エラーになる前に入力ミスに気づくことができます。",
+        "url": "https://docs.python.org/ja/3/tutorial/interactive.html"
+    },
+    {
+        "question": "タブ補完機能がインタプリタの起動時に「自動的に有効化されます」とあることから、この機能のPythonにおける位置づけについて何が言えますか？",
+        "choices": [
+            "オプションの実験的な機能である",
+            "開発者体験を向上させるための、標準的で重要な機能と見なされている",
+            "上級者のみが手動で設定する機能である",
+            "近い将来廃止される予定の機能である"
+        ],
+        "correct": 2,
+        "category": 14,
+        "hint": "デフォルトで有効になっているということは、この機能がほとんどのユーザーにとって有用であり、Pythonの対話的利用における基本的な体験の一部として提供されていることを示しています。",
+        "url": "https://docs.python.org/ja/3/tutorial/interactive.html"
+    },
+    {
+        "question": "なぜ `IPython` のようなツールは「対話的インタープリタの代替」でありながら、「他のアプリケーションに組込まれ」ることもあるのでしょうか？",
+        "choices": [
+            "IPythonが単なる実行可能ファイルではなく、強力な対話機能を提供するライブラリとしても設計されているから",
+            "すべてのPythonアプリケーションはIPythonを必要とするから",
+            "IPythonはグラフィカルなウィジェットしか提供しないから",
+            "アプリケーションに組み込むと動作が遅くなるから"
+        ],
+        "correct": 1,
+        "category": 14,
+        "hint": "IPythonのコア部分は、他のソフトウェアから呼び出して利用できるコンポーネントとして作られています。これにより、例えば科学技術計算アプリケーションなどが、自身のプログラム内に高度な対話シェルを組み込むことができます（例：Jupyter Notebook）。",
+        "url": "https://docs.python.org/ja/3/tutorial/interactive.html"
+    },
+    {
+        "question": "本文で挙げられている標準インタプリタの改善要望（インデント補助、シンボルテーブル利用の補完、括弧の対応チェック）に共通する目的は何ですか？",
+        "choices": [
+            "プログラムの実行速度の向上",
+            "対話的なコーディング体験の効率化とエラーの削減",
+            "Pythonの文法をより複雑にすること",
+            "メモリ使用量の削減"
+        ],
+        "correct": 2,
+        "category": 14,
+        "hint": "これらの機能はすべて、開発者が対話モードでコードを書く際の、入力の手間を省き、構文エラーのような単純なミスを減らすことを目的としています。これらは直接的なパフォーマンス向上ではなく、開発者の生産性向上に寄与します。",
+        "url": "https://docs.python.org/ja/3/tutorial/interactive.html"
+    },
   {
-    "question": "プログラミング言語Pythonの名称は、何に由来していますか？",
+    "question": "Pythonインタプリタを終了するための、ファイル終端文字のキー入力として正しくないものはどれですか？",
     "choices": [
-      "BBCのテレビ番組「モンティ・パイソンの空飛ぶサーカス」",
-      "ギリシャ神話に登場する巨大な蛇「ピュートーン」",
-      "開発者が飼育していたニシキヘビの名前",
-      "特定の爬虫類とは関係なく、力強さを象徴する名称"
-    ],
-    "correct": 1,
-    "category": 1
-  },
-  {
-    "question": "ソースコンテクストによると、Pythonはどのような種類の言語として分類されていますか？",
-    "choices": [
-      "コンパイラ言語",
-      "アセンブリ言語",
-      "インタプリタ言語",
-      "マークアップ言語"
-    ],
-    "correct": 3,
-    "category": 1
-  },
-  {
-    "question": "Pythonが「超高級言語 (very-high-level language)」と呼ばれる理由として、ソースコンテクストで挙げられている特徴はどれですか？",
-    "choices": [
-      "ハードウェアを直接制御する機能が豊富なこと",
-      "可変長配列や辞書などの高級な型を組込みで持っていること",
-      "専門家以外には理解が困難な複雑な文法を持つこと",
-      "実行速度が他のどの言語よりも速いこと"
-    ],
-    "correct": 2,
-    "category": 1
-  },
-  {
-    "question": "ソースコンテクストで、Pythonを使って自動化できる作業の例として挙げられているものはどれですか？",
-    "choices": [
-      "オペレーティングシステムのカーネル開発",
-      "ウェブブラウザのレンダリングエンジン作成",
-      "多数のテキストファイルに対する一括検索・置換操作",
-      "コンピュータのCPUアーキテクチャ設計"
-    ],
-    "correct": 3,
-    "category": 1
-  },
-  {
-    "question": "C/C++/Javaと比較して、Pythonでの開発が時間を節約できる主な理由として、ソースコンテクストで述べられているのはどれですか？",
-    "choices": [
-      "コンパイルやリンクの作業が不要であるため",
-      "利用できるライブラリの数が少ないため",
-      "厳密な型指定が常に要求されるため",
-      "コードの実行速度が常に最速であるため"
-    ],
-    "correct": 1,
-    "category": 1
-  },
-  {
-    "question": "Pythonで書かれたプログラムがC言語などより短くなる理由の一つとして、ソースコンテクストで説明されているものはどれですか？",
-    "choices": [
-      "プログラムの実行文のグループ化をインデントで行うため",
-      "全ての標準関数名が1文字に短縮されているため",
-      "コメントの記述が一切許可されていないため",
-      "使用できるデータ型が整数型のみに限定されているため"
-    ],
-    "correct": 1,
-    "category": 1
-  },
-  {
-    "question": "Pythonの拡張性について、ソースコンテクストではどのようなことが可能であると説明されていますか？",
-    "choices": [
-      "Pythonの文法をJavaScript風に自由に変更できる",
-      "Pythonで書いたコードを自動的にJavaバイトコードに変換できる",
-      "C言語で新たな組み込み関数やモジュールをインタプリタに追加できる",
-      "実行中にプログラムのメモリ上限を動的に拡張できる"
-    ],
-    "correct": 3,
-    "category": 1
-  },
-  {
-    "question": "ソースコンテクストによると、Unixシェルスクリプトが比較的向いていないとされる用途はどれですか？",
-    "choices": [
-      "ファイル操作",
-      "テキストデータの操作",
-      "GUIアプリケーションやゲームの開発",
-      "簡単なコマンドの自動実行"
-    ],
-    "correct": 3,
-    "category": 1
-  },
-  {
-    "question": "Pythonに付属する膨大な標準モジュールの主な役割として、ソースコンテクストで述べられていることはどれですか？",
-    "choices": [
-      "プログラムを意図的に複雑にし、解読を困難にすること",
-      "プログラムを作る上での基盤として利用できること",
-      "商用ライセンスの購入を促すためのサンプル機能を提供すること",
-      "プログラムの実行速度をあえて遅くするデバッグ機能を提供すること"
-    ],
-    "correct": 2,
-    "category": 1
-  },
-  {
-    "question": "Pythonの標準モジュールが提供する機能の具体例として、ソースコンテクストで挙げられているものはどれですか？",
-    "choices": [
-      "高度な3Dグラフィックス描画",
-      "機械学習モデルのトレーニング",
-      "ブロックチェーンのトランザクション管理",
-      "ファイル I/O、システムコール、ソケット"
+      "Unixでの Control-D",
+      "Windowsでの Control-Z",
+      "quit() コマンドの入力",
+      "Unixでの Control-C"
     ],
     "correct": 4,
-    "category": 1
+    "category": 2,
+    "hint": "インタプリタを終了するには、ファイル終端文字 (Unixでは Control-D、DOS や Windows では Control-Z) を入力するか、コマンド `quit()` を入力します。Control-Cは通常、割り込みを発生させますが、インタプリタを終了するとは限りません。",
+    "url": "https://docs.python.org/ja/3/tutorial/interpreter.html"
   },
   {
-    "question": "プロの開発者がC/C++/Javaの「編集/コンパイル/テスト/再コンパイルのサイクル」に不満を持つ状況で、Pythonが有効な解決策となるのはなぜだとソースコンテクストから推測できますか？",
+    "question": "Pythonインタプリタが対話モードでコマンドの入力を促す際に表示する、一次プロンプトは通常どれですか？",
     "choices": [
-      "PythonがC++よりも高速なコンパイラを提供しているから",
-      "Pythonにはテストが不要な文化があるから",
-      "インタプリタ言語であるためコンパイルが不要で、テストの試行錯誤を迅速に行えるから",
-      "PythonがC++のコードを自動的にリファクタリングする機能を持つから"
-    ],
-    "correct": 3,
-    "category": 1
-  },
-  {
-    "question": "ソースコンテクストの記述に基づくと、開発者が既存のC/C++/Javaライブラリのテストを書きたい場合、Pythonを選ぶ最も大きな動機は何であると考えられますか？",
-    "choices": [
-      "C++と完全に同じ文法でテストが書けるため",
-      "開発サイクルが速く、気軽にテストコードを書いて実行できるため",
-      "Pythonで書いたテストはバグが一切発生しないため",
-      "テストコードの実行速度がJavaの10倍以上になるため"
-    ],
-    "correct": 2,
-    "category": 1
-  },
-  {
-    "question": "Pythonプログラムが他の言語より短くなる理由として、ソースコンテクストで挙げられて**いない**ものは次のうちどれですか？",
-    "choices": [
-      "高レベルのデータ型が使えること",
-      "変数や引数の宣言が不要なこと",
-      "インデントで文のグループ化を行うこと",
-      "AIによるコードの自動短縮機能があること"
-    ],
-    "correct": 4,
-    "category": 1
-  },
-  {
-    "question": "「実行文のグループ化を...インデントで行えます」という特徴は、PythonのコードがC言語などと比較してどのような外見的特徴を持つことを示唆していますか？",
-    "choices": [
-      "ブロックを示すための括弧 `{}` が少なく、視覚的に整っている",
-      "全ての行末にセミコロン `;` が必須である",
-      "C言語よりも多くの記号や括弧を使用する",
-      "コードの見た目よりも、実行速度を最優先する設計である"
-    ],
-    "correct": 1,
-    "category": 1
-  },
-  {
-    "question": "Pythonが『超高級言語』と呼ばれる理由の一つに『高級な型を組込みで持つ』点がありますが、この特徴はソースコンテクストで述べられているPythonのどの利点に直接貢献していますか？",
-    "choices": [
-      "高レベルのデータ型によって、複雑な操作を一つの実行文で表現できる点。",
-      "コンパイルやリンクの作業が不要である点。",
-      "インデントによって文のグループ化ができる点。",
-      "C言語で新たなモジュールをインタプリタに追加できる点。"
-    ],
-    "correct": 1,
-    "category": 1
-  },
-  {
-    "question": "ソースコンテクストはPythonをAwkやPerlと比較して『より汎用的なデータ型を備えて』いると述べています。この特徴から推測されるPythonの利点は何ですか？",
-    "choices": [
-      "テキスト処理の実行速度がAwkやPerlより格段に速いこと。",
-      "ファイル操作やテキスト処理だけでなく、GUIアプリケーション開発のような、より幅広い問題領域に対応できること。",
-      "C言語とほぼ同じ文法構造を持ち、学習しやすいこと。",
-      "Unixシェルスクリプトと完全に互換性があること。"
-    ],
-    "correct": 2,
-    "category": 1
-  },
-  {
-    "question": "Pythonがインタプリタ言語であることと、対話的に使えることは、開発プロセスにおいてどのような相乗効果を生むとソースコンテクストは示唆していますか？",
-    "choices": [
-      "書いたコードが自動的にコンパイルされ、配布可能な実行ファイルが即座に生成される",
-      "デバッグが不要になり、常にバグのないプログラムが書けるようになる",
-      "ボトムアップでの開発時に、関数を一つずつ気軽にテストしながら進めることができる",
-      "GUIのデザインを対話的に変更しながら、リアルタイムでコードに反映される"
-    ],
-    "correct": 3,
-    "category": 1
-  },
-  {
-    "question": "ソースコンテクストの「便利な電卓にもなります」という一文は、Pythonのどのような性質を比喩的に表現していますか？",
-    "choices": [
-      "標準で高度な金融計算ライブラリが付属していること",
-      "インタプリタを対話的に起動し、数式などを入力してすぐに結果を得られる手軽さ",
-      "GUIの電卓アプリケーションを一行のコードで作成できること",
-      "全ての数値計算がハードウェアレベルで最適化されていること"
-    ],
-    "correct": 2,
-    "category": 1
-  },
-  {
-    "question": "Pythonの拡張性を活用するシナリオとして、ソースコンテクストの記述から最も適切に考えられるものはどれですか？",
-    "choices": [
-      "Pythonプログラム全体の処理が遅いため、インタプリタ自体をC言語で自作する",
-      "Pythonプログラムの中で特に処理に時間がかかる一部分だけをC言語で実装し、高速化する",
-      "Pythonの文法が気に入らないため、C言語を使って独自の文法を追加する",
-      "Pythonの標準ライブラリを全てC言語で書き直し、パフォーマンスを改善する"
-    ],
-    "correct": 2,
-    "category": 1
-  },
-  {
-    "question": "ある開発者が、既存のC言語製大規模アプリケーションに、ユーザが独自の簡単なスクリプトを書いて機能を拡張できる仕組みを追加したいと考えています。ソースコンテクストに基づくと、この目的を達成するためにPythonはどのように利用できますか？",
-    "choices": [
-      "Cアプリケーションのコードを全てPythonに自動変換する。",
-      "PythonインタプリタをCアプリケーションに組み込み、拡張言語として提供する。",
-      "PythonスクリプトをC言語のバイナリにコンパイルしてから連携させる。",
-      "Cアプリケーションのパフォーマンスが低い部分をPythonで書き直す。"
-    ],
-    "correct": 2,
-    "category": 1
-  },
-  {
-    "question": "Unixライクなシステムで、Python 3インタプリタを起動するための一般的なコマンドは何ですか？",
-    "choices": [
-      "python",
-      "py",
-      "python3",
-      "run python"
-    ],
-    "correct": 3,
-    "category": 2
-  },
-  {
-    "question": "Windows環境で、Pythonインタプリタをファイル終端文字を使って終了させるためのキーの組み合わせは何ですか？",
-    "choices": [
-      "Control - C",
-      "Control - D",
-      "Control - Z",
-      "Alt - F4"
-    ],
-    "correct": 3,
-    "category": 2
-  },
-  {
-    "question": "ファイル終端文字による終了操作が機能しない場合、インタプリタを終了させるために代わりに入力できるコマンドは何ですか？",
-    "choices": [
-      "exit()",
-      "quit()",
-      "end()",
-      "close()"
-    ],
-    "correct": 2,
-    "category": 2
-  },
-  {
-    "question": "Pythonの対話モードにおける、コマンド入力を促す一次プロンプトとして通常使用される記号は何ですか？",
-    "choices": [
-      "$$$",
-      "---",
-      ">>>",
-      "..."
-    ],
-    "correct": 3,
-    "category": 2
-  },
-  {
-    "question": "Pythonの対話モードで、if文などの複数行にわたる構文を入力する際に表示される二次プロンプトの記号は何ですか？",
-    "choices": [
-      ">>>",
       "...",
-      "---",
-      "+++"
+      ">>>",
+      ">",
+      "$"
     ],
     "correct": 2,
-    "category": 2
+    "category": 2,
+    "hint": "対話モードでは、インタプリタは一次プロンプトを表示して、ユーザにコマンドを入力するよう促します。一次プロンプトは普通、三つの「大なり記号」 (>>>) です。",
+    "url": "https://docs.python.org/ja/3/tutorial/interpreter.html"
   },
   {
-    "question": "Pythonのソースコードでエンコーディングが明示的に指定されていない場合、デフォルトでどのエンコーディングとして扱われますか？",
-    "choices": [
-      "ASCII",
-      "Shift-JIS",
-      "EUC-JP",
-      "UTF-8"
-    ],
-    "correct": 4,
-    "category": 2
-  },
-  {
-    "question": "PythonソースコードでUTF-8以外のエンコーディングを使用したい場合、ファイルの先頭行に記述すべき特別なコメントの書式はどれですか？",
-    "choices": [
-      "// encoding: name",
-      "# encoding = name",
-      "# -*- coding: name -*-",
-      "/* coding: name */"
-    ],
-    "correct": 3,
-    "category": 2
-  },
-  {
-    "question": "ファイルに保存されたPythonスクリプトを実行する方法として、ドキュメントで説明されているのはどれですか？",
-    "choices": [
-      "インタプリタを起動し、import文で読み込む",
-      "ファイル名を引数に指定してインタプリタを起動する",
-      "ファイルをインタプリタのアイコンにドラッグ＆ドロップする",
-      "コンパイラで実行ファイルを作成する"
-    ],
-    "correct": 2,
-    "category": 2
-  },
-  {
-    "question": "スクリプトファイルを実行した後に、そのまま対話モードに移行したい場合に使用するコマンドラインオプションは何ですか？",
-    "choices": [
-      "-c",
-      "-m",
-      "-i",
-      "-s"
-    ],
-    "correct": 3,
-    "category": 2
-  },
-  {
-    "question": "コマンドラインからファイルを使わずに直接Pythonの文を実行するために使用するオプションは何ですか？",
-    "choices": [
-      "-e",
-      "-x",
-      "-c",
-      "-run"
-    ],
-    "correct": 3,
-    "category": 2
-  },
-  {
-    "question": "対話モードでコマンドライン編集機能がサポートされているかを確認する最も手早い方法として、ドキュメントで紹介されているキー入力は何ですか？",
-    "choices": [
-      "Tabキーを押す",
-      "Control - A を入力する",
-      "Control - P を入力する",
-      "上矢印キーを押す"
-    ],
-    "correct": 3,
-    "category": 2
-  },
-  {
-    "question": "スクリプト名も引数も指定せずにPythonインタプリタを対話モードで起動した場合、`sys.argv[0]`の値は何になりますか？",
-    "choices": [
-      "__main__",
-      "None",
-      "空の文字列",
-      "python"
-    ],
-    "correct": 3,
-    "category": 2
-  },
-  {
-    "question": "`python -c \"print('hello')\"` のように `-c` オプションを使ってインタプリタを起動した場合、`sys.argv[0]` の値は何になりますか？",
-    "choices": [
-      "'-c'",
-      "\"print('hello')\"",
-      "スクリプトのフルパス",
-      "空の文字列"
-    ],
-    "correct": 1,
-    "category": 2
-  },
-  {
-    "question": "`-m module` オプションを使ってモジュールをスクリプトとして実行した場合、`sys.argv[0]` には何が格納されますか？",
-    "choices": [
-      "モジュール名",
-      "'-m'",
-      "モジュールのフルパス",
-      "Pythonインタプリタのパス"
-    ],
-    "correct": 3,
-    "category": 2
-  },
-  {
-    "question": "インタプリタに渡されたスクリプト名とコマンドライン引数が、文字列のリストとして格納される`sys`モジュール内の変数名は何ですか？",
+    "question": "Pythonスクリプトに渡されたコマンドライン引数が格納される、`sys`モジュールの変数は何ですか？",
     "choices": [
       "sys.args",
       "sys.params",
@@ -382,1105 +1594,2049 @@
       "sys.input"
     ],
     "correct": 3,
-    "category": 2
+    "category": 2,
+    "hint": "スクリプト名やスクリプト名以後に指定した引数は、文字列のリストに変換されて `sys` モジュールの `argv` 変数に格納されます。",
+    "url": "https://docs.python.org/ja/3/tutorial/interpreter.html"
   },
   {
-    "question": "ソースコードのエンコーディングとして `Windows-1252` を指定する場合、ファイルの先頭に記述すべき正しい行はどれですか？",
+    "question": "Pythonインタプリタを起動し、指定したコマンドを実行するためのコマンドラインオプションはどれですか？",
     "choices": [
-      "# encoding: windows-1252",
-      "# -*- coding: cp1252 -*-",
-      "# coding = cp1252",
-      "// -*- encoding: cp1252 -*-"
+      "-c command",
+      "-x command",
+      "-e command",
+      "-r command"
+    ],
+    "correct": 1,
+    "category": 2,
+    "hint": "インタプリタを `python -c command [arg] ...` のように起動する方法もあります。この形式では、シェルの-cオプションと同じように、commandに指定した文を実行します。",
+    "url": "https://docs.python.org/ja/3/tutorial/interpreter.html"
+  },
+  {
+    "question": "Pythonのソースコードで、デフォルトとして扱われるエンコーディングは何ですか？",
+    "choices": [
+      "ASCII",
+      "Shift-JIS",
+      "EUC-JP",
+      "UTF-8"
+    ],
+    "correct": 4,
+    "category": 2,
+    "hint": "デフォルトでは、PythonのソースコードはUTF-8でエンコードされているものとして扱われます。",
+    "url": "https://docs.python.org/ja/3/tutorial/interpreter.html"
+  },
+  {
+    "question": "スクリプトファイルを実行した後、対話モードに入るためのコマンドラインオプションはどれですか？",
+    "choices": [
+      "-i",
+      "-t",
+      "-a",
+      "-p"
+    ],
+    "correct": 1,
+    "category": 2,
+    "hint": "スクリプトファイルを使用する場合、スクリプトの実行が完了した後、そのまま対話モードに入れると便利なことがあります。これには-iをスクリプト名の前に追加します。",
+    "url": "https://docs.python.org/ja/3/tutorial/interpreter.html"
+  },
+  {
+    "question": "Pythonの対話モードで、複数行の構文を入力する際に表示される二次プロンプトは、デフォルトでどれですか？",
+    "choices": [
+      ">>>",
+      "---",
+      "...",
+      ":::"
+    ],
+    "correct": 3,
+    "category": 2,
+    "hint": "継続行では、インタプリタは二次プロンプトを表示します。二次プロンプトは、デフォルトでは三つのドット (...) です。",
+    "url": "https://docs.python.org/ja/3/tutorial/interpreter.html"
+  },
+  {
+    "question": "Pythonスクリプトを `python script.py arg1 arg2` のように実行した場合、`sys.argv[0]` には何が格納されますか？",
+    "choices": [
+      "python",
+      "script.py",
+      "arg1",
+      "空の文字列"
     ],
     "correct": 2,
-    "category": 2
+    "category": 2,
+    "hint": "`sys.argv` リストの最初の要素はスクリプト名です。したがって、`sys.argv[0]`には`script.py`が格納されます。",
+    "url": "https://docs.python.org/ja/3/tutorial/interpreter.html"
   },
   {
-    "question": "UNIXの \"shebang\" 行 (`#!/usr/bin/env python3`) が存在するソースファイルにおいて、エンコーディング宣言はどの行に記述する必要がありますか？",
+    "question": "ソースコードのエンコーディングをデフォルトのUTF-8以外に指定する場合、ファイルのどの位置に特別なコメントを記述する必要がありますか？",
     "choices": [
-      "1行目（shebang行の前）",
-      "1行目（shebang行と置き換える）",
+      "ファイルの末尾",
+      "ファイルの先頭行（shebang行がある場合は2行目）",
+      "ファイルの任意の位置",
+      "ファイルの中央"
+    ],
+    "correct": 2,
+    "category": 2,
+    "hint": "デフォルトエンコーディング以外のエンコーディングを使用するには、ファイルの先頭の行に特別なコメントを追加しなければなりません。shebang行がある場合は、エンコーディングの宣言はファイルの2行目に追加します。",
+    "url": "https://docs.python.org/ja/3/tutorial/interpreter.html"
+  },
+  {
+    "question": "モジュールをスクリプトとして実行するためのコマンドラインオプションはどれですか？",
+    "choices": [
+      "-c module",
+      "-i module",
+      "-m module",
+      "-s module"
+    ],
+    "correct": 3,
+    "category": 2,
+    "hint": "Pythonのモジュールには、スクリプトとしても便利に使えるものがあります。 `python -m module [arg] ...` のように起動すると、moduleのソースファイルを、フルパスを指定して起動したかのように実行できます。",
+    "url": "https://docs.python.org/ja/3/tutorial/interpreter.html"
+  },
+  {
+    "question": "`python -c 'import sys; print(sys.argv)' arg1` を実行した場合、`sys.argv` の内容はどうなりますか？",
+    "choices": [
+      "['-c', 'import sys; print(sys.argv)', 'arg1']",
+      "['-c', 'arg1']",
+      "['import sys; print(sys.argv)', 'arg1']",
+      "['arg1']"
+    ],
+    "correct": 2,
+    "category": 2,
+    "hint": "`python -c command [arg] ...` の形式で起動した場合、`sys.argv[0]` は `'-c'` となり、`command` に指定した文は `sys.argv` には含まれません。`command` の後の引数がリストに格納されます。",
+    "url": "https://docs.python.org/ja/3/tutorial/interpreter.html"
+  },
+  {
+    "question": "`python -m mymodule arg1` を実行したとき、`sys.argv[0]` には何が格納されますか？",
+    "choices": [
+      "mymodule",
+      "'-m'",
+      "mymoduleのフルパス",
+      "空の文字列"
+    ],
+    "correct": 3,
+    "category": 2,
+    "hint": "`-m module` を使った場合、`sys.argv[0]` はモジュールのフルパスになります。",
+    "url": "https://docs.python.org/ja/3/tutorial/interpreter.html"
+  },
+  {
+    "question": "スクリプトも引数も指定せずにPythonインタプリタを対話モードで起動した場合、`sys.argv[0]` はどうなりますか？",
+    "choices": [
+      "'' (空の文字列)",
+      "'-'",
+      "エラーが発生する",
+      "定義されない"
+    ],
+    "correct": 1,
+    "category": 2,
+    "hint": "`sys.argv` には少なくとも一つ要素が入っています。スクリプト名も引数も指定しなければ、`sys.argv[0]` は空の文字列になります。",
+    "url": "https://docs.python.org/ja/3/tutorial/interpreter.html"
+  },
+  {
+    "question": "ソースコードのエンコーディング宣言として正しい書式はどれですか？",
+    "choices": [
+      "// encoding: utf-8",
+      "/* coding: utf-8 */",
+      "# -*- coding: utf-8 -*-",
+      "<!-- encoding: utf-8 -->"
+    ],
+    "correct": 3,
+    "category": 2,
+    "hint": "デフォルトエンコーディング以外のエンコーディングを使用するための書式は `# -*- coding: encoding -*-` です。`encoding` にはPythonがサポートする有効なエンコーディングを指定します。",
+    "url": "https://docs.python.org/ja/3/tutorial/interpreter.html"
+  },
+  {
+    "question": "shebang行（例: `#!/usr/bin/env python3`）があるファイルでエンコーディング宣言を行う場合、それは何行目に記述する必要がありますか？",
+    "choices": [
+      "1行目、shebang行の前に",
+      "1行目、shebang行の後に",
       "2行目",
       "ファイルの末尾"
     ],
     "correct": 3,
-    "category": 2
+    "category": 2,
+    "hint": "ソースコードがUNIX \"shebang\" 行で始まる場合には、エンコーディングの宣言はファイルの2行目に追加します。",
+    "url": "https://docs.python.org/ja/3/tutorial/interpreter.html"
   },
   {
-    "question": "ドキュメントによると、GNU Readline ライブラリがサポートされているシステムで利用可能になる機能として挙げられているものはどれですか？",
+    "question": "対話モードでコマンドライン編集機能がサポートされているかを確認する簡単な方法として、ドキュメントで紹介されているキー入力はどれですか？",
     "choices": [
-      "デバッグ機能とブレークポイント",
-      "マルチスレッド処理のサポート",
-      "対話的行編集とヒストリ置換",
-      "GUIアプリケーションの構築"
-    ],
-    "correct": 3,
-    "category": 2
-  },
-  {
-    "question": "Microsoft ストアからPythonをインストールしたWindowsマシンで、利用可能になるバージョン指定のコマンドはどれですか？",
-    "choices": [
-      "python",
-      "py",
-      "python3",
-      "python.exe"
-    ],
-    "correct": 3,
-    "category": 2
-  },
-  {
-    "question": "ある開発者が `python -m mymodule --verbose` というコマンドを実行しました。`mymodule` のスクリプト内から `--verbose` という引数にアクセスするには、どのモジュールのどの変数を確認すべきですか？",
-    "choices": [
-      "os.args",
-      "sys.argv",
-      "argparse.args",
-      "main.argv"
+      "Control-A",
+      "Control-P",
+      "Tabキー",
+      "上矢印キー"
     ],
     "correct": 2,
-    "category": 2
+    "category": 2,
+    "hint": "コマンドライン編集機能がサポートされているかを最も手っ取り早く調べる方法は、おそらく最初に表示された Python プロンプトに Control-P を入力してみることです。ビープ音が鳴るなら、コマンドライン編集機能があります。",
+    "url": "https://docs.python.org/ja/3/tutorial/interpreter.html"
   },
   {
-        "question": "`17 % 3` の計算結果として正しいものはどれですか？",
-        "choices": [
-            "5",
-            "2",
-            "5.66",
-            "エラーが発生する"
-        ],
-        "correct": 2,
-        "category": 3
-    },
-    {
-        "question": "Pythonで整数除算を行い、結果の小数部を破棄する演算子はどれですか？",
-        "choices": [
-            "/",
-            "%",
-            "//",
-            "*"
-        ],
-        "correct": 3,
-        "category": 3
-    },
-    {
-        "question": "Pythonで冪乗（べきじょう）を計算する演算子はどれですか？",
-        "choices": [
-            "^",
-            "**",
-            "pow()",
-            "exp()"
-        ],
-        "correct": 2,
-        "category": 3
-    },
-    {
-        "question": "式 `(50 - 5 * 6) / 4` を実行した結果のデータ型は何ですか？",
-        "choices": [
-            "int",
-            "float",
-            "str",
-            "list"
-        ],
-        "correct": 2,
-        "category": 3
-    },
-    {
-        "question": "変数 `width` に値 `20` を代入するための正しい構文はどれですか？",
-        "choices": [
-            "width == 20",
-            "20 = width",
-            "width = 20",
-            "let width = 20"
-        ],
-        "correct": 3,
-        "category": 3
-    },
-    {
-        "question": "文字列を連結（結合）する演算子はどれですか？",
-        "choices": [
-            "&",
-            "|",
-            "+",
-            "~"
-        ],
-        "correct": 3,
-        "category": 3
-    },
-    {
-        "question": "式 `3 * 'un' + 'ium'` を実行した結果として正しい文字列はどれですか？",
-        "choices": [
-            "unununium",
-            "un3ium",
-            "un un un ium",
-            "SyntaxError"
-        ],
-        "correct": 1,
-        "category": 3
-    },
-    {
-        "question": "Pythonでリストを作成するための正しい構文はどれですか？",
-        "choices": [
-            "{1, 2, 3}",
-            "[1, 2, 3]",
-            "(1, 2, 3)",
-            "<1, 2, 3>"
-        ],
-        "correct": 2,
-        "category": 3
-    },
-    {
-        "question": "`letters = ['a', 'b', 'c', 'd']` というリストがあるとき、`len(letters)` の結果は何になりますか？",
-        "choices": [
-            "3",
-            "4",
-            "5",
-            "d"
-        ],
-        "correct": 2,
-        "category": 3
-    },
-    {
-        "question": "`word = 'Python'` のとき、インデックス `word[0]` でアクセスできる文字は何ですか？",
-        "choices": [
-            "P",
-            "n",
-            "o",
-            "エラーが発生する"
-        ],
-        "correct": 1,
-        "category": 3
-    },
-    {
-        "question": "`word = 'Python'` があるとき、`word[0] = 'J'` を実行するとどうなりますか？",
-        "choices": [
-            "`word`が`'Jython'`になる",
-            "何も起こらない",
-            "`NameError`が発生する",
-            "`TypeError`が発生する"
-        ],
-        "correct": 4,
-        "category": 3
-    },
-    {
-        "question": "以下のコードを実行した後、`rgb` の値はどうなりますか？\n`rgb = [\"Red\", \"Green\", \"Blue\"]\nrgba = rgb\nrgba.append(\"Alpha\")`",
-        "choices": [
-            "[\"Red\", \"Green\", \"Blue\"]",
-            "[\"Red\", \"Green\", \"Blue\", \"Alpha\"]",
-            "None",
-            "エラーが発生する"
-        ],
-        "correct": 2,
-        "category": 3
-    },
-    {
-        "question": "リストの「浅いコピー」を新しい変数に作成し、元のリストに影響を与えずに変更を加えるための正しい方法はどれですか？",
-        "choices": [
-            "`new_list = old_list`",
-            "`new_list = old_list[:]`",
-            "`new_list.copy(old_list)`",
-            "`new_list.append(old_list)`"
-        ],
-        "correct": 2,
-        "category": 3
-    },
-    {
-        "question": "`word = 'Python'` のとき、スライス `word[-2:]` の結果はどうなりますか？",
-        "choices": [
-            "'on'",
-            "'ho'",
-            "'th'",
-            "'Pyth'"
-        ],
-        "correct": 1,
-        "category": 3
-    },
-    {
-        "question": "Pythonの対話モードにおいて、最後に評価・表示された式の値を保持する特殊変数はどれですか？",
-        "choices": [
-            "ans",
-            "last",
-            "result",
-            "_"
-        ],
-        "correct": 4,
-        "category": 3
-    },
-    {
-        "question": "`print()`関数の`end`引数に文字列を指定すると、どのような効果がありますか？",
-        "choices": [
-            "出力の先頭に文字列が追加される",
-            "出力される各要素の間に文字列が挿入される",
-            "出力の末尾が指定した文字列になり、改行されなくなる",
-            "文字列のエンコーディングを指定する"
-        ],
-        "correct": 3,
-        "category": 3
-    },
-    {
-        "question": "文字列内のバックスラッシュ `\\` を特殊文字として解釈させないようにするための「raw文字列」を定義する方法はどれですか？",
-        "choices": [
-            "`'C:\\some\\name'`",
-            "`f'C:\\some\\name'`",
-            "`b'C:\\some\\name'`",
-            "`r'C:\\some\\name'`"
-        ],
-        "correct": 4,
-        "category": 3
-    },
-    {
-        "question": "以下の複数同時代入のコードを実行した後、`a` と `b` の値はそれぞれどうなりますか？\n`a, b = 0, 1\na, b = b, a + b`",
-        "choices": [
-            "a=1, b=1",
-            "a=1, b=0",
-            "a=0, b=1",
-            "a=1, b=2"
-        ],
-        "correct": 1,
-        "category": 3
-    },
-    {
-        "question": "`letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g']` があるとき、 `letters[2:5] = ['C', 'D', 'E']` を実行すると `letters` はどうなりますか？",
-        "choices": [
-            "['a', 'b', 'C', 'D', 'E', 'f', 'g']",
-            "['a', 'b', ['C', 'D', 'E'], 'f', 'g']",
-            "['C', 'D', 'E']",
-            "TypeErrorが発生する"
-        ],
-        "correct": 1,
-        "category": 3
-    },
-    {
-        "question": "Pythonでは、連続して並べられた文字列リテラルは自動的に連結されます。この機能が働かないのはどのケースですか？",
-        "choices": [
-            "`'Py' 'thon'`",
-            "`('Py' 'thon')`",
-            "`prefix = 'Py'; prefix + 'thon'`",
-            "`prefix = 'Py'; prefix 'thon'`"
-        ],
-        "correct": 4,
-        "category": 3
-    },
-    {
-    "question": "Pythonの`if`文において、`elif`キーワードは何を意味しますか？",
-    "choices": ["\"else if\" の短縮形で、複数の条件分岐を記述するために使用される。", "\"end if\" の短縮形で、`if`文の終わりを示す。", "\"error if\" の短縮形で、エラー発生時の処理を記述する。", "\"evaluate if\" の短縮形で、条件を再評価するために使用される。"],
+    "question": "インタプリタが `python < filename` のように起動された場合、`sys.argv[0]` の値はどうなりますか？",
+    "choices": [
+      "filename",
+      "'-'",
+      "空の文字列",
+      "<"
+    ],
+    "correct": 2,
+    "category": 2,
+    "hint": "スクリプト名の代わりに '-' (標準入力を意味します) を指定すると、 `sys.argv[0]` は '-' になります。`python < filename` は標準入力からの読み込みに相当します。",
+    "url": "https://docs.python.org/ja/3/tutorial/interpreter.html"
+  },
+  {
+    "question": "`python -i script.py` と `python script.py -i` の動作の違いについて、正しい説明はどれですか？",
+    "choices": [
+      "両者は同じ動作をする。",
+      "前者のみがスクリプト実行後に対話モードに入る。",
+      "後者のみがスクリプト実行後に対話モードに入る。",
+      "どちらも対話モードには入らない。"
+    ],
+    "correct": 2,
+    "category": 2,
+    "hint": "スクリプトファイルを使用する場合、`-i` をスクリプト名の前に追加すると、実行後に対話モードに入ります。Pythonインタープリタは、スクリプト名の後ろに指定したオプションを無視します。",
+    "url": "https://docs.python.org/ja/3/tutorial/interpreter.html"
+  },
+  {
+    "question": "`python -c command` や `python -m module` の後ろに指定されたオプション（引数）は、Pythonインタプリタによってどのように扱われますか？",
+    "choices": [
+      "インタプリタ自身によって解釈される。",
+      "無視され、`sys.argv` を通じて `command` や `module` から参照できる。",
+      "エラーを引き起こす。",
+      "`sys.path` に追加される。"
+    ],
+    "correct": 2,
+    "category": 2,
+    "hint": "Python インタープリタは、-c command や -m module の後ろに指定したオプションは無視します。無視された引数は、 sys.argv を使って command や module から参照できます。",
+    "url": "https://docs.python.org/ja/3/tutorial/interpreter.html"
+  },
+  {
+    "question": "Unixにおいて、Python 3.xのインタプリタ実行ファイルがデフォルトで `python` という名前でインストールされない理由は何ですか？",
+    "choices": [
+      "Python 3はUnixを公式にサポートしていないから。",
+      "Python 2.x実行ファイルとの衝突を避けるため。",
+      "`python3`という名前の方がタイピングしやすいから。",
+      "セキュリティ上の理由から。"
+    ],
+    "correct": 2,
+    "category": 2,
+    "hint": "Unixでは、Python 3.x インタープリタの実行ファイルはデフォルトでは python という名前ではインストールされません。同時にインストールされた Python 2.x 実行ファイルと衝突させないためです。",
+    "url": "https://docs.python.org/ja/3/tutorial/interpreter.html"
+  },
+  {
+    "question": "Pythonで整数除算（小数部を破棄する除算）を行う演算子はどれですか？",
+    "choices": [
+      "/",
+      "%",
+      "//",
+      "**"
+    ],
+    "correct": 3,
+    "category": 3,
+    "hint": "`//` 演算子は整数除算を行い、整数値を返します。例えば `17 // 3` の結果は `5` になります。",
+    "url": "https://docs.python.org/ja/3/tutorial/introduction.html"
+  },
+  {
+    "question": "Pythonで冪乗（べき乗）を計算する演算子はどれですか？",
+    "choices": [
+      "^",
+      "**",
+      "pow()",
+      "exp()"
+    ],
+    "correct": 2,
+    "category": 3,
+    "hint": "Pythonでは、冪乗を計算するのに `**` 演算子が使えます。例えば `5 ** 2` は5の2乗を計算し、`25` を返します。",
+    "url": "https://docs.python.org/ja/3/tutorial/introduction.html"
+  },
+  {
+    "question": "Pythonの対話モードで、最後に表示された結果が自動的に代入される特殊な変数は何ですか？",
+    "choices": [
+      "_",
+      "last",
+      "ans",
+      "result"
+    ],
     "correct": 1,
-    "category": 4
-    },
-    {
-    "question": "`for`ループでコレクションを反復処理中にそのコレクション自体を変更する場合、どのようなアプローチが推奨されていますか？",
-    "choices": ["ループ内で直接コレクションを変更する。", "コレクションのコピーを作成し、そのコピーに対して反復処理を行う。", "ループの前にコレクションをロックする。", "コレクションの変更には常に`while`ループを使用する。"],
+    "category": 3,
+    "hint": "対話モードでは、最後に表示された結果は変数 `_` に代入されます。これにより、計算を連続して行う作業が楽になります。",
+    "url": "https://docs.python.org/ja/3/tutorial/introduction.html"
+  },
+  {
+    "question": "Pythonで文字列リテラルを定義するために使用できるクォートの組み合わせとして正しいものはどれですか？",
+    "choices": [
+      "シングルクォート (`'...'`) のみ",
+      "ダブルクォート (`\"...\"`) のみ",
+      "シングルクォートまたはダブルクォート",
+      "バッククォート (`` `...` ``) のみ"
+    ],
+    "correct": 3,
+    "category": 3,
+    "hint": "文字列はシングルクォート (`'...'`) またはダブルクォート (`\"...\"`) で囲み、どちらを使っても違いはありません。",
+    "url": "https://docs.python.org/ja/3/tutorial/introduction.html"
+  },
+  {
+    "question": "文字列内のバックスラッシュ `\\` を特殊文字として解釈させたくない場合に使用する文字列リテラルの形式は何ですか？",
+    "choices": [
+      "f-string (f'...')",
+      "raw string (r'...')",
+      "byte string (b'...')",
+      "unicode string (u'...')"
+    ],
     "correct": 2,
-    "category": 4
-    },
-    {
-    "question": "組み込み関数 `range(5)` によって生成される数列として正しいものはどれですか？",
-    "choices": ["1, 2, 3, 4, 5", "0, 1, 2, 3, 4, 5", "0, 1, 2, 3, 4", "5のみ"],
-    "correct": 3,
-    "category": 4
-    },
-    {
-    "question": "ループ内で`break`文が実行されるとどうなりますか？",
-    "choices": ["ループの現在のイテレーションをスキップし、次のイテレーションに進む。", "プログラム全体を終了する。", "`for`文または`while`文のうち、その文を内包する最も内側のループから即座に抜け出す。", "関数から値を返す。"],
-    "correct": 3,
-    "category": 4
-    },
-    {
-    "question": "Pythonにおける`pass`文の主な役割は何ですか？",
-    "choices": ["プログラムの実行を一時停止する。", "構文上、文が必要な場所で何もしないプレースホルダとして機能する。", "ループを強制的に終了させる。", "コードが未実装であることを示す省略記号(`...`)と同じ意味を持つ。"],
+    "category": 3,
+    "hint": "`\\` に続く文字を特殊文字として解釈されたくない場合は、最初の引用符の前に `r` を付けた raw strings が使えます。",
+    "url": "https://docs.python.org/ja/3/tutorial/introduction.html"
+  },
+  {
+    "question": "文字列を連結する演算子と、反復させる演算子の組み合わせとして正しいものはどれですか？",
+    "choices": [
+      "連結: `&`, 反復: `*`",
+      "連結: `+`, 反復: `*`",
+      "連結: `+`, 反復: `^`",
+      "連結: `.` , 反復: `x`"
+    ],
     "correct": 2,
-    "category": 4
-    },
-    {
-    "question": "`match`文において、`case _:` のように使われるアンダースコア(`_`)は何を意味しますか？",
-    "choices": ["デフォルト値を示す変数。", "エラーケースのみを捕捉する特別なパターン。", "常にマッチが成功するワイルドカードとして機能し、他のどのパターンにもマッチしなかった場合のデフォルトケースとして利用される。", "何もマッチさせないことを明示的に示すパターン。"],
-    "correct": 3,
-    "category": 4
-    },
-    {
-    "question": "関数の定義内で、その関数の説明を記述するために使われる、本体の最初の文として置かれる文字列リテラルを何と呼びますか？",
-    "choices": ["コメント文字列 (comment string)", "ヘルプテキスト (help text)", "ドキュメンテーション文字列 (docstring)", "メタデータ文字列 (metadata string)"],
-    "correct": 3,
-    "category": 4
-    },
-    {
-    "question": "関数を呼び出す際に、位置引数とキーワード引数を両方使用する場合の正しい順序はどれですか？",
-    "choices": ["キーワード引数を先に記述し、その後に位置引数を記述する。", "位置引数を先に記述し、その後にキーワード引数を記述する。", "順序は任意であり、自由に混在させることができる。", "位置引数とキーワード引数は交互に記述しなければならない。"],
+    "category": 3,
+    "hint": "文字列は `+` 演算子で連結させることができ、`*` 演算子で反復させることができます。例: `3 * 'un' + 'ium'`",
+    "url": "https://docs.python.org/ja/3/tutorial/introduction.html"
+  },
+  {
+    "question": "文字列 `word = 'Python'` があるとき、最後の文字 'n' にアクセスするための負のインデックスは何ですか？",
+    "choices": [
+      "word[-0]",
+      "word[-1]",
+      "word[-6]",
+      "word[last]"
+    ],
     "correct": 2,
-    "category": 4
-    },
-    {
-    "question": "Pythonの`lambda`キーワードの主な用途は何ですか？",
-    "choices": ["再帰的な関数を効率的に定義する。", "ジェネレータ関数を作成する。", "名前のない小さな関数（無名関数）を生成する。", "非同期処理のための関数を定義する。"],
+    "category": 3,
+    "hint": "インデックスには負の値も指定でき、右から数えていきます。最後の文字のインデックスは `-1` です。",
+    "url": "https://docs.python.org/ja/3/tutorial/introduction.html"
+  },
+  {
+    "question": "リストを作成するための正しい構文はどれですか？",
+    "choices": [
+      "{1, 2, 3}",
+      "(1, 2, 3)",
+      "[1, 2, 3]",
+      "<1, 2, 3>"
+    ],
     "correct": 3,
-    "category": 4
-    },
-    {
-    "question": "Pythonの公式スタイルガイドであるPEP 8では、インデントに何を使用することが推奨されていますか？",
-    "choices": ["タブ1つ", "空白2つ", "空白4つ", "タブまたは空白のどちらでも良い"],
-    "correct": 3,
-    "category": 4
-    },
-    {
-    "question": "`for`ループや`while`ループに付随する`else`節が実行されないのは、どのような場合ですか？",
-    "choices": ["ループが正常に最後まで実行された場合。", "ループの条件が最初から偽であった場合。", "ループ内で`continue`文が実行された場合。", "ループが`break`文によって途中で終了した場合。"],
+    "category": 3,
+    "hint": "リストは、コンマ区切りの値（要素）の並びを角括弧で囲んだものとして書き表されます。例: `squares = [1, 4, 9, 16, 25]`",
+    "url": "https://docs.python.org/ja/3/tutorial/introduction.html"
+  },
+  {
+    "question": "リストの末尾に新しい要素を追加するためのメソッドは何ですか？",
+    "choices": [
+      "list.add()",
+      "list.insert_last()",
+      "list.push()",
+      "list.append()"
+    ],
     "correct": 4,
-    "category": 4
-    },
-    {
-    "question": "`range()`関数が返すオブジェクトの型に関する説明として、最も正確なものはどれですか？",
-    "choices": ["数列の全要素をメモリ上に確保したリスト(list)。", "変更不可能な数列の全要素を含むタプル(tuple)。", "要求に応じて数列の要素を逐次生成するイテラブル(iterable)オブジェクトであり、全要素をメモリ上に確保するリストと比べてメモリ効率が良い。", "数列の開始値、終了値、ステップを保持する辞書(dict)。"],
-    "correct": 3,
-    "category": 4
-    },
-    {
-    "question": "`match`文の`case`パターンに`if`節を追加する機能は何と呼ばれ、どのような役割を果たしますか？",
-    "choices": ["\"フィルター\"と呼ばれ、パターンマッチングの前に値を変換する。", "\"アサーション\"と呼ばれ、パターンがマッチした場合に条件が真であることを保証する。", "\"ガード\"と呼ばれ、パターンがマッチした後にさらに条件を評価し、その条件が偽の場合は次の`case`に進む。", "\"デコレータ\"と呼ばれ、`case`ブロックの挙動を変更する。"],
-    "correct": 3,
-    "category": 4
-    },
-    {
-    "question": "Pythonの関数で、`return`文が明示的に書かれていない、または`return`文に値が指定されていない場合、その関数は何を返しますか？",
-    "choices": ["0", "空の文字列 `\"\"`", "`None`", "最後に評価された式の値"],
-    "correct": 3,
-    "category": 4
-    },
-    {
-    "question": "関数のデフォルト引数値は、いつ評価されて設定されますか？",
-    "choices": ["関数が呼び出されるたびに、その引数が省略された場合のみ評価される。", "関数が定義された時に一度だけ評価される。", "モジュールが最初にインポートされた時に評価される。", "その引数が関数本体で初めて参照された時に遅延評価される。"],
-    "correct": 2,
-    "category": 4
-    },
-    {
-    "question": "`def add_item(item, items=[]): items.append(item); print(items)` という関数を定義しました。`add_item(1)`を実行した後、`add_item(2)`を実行すると何が出力されますか？",
-    "choices": ["[2]", "[1, 2]", "[1] と [2] がそれぞれ別の行に出力される", "[2, 1]"],
-    "correct": 2,
-    "category": 4
-    },
-    {
-    "question": "`def func(pos_arg, /): ...` のように、引数リストの最後に`/`（スラッシュ）を置いて定義された関数の引数`pos_arg`の正しい呼び出し方はどれですか？",
-    "choices": ["`func(pos_arg=1)`のようにキーワードでのみ呼び出せる。", "`func(1)`のように位置でのみ呼び出せる。", "`func(1)`でも`func(pos_arg=1)`でもどちらでも呼び出せる。", "この定義は構文エラーとなる。"],
-    "correct": 2,
-    "category": 4
-    },
-    {
-    "question": "`def func(*, kwd_arg): ...` のように、引数リストに単独の`*`（アスタリスク）を置いて定義された関数の引数`kwd_arg`の正しい呼び出し方はどれですか？",
-    "choices": ["`func(kwd_arg=1)`のようにキーワードでのみ呼び出せる。", "`func(1)`のように位置でのみ呼び出せる。", "`func(1)`でも`func(kwd_arg=1)`でもどちらでも呼び出せる。", "この定義は構文エラーとなる。"],
+    "category": 3,
+    "hint": "`list.append()` メソッドを使って、リストの末尾に新しい要素を追加できます。",
+    "url": "https://docs.python.org/ja/3/tutorial/introduction.html"
+  },
+  {
+    "question": "`while` ループの条件式において、Pythonではどのような値が「偽」として扱われますか？",
+    "choices": [
+      "ゼロの整数値、空のシーケンス",
+      "負の整数値",
+      "`None` のみ",
+      "`False` のみ"
+    ],
     "correct": 1,
-    "category": 4
-    },
-    {
-    "question": "`def func(*args): ...` のように定義された関数において、複数の位置引数を受け取る`args`変数の型は何ですか？",
-    "choices": ["リスト (list)", "辞書 (dict)", "集合 (set)", "タプル (tuple)"],
+    "category": 3,
+    "hint": "Pythonでは、ゼロでない整数値は真となり、ゼロは偽です。また、長さが1以上のシーケンスは真で、空のシーケンスは偽になります。",
+    "url": "https://docs.python.org/ja/3/tutorial/introduction.html"
+  },
+  {
+    "question": "式 `-3**2` の評価結果はどうなりますか？また、その理由として正しいものはどれですか？",
+    "choices": [
+      "9 (`-` と `3` が先に評価されるため)",
+      "-9 (`**` が `-` より優先順位が高いため)",
+      "9 (`**` は負数に対応していないため)",
+      "構文エラー"
+    ],
+    "correct": 2,
+    "category": 3,
+    "hint": "`**` は `-` より優先順位が高いため、 `-3**2` は `-(3**2)` と解釈され、計算結果は `-9` になります。 `9` を得たい場合は `(-3)**2` と書く必要があります。",
+    "url": "https://docs.python.org/ja/3/tutorial/introduction.html"
+  },
+  {
+    "question": "`word = 'Python'` のスライス `word[2:5]` の結果は何ですか？",
+    "choices": [
+      "'tho'",
+      "'thon'",
+      "'yt'",
+      "'ython'"
+    ],
+    "correct": 1,
+    "category": 3,
+    "hint": "スライスでは開始値のインデックスは含まれ、終了値のインデックスは含まれません。`word[2]`は't', `word[3]`は'h', `word[4]`は'o'なので、結果は'tho'になります。",
+    "url": "https://docs.python.org/ja/3/tutorial/introduction.html"
+  },
+  {
+    "question": "`word = 'Python'` のスライスで、最初のインデックスを省略した `word[:2]` は、何と等価ですか？",
+    "choices": [
+      "word[1:2]",
+      "word[0:2]",
+      "word[2:]",
+      "エラーになる"
+    ],
+    "correct": 2,
+    "category": 3,
+    "hint": "スライスのインデックスには便利なデフォルト値があります。最初のインデックスを省略すると、0 と見なされます。したがって、`word[:2]` は `word[0:2]` と等価です。",
+    "url": "https://docs.python.org/ja/3/tutorial/introduction.html"
+  },
+  {
+    "question": "Pythonの文字列は「不変(immutable)」です。これは何を意味しますか？",
+    "choices": [
+      "文字列の長さを変更できない。",
+      "文字列のインデックスで指定したある場所に代入を行えない。",
+      "文字列をスライスできない。",
+      "文字列を連結できない。"
+    ],
+    "correct": 2,
+    "category": 3,
+    "hint": "Pythonの文字列は変更できません（不変です）。従って、文字列のインデックスで指定したある場所に代入を行うと `TypeError` が発生します。",
+    "url": "https://docs.python.org/ja/3/tutorial/introduction.html"
+  },
+  {
+    "question": "変数 `a` と `b` に同時に値を代入する「複数同時代入」の正しい構文はどれですか？",
+    "choices": [
+      "a = 0; b = 1",
+      "a, b = 0, 1",
+      "a = b = 0, 1",
+      "assign(a=0, b=1)"
+    ],
+    "correct": 2,
+    "category": 3,
+    "hint": "複数同時の代入は `a, b = 0, 1` のように行います。この代入では、まず右辺の式がすべて評価され、次に左辺の変数に代入が行われます。",
+    "url": "https://docs.python.org/ja/3/tutorial/introduction.html"
+  },
+  {
+    "question": "コード `a = [1, 2]; b = a; b.append(3)` を実行した後、`a` の値はどうなりますか？",
+    "choices": [
+      "[1, 2]",
+      "[1, 2, 3]",
+      "[3]",
+      "エラーが発生する"
+    ],
+    "correct": 2,
+    "category": 3,
+    "hint": "単純な代入ではPythonはデータをコピーしません。`b = a` は `b` が `a` と同じリストを参照することを意味します。そのため、`b` を通してリストを変更すると、`a` から見てもその変更が反映されます。",
+    "url": "https://docs.python.org/ja/3/tutorial/introduction.html"
+  },
+  {
+    "question": "リスト `letters = ['a', 'b', 'c', 'd']` の内容をすべてクリアするための、スライスを使った代入方法はどれですか？",
+    "choices": [
+      "letters[0:3] = []",
+      "letters[1:4] = []",
+      "letters[:] = []",
+      "letters[] = []"
+    ],
+    "correct": 3,
+    "category": 3,
+    "hint": "スライスには代入もできます。リスト全体を対象とするスライス `[:]` に空のリスト `[]` を代入することで、リストの要素全体をクリアできます。",
+    "url": "https://docs.python.org/ja/3/tutorial/introduction.html"
+  },
+  {
+    "question": "2つの文字列リテラルを隣接して記述した場合 (`'Py' 'thon'`)、どのような結果になりますか？",
+    "choices": [
+      "エラーが発生する",
+      "2つの別々の文字列として扱われる",
+      "自動的に連結されて `'Python'` という1つの文字列になる",
+      "タプル `('Py', 'thon')` になる"
+    ],
+    "correct": 3,
+    "category": 3,
+    "hint": "連続して並んでいる複数の文字列リテラルは、自動的に連結されます。これは2つのリテラルどうしに対してのみ働き、変数や式には働きません。",
+    "url": "https://docs.python.org/ja/3/tutorial/introduction.html"
+  },
+  {
+    "question": "`print()`関数のキーワード引数 `end` の役割は何ですか？",
+    "choices": [
+      "出力の先頭に文字列を追加する。",
+      "出力の末尾に改行文字を出力しないようにしたり、別の文字列を末尾に出力したりする。",
+      "出力される各要素の区切り文字を指定する。",
+      "出力のエンコーディングを指定する。"
+    ],
+    "correct": 2,
+    "category": 3,
+    "hint": "キーワード引数 `end` を使うと、出力の末尾に改行文字を出力しないようにしたり、別の文字列を末尾に出力したりできます。例: `print(a, end=',')`",
+    "url": "https://docs.python.org/ja/3/tutorial/introduction.html"
+  },
+  {
+    "question": "`a = [1]; b = a[:]` とした場合、`b.append(2)` を実行した後の `a` の値はどうなりますか？",
+    "choices": [
+      "[1, 2]",
+      "[1]",
+      "エラーが発生する",
+      "[2]"
+    ],
+    "correct": 2,
+    "category": 3,
+    "hint": "全てのスライス操作は、指定された要素を含む新しいリストを返します。`a[:]` はリスト `a` の浅いコピーを返すため、`b` は `a` とは別の新しいリストオブジェクトになります。したがって、`b` の変更は `a` に影響しません。",
+    "url": "https://docs.python.org/ja/3/tutorial/introduction.html"
+  },
+  {
+    "question": "`if...elif...else` 文の `elif` は何の略ですか？",
+    "choices": [
+      "else final",
+      "else if",
+      "end if",
+      "elevated if"
+    ],
+    "correct": 2,
+    "category": 4,
+    "hint": "キーワード 'elif' は 'else if' を短くしたもので、過剰なインデントを避けるのに役立ちます。",
+    "url": "https://docs.python.org/ja/3/tutorial/controlflow.html"
+  },
+  {
+    "question": "Pythonの `for` 文は、どのようなオブジェクトに対して反復処理（ループ）を行いますか？",
+    "choices": [
+      "数値の範囲のみ",
+      "任意のシーケンス型（リストや文字列など）",
+      "辞書のみ",
+      "整数型の変数のみ"
+    ],
+    "correct": 2,
+    "category": 4,
+    "hint": "Python の for 文は、任意のシーケンス型（リストまたは文字列）にわたって反復を行います。反復の順番はシーケンス中に要素が現れる順番です。",
+    "url": "https://docs.python.org/ja/3/tutorial/controlflow.html"
+  },
+  {
+    "question": "組み込み関数 `range(5)` が生成する数列として正しいものはどれですか？",
+    "choices": [
+      "1, 2, 3, 4, 5",
+      "0, 1, 2, 3, 4, 5",
+      "0, 1, 2, 3, 4",
+      "5"
+    ],
+    "correct": 3,
+    "category": 4,
+    "hint": "`range()` が生成する数列では、指定した終端値は含まれません。`range(5)` は0から始まり、5の直前までの整数を生成します。",
+    "url": "https://docs.python.org/ja/3/tutorial/controlflow.html"
+  },
+  {
+    "question": "ループ（`for` または `while`）を途中で抜け出すために使用する文はどれですか？",
+    "choices": [
+      "continue",
+      "pass",
+      "exit",
+      "break"
+    ],
     "correct": 4,
-    "category": 4
-    },
-    {
-    "question": "辞書オブジェクトを関数のキーワード引数として展開（アンパック）して渡す際に、辞書名の前に付ける演算子はどれですか？",
-    "choices": ["`*` (アスタリスク1つ)", "`**` (アスタリスク2つ)", "`&` (アンパサンド)", "`@` (アットマーク)"],
-    "correct": 2,
-    "category": 4
-    },
-  {
-    "question": "`list.append(x)` メソッドはどのような操作を行いますか？",
-    "choices": [
-      "リストの末尾に要素を一つ追加する",
-      "リストの先頭に要素を一つ追加する",
-      "指定した位置に要素を挿入する",
-      "リストから指定した要素を削除する"
-    ],
-    "correct": 1,
-    "category": 5
+    "category": 4,
+    "hint": "`break` 文は、その `break` 文を内包している最も内側にある `for` 文または `while` 文から抜け出すことができます。",
+    "url": "https://docs.python.org/ja/3/tutorial/controlflow.html"
   },
   {
-    "question": "リストをスタックとして使用する場合の基本的な原則は何ですか？",
+    "question": "ループ処理で現在のイテレーションを中断し、次のイテレーションに移るために使用する文はどれですか？",
     "choices": [
-      "\"first-in, first-out\" (最初に追加した要素が最初に取り出される)",
-      "\"last-in, first-out\" (最後に追加した要素が最初に取り出される)",
-      "要素はランダムな順序で取り出される",
-      "要素はソートされた順序で取り出される"
-    ],
-    "correct": 2,
-    "category": 5
-  },
-  {
-    "question": "リスト内包表記の主な目的として最も適切なものはどれですか？",
-    "choices": [
-      "既存のリストを逆順にする",
-      "リスト内の要素を効率的に検索する",
-      "既存のシーケンスから新しいリストを簡潔に生成する",
-      "複数のリストを一つに結合する"
+      "break",
+      "skip",
+      "continue",
+      "next"
     ],
     "correct": 3,
-    "category": 5
+    "category": 4,
+    "hint": "`continue` 文はループの次のイテレーションを実行します。",
+    "url": "https://docs.python.org/ja/3/tutorial/controlflow.html"
   },
   {
-    "question": "`del`文を使用してリスト `a` のインデックス `2` にある要素を削除する正しい構文はどれですか？",
+    "question": "構文上は文が必要だが、プログラム上は何も実行する必要がない場合に使用する文はどれですか？",
     "choices": [
-      "del(a, 2)",
-      "a.del(2)",
-      "del a[2]",
-      "delete a[2]"
+      "empty",
+      "null",
+      "pass",
+      "noop"
     ],
     "correct": 3,
-    "category": 5
+    "category": 4,
+    "hint": "`pass` 文は何もしません。`pass` は、文を書くことが構文上要求されているが、プログラム上何の動作もする必要がない時に使われます。",
+    "url": "https://docs.python.org/ja/3/tutorial/controlflow.html"
   },
   {
-    "question": "タプル（tuple）の最も重要な特性は何ですか？",
+    "question": "関数を定義するために使用するキーワードはどれですか？",
     "choices": [
-      "可変（ミュータブル）であること",
-      "不変（イミュータブル）であること",
-      "要素が必ず同じ型でなければならないこと",
-      "要素をキーでアクセスできること"
+      "function",
+      "def",
+      "define",
+      "func"
     ],
     "correct": 2,
-    "category": 5
+    "category": 4,
+    "hint": "`def` は関数の定義を導くキーワードです。`def` の後には、関数名と仮引数を丸括弧で囲んだリストを続けなければなりません。",
+    "url": "https://docs.python.org/ja/3/tutorial/controlflow.html"
   },
   {
-    "question": "集合（set）の基本的な性質として正しいものはどれですか？",
+    "question": "関数の本体の最初の行に記述される文字列リテラルは、何と呼ばれますか？",
     "choices": [
-      "重複する要素を持つことができ、順序が保持される",
-      "重複する要素を持たず、順序づけられていない",
-      "重複する要素を持つことはできないが、順序は保持される",
-      "重複する要素を持つことができるが、順序は保持されない"
-    ],
-    "correct": 2,
-    "category": 5
-  },
-  {
-    "question": "辞書（dictionary）がデータを格納するために使用する基本的な構造は何ですか？",
-    "choices": [
-      "インデックスと値のペア",
-      "キーと値のペア",
-      "連続したメモリブロック上の値のシーケンス",
-      "値のみの順序付けられていないコレクション"
-    ],
-    "correct": 2,
-    "category": 5
-  },
-  {
-    "question": "`enumerate()` 関数をシーケンスのループ処理で使用すると、何が提供されますか？",
-    "choices": [
-      "要素の値のみ",
-      "要素のインデックスのみ",
-      "要素のインデックスと値の両方",
-      "要素の型情報"
+      "コメント",
+      "メタデータ",
+      "ドキュメンテーション文字列 (docstring)",
+      "ヘッダー"
     ],
     "correct": 3,
-    "category": 5
+    "category": 4,
+    "hint": "関数の本体の記述する文の最初の行は文字列リテラルにすることもできます。その場合、この文字列は関数のドキュメンテーション文字列、または docstring と呼ばれます。",
+    "url": "https://docs.python.org/ja/3/tutorial/controlflow.html"
   },
   {
-    "question": "`zip()` 関数は、複数のシーケンスを同時にループ処理する際にどのように機能しますか？",
+    "question": "関数が `return` 文を持たない場合、または `return` に引数がない場合、その関数は何を返しますか？",
     "choices": [
-      "すべてのシーケンスを連結して一つのシーケンスにする",
-      "各シーケンスから対応する位置の要素を取り出し、ペアにする",
-      "最初のシーケンスのみをループ処理する",
-      "各シーケンスを個別にソートする"
-    ],
-    "correct": 2,
-    "category": 5
-  },
-  {
-    "question": "`sorted()` 関数をリストに適用した場合、元のリストにはどのような影響がありますか？",
-    "choices": [
-      "元のリストがソートされた状態に変更される",
-      "元のリストは変更されず、ソート済みの新しいリストが返される",
-      "元のリストの要素が逆順になる",
-      "元のリストから重複した要素が削除される"
-    ],
-    "correct": 2,
-    "category": 5
-  },
-  {
-    "question": "`my_list.sort()` のように、リストをインプレース（in-place）でソートするメソッドの戻り値は何ですか？",
-    "choices": [
-      "ソートされたリスト",
-      "None",
-      "True",
-      "ソート前のリストのコピー"
-    ],
-    "correct": 2,
-    "category": 5
-  },
-  {
-    "question": "リストをキュー（\"first-in, first-out\"）として使用するのが非効率とされる主な理由は何ですか？",
-    "choices": [
-      "リストの末尾への要素追加が遅いため",
-      "リストの先頭からの要素の取り出し（または挿入）が遅いため",
-      "リストがメモリを過剰に消費するため",
-      "リストの最大要素数に制限があるため"
-    ],
-    "correct": 2,
-    "category": 5
-  },
-  {
-    "question": "存在しないキーを `d[key]` という構文で辞書から取得しようとすると、どのようなエラーが発生しますか？",
-    "choices": [
-      "IndexError",
-      "ValueError",
-      "KeyError",
-      "TypeError"
-    ],
-    "correct": 3,
-    "category": 5
-  },
-  {
-    "question": "存在しないキーを `get()` メソッドで辞書から取得しようとした場合、デフォルトでは何が返されますか？",
-    "choices": [
-      "KeyError が発生する",
-      "空文字列 ''",
       "0",
+      "空の文字列 ''",
+      "False",
       "None"
     ],
     "correct": 4,
-    "category": 5
+    "category": 4,
+    "hint": "実際には `return` 文を持たない関数も値を返しています。この値は `None` と呼ばれます。`return` の引数となる式がない場合や、関数が終了したときにも `None` が返ります。",
+    "url": "https://docs.python.org/ja/3/tutorial/controlflow.html"
   },
   {
-    "question": "`'hello'` という文字列一つだけを要素として持つタプルを作成するための正しい構文はどれですか？",
+    "question": "関数呼び出し時に、引数を `kwarg=value` の形式で渡すことを何と呼びますか？",
     "choices": [
-      "('hello')",
-      "['hello',]",
-      "{'hello'}",
-      "('hello',)"
-    ],
-    "correct": 4,
-    "category": 5
-  },
-  {
-    "question": "`matrix` がリストのリストで表現された行列であり、列数が4である場合、リスト内包表記 `[[row[i] for row in matrix] for i in range(4)]` はどのような操作を実行しますか？",
-    "choices": [
-      "行列の各要素を2倍にする",
-      "行列の行と列を入れ替える（転置）",
-      "行列を1次元のリストにフラット化する",
-      "行列の各行を逆順にする"
-    ],
-    "correct": 2,
-    "category": 5
-  },
-  {
-    "question": "2つの集合 `a` と `b` があるとき、演算子 `a - b` は何を計算しますか？",
-    "choices": [
-      "和集合（`a` または `b` にあるすべての要素）",
-      "積集合（`a` と `b` の両方にある要素）",
-      "差集合（`a` には存在するが `b` には存在しない要素）",
-      "対称差（`a` または `b` のどちらか一方にのみ存在する要素）"
+      "位置引数",
+      "デフォルト引数",
+      "キーワード引数",
+      "任意引数"
     ],
     "correct": 3,
-    "category": 5
+    "category": 4,
+    "hint": "関数を `kwarg=value` という形式のキーワード引数を使って呼び出すこともできます。キーワード引数は位置引数の後でなければなりません。",
+    "url": "https://docs.python.org/ja/3/tutorial/controlflow.html"
   },
   {
-    "question": "重複を含むリスト `basket = ['apple', 'orange', 'apple']` に対して `sorted(set(basket))` を実行すると、どのような結果が得られますか？",
+    "question": "ループ（`for` や `while`）の `else` 節が実行されるのはどのような場合ですか？",
     "choices": [
-      "['apple', 'apple', 'orange']",
-      "['apple', 'orange']",
-      "{'apple', 'orange'}",
-      "('apple', 'orange')"
+      "ループが `break` 文によって終了した場合",
+      "ループが `break` を実行せずに正常に終了した場合",
+      "ループの条件が最初から偽だった場合",
+      "ループ内でエラーが発生した場合"
     ],
     "correct": 2,
-    "category": 5
+    "category": 4,
+    "hint": "`break` を実行せずにループが終了すると、`else` 節が実行されます。ループが `break` によって終了した場合は `else` 句は実行されません。",
+    "url": "https://docs.python.org/ja/3/tutorial/controlflow.html"
   },
   {
-    "question": "`(1, 2, 3) < (1, 2, 4)` のようなシーケンスオブジェクト同士の比較は、どのような順序付けに基づいて行われますか？",
+    "question": "関数 `def f(a, L=[]): L.append(a); return L` にはどのような潜在的な問題がありますか？",
     "choices": [
-      "シーケンスの長さ",
-      "シーケンス全体の要素の合計値",
-      "辞書的な順序（先頭の要素から順に比較）",
-      "最後の要素の値"
+      "リストはデフォルト引数にできない。",
+      "デフォルト値は一度しか評価されず、後続の呼び出しでリストが共有されてしまう。",
+      "`L.append(a)` は常にエラーになる。",
+      "関数は何も返さない。"
+    ],
+    "correct": 2,
+    "category": 4,
+    "hint": "重要な警告: デフォルト値は1度だけしか評価されません。デフォルト値がリストや辞書のような変更可能なオブジェクトの時には、後続の関数呼び出しでそのオブジェクトが共有されてしまいます。",
+    "url": "https://docs.python.org/ja/3/tutorial/controlflow.html"
+  },
+  {
+    "question": "`match` 文の `case _:` はどのような役割を果たしますか？",
+    "choices": [
+      "アンダースコアという名前の変数を探す",
+      "どのパターンにもマッチしなかった場合に実行されるワイルドカードとして機能する",
+      "エラーを発生させる",
+      "プライベートなケースとして扱われる"
+    ],
+    "correct": 2,
+    "category": 4,
+    "hint": "`match` 文の `case _:` において、変数名 `_` はワイルドカードの働きをし、マッチに絶対失敗しません。どのcaseにもマッチしない場合にこの分岐が実行されます。",
+    "url": "https://docs.python.org/ja/3/tutorial/controlflow.html"
+  },
+  {
+    "question": "関数定義 `def f(pos, /, standard, *, kwd):` における `/` と `*` の意味として正しいものはどれですか？",
+    "choices": [
+      "`/` は除算、 `*` は乗算を意味する。",
+      "`/` 以前は位置専用引数、`*` 以後はキーワード専用引数を示す。",
+      "`/` 以前はキーワード専用引数、`*` 以後は位置専用引数を示す。",
+      "両方とも任意引数リストを受け取るための記号である。"
+    ],
+    "correct": 2,
+    "category": 4,
+    "hint": "関数定義において `/` と `*` は引数の渡し方を制限します。`/` の前の引数は位置専用、`*` の後の引数はキーワード専用となります。その間の引数は位置またはキーワードで渡せます。",
+    "url": "https://docs.python.org/ja/3/tutorial/controlflow.html"
+  },
+  {
+    "question": "リスト `args = [3, 6]` を `range()` 関数に渡して `range(3, 6)` と同じ結果を得るための「引数リストのアンパック」の構文はどれですか？",
+    "choices": [
+      "range(args)",
+      "range(&args)",
+      "range(*args)",
+      "range([args])"
     ],
     "correct": 3,
-    "category": 5
+    "category": 4,
+    "hint": "関数呼び出しを `*` 演算子を使って書き、リストやタプルから引数をアンパックします。`list(range(*args))` は `list(range(3, 6))` と等価になります。",
+    "url": "https://docs.python.org/ja/3/tutorial/controlflow.html"
   },
   {
-    "question": "ブール演算子 `and` や `or` が持つ、結果が確定した時点で評価を停止する性質を何と呼びますか？",
+    "question": "ラムダ式（lambda expression）に関する説明として正しいものはどれですか？",
     "choices": [
-      "遅延評価 (Lazy Evaluation)",
-      "積極評価 (Eager Evaluation)",
-      "短絡評価 (Short-circuit Evaluation)",
-      "再帰評価 (Recursive Evaluation)"
+      "複数の式を含む複雑な無名関数を生成できる。",
+      "`def` キーワードを使って定義される。",
+      "構文上、単一の式に制限された小さな無名関数を生成する。",
+      "外部スコープの変数を参照できない。"
     ],
     "correct": 3,
-    "category": 5
+    "category": 4,
+    "hint": "キーワード `lambda` を使うと、名前のない小さな関数を生成できます。ラムダ式は、構文上単一の式に制限されていますが、それを取り囲むスコープから変数を参照することができます。",
+    "url": "https://docs.python.org/ja/3/tutorial/controlflow.html"
   },
   {
-    "question": "Pythonにおいて、定義（関数や変数）を保持し、スクリプトや対話インスタンスで再利用するためにファイルに書き出されたものを何と呼びますか？",
-    "choices": ["ライブラリ", "モジュール", "クラス", "フレームワーク"],
-    "correct": 2,
-    "category": 6
-  },
-  {
-    "question": "モジュールを定義するPythonファイルに必須の接尾語（拡張子）は何ですか？",
-    "choices": [".txt", ".pyo", ".exe", ".py"],
-    "correct": 4,
-    "category": 6
-  },
-  {
-    "question": "モジュールを初期化するための実行文は、インポート文の中でモジュール名がいつ見つかったときに実行されますか？",
-    "choices": ["常にモジュールがロードされるたび", "スクリプトとして実行されたときのみ", "最初にモジュール名が見つかったときにだけ", "定義されている関数が呼び出されたとき"],
+    "question": "関数アノテーション `def f(ham: str) -> str:` はプログラムの動作にどのような影響を与えますか？",
+    "choices": [
+      "引数 `ham` が文字列でない場合、自動的にエラーを発生させる。",
+      "戻り値が文字列でない場合、自動的に文字列に変換する。",
+      "何も影響を与えず、関数の `__annotations__` 属性に辞書として格納されるだけである。",
+      "コンパイル時に型チェックを行う。"
+    ],
     "correct": 3,
-    "category": 6
+    "category": 4,
+    "hint": "関数アノテーションはユーザ定義関数で使用される型についての完全にオプションなメタデータ情報です。アノテーションは関数の `__annotations__` 属性に辞書として格納され、関数の他の部分には何も影響を与えません。",
+    "url": "https://docs.python.org/ja/3/tutorial/controlflow.html"
   },
   {
-    "question": "import文を使ってモジュール（例：fibo）をインポートした後、モジュール内で定義された関数（例：fib）にアクセスするために使われる表記法はどれですか？",
-    "choices": ["fib.fibo()", "fib()", "fibo::fib()", "fibo.fib()"],
-    "correct": 4,
-    "category": 6
-  },
-  {
-    "question": "モジュール内で、そのモジュール名（文字列）を取得するために使えるグローバル変数は何ですか？",
-    "choices": ["module", "self", "name", "id"],
-    "correct": 3,
-    "category": 6
-  },
-  {
-    "question": "from fibo import fib, fib2 のように特定の名前をインポートした場合、インポートの対象となるモジュール名（fibo）はローカルな名前空間に取り込まれますか？",
-    "choices": ["取り込まれる", "取り込まれない", "常にエラーになる", "設定によって異なる"],
+    "question": "関数定義 `def concat(*args, sep=\"/\"):` において、`*args` の後の仮引数 `sep` はどのように扱われますか？",
+    "choices": [
+      "位置引数としてのみ渡せる。",
+      "キーワード専用引数となり、キーワード引数としてのみ渡せる。",
+      "位置引数またはキーワード引数として渡せる。",
+      "`*args` によって無視される。"
+    ],
     "correct": 2,
-    "category": 6
+    "category": 4,
+    "hint": "`*args` 引数の後にある仮引数は 'キーワード専用' 引数で、位置引数ではなくキーワード引数としてのみ使えることを意味します。",
+    "url": "https://docs.python.org/ja/3/tutorial/controlflow.html"
   },
   {
-    "question": "from fibo import * の形式でインポートする際、ローカルな名前空間に取り込まれない名前の共通の特徴は何ですか？",
-    "choices": ["大文字で始まる", "数字で始まる", "アンダースコア（_）で始まる", "クラスとして定義されている"],
+    "question": "`match` 文のパターンに `if` 節を追加したものは「ガード」と呼ばれます。ガードが `False` の場合、どのような動作になりますか？",
+    "choices": [
+      "`match` 文全体がエラーで終了する。",
+      "その `case` ブロックが実行される。",
+      "値の取り込みは行われず、次の `case` ブロックの処理に移動する。",
+      "値の取り込みは行われるが、ガードがFalseと評価されたため、次の`case`ブロックの処理に移動する。"
+    ],
+    "correct": 4,
+    "category": 4,
+    "hint": "ガードが `False` の場合、`match` は次の `case` ブロックの処理に移動します。ガードを評価する前に値が取り込まれることに注意してください。",
+    "url": "https://docs.python.org/ja/3/tutorial/controlflow.html"
+  },
+  {
+    "question": "PEP 8 スタイルガイドで推奨されているインデント方法はどれですか？",
+    "choices": [
+      "タブ 1つ",
+      "空白 2つ",
+      "空白 4つ",
+      "タブまたは空白のどちらでも良い"
+    ],
     "correct": 3,
-    "category": 6
+    "category": 4,
+    "hint": "PEP 8 では、インデントには空白4つを使い、タブは使わないことが推奨されています。",
+    "url": "https://docs.python.org/ja/3/tutorial/controlflow.html"
   },
   {
-    "question": "Pythonモジュールを python fibo.py <arguments> のようにスクリプトとして実行した場合、モジュールの name に設定される文字列は何ですか？",
-    "choices": ["fibo", "script", "module", "main"],
-    "correct": 4,
-    "category": 6
+    "question": "リストから指定した位置の要素を取り除き、それを返すメソッドは何ですか？",
+    "choices": [
+      "list.remove()",
+      "list.delete()",
+      "list.pop()",
+      "list.extract()"
+    ],
+    "correct": 3,
+    "category": 5,
+    "hint": "`list.pop([i])` は指定された位置の要素をリストから取り除き、それを返します。インデックスが指定されていない場合は、末尾の要素を取り除きます。",
+    "url": "https://docs.python.org/ja/3/tutorial/datastructures.html"
   },
   {
-    "question": "Pythonがモジュールの読み込みを高速化するためにコンパイル済みのモジュールをキャッシュするディレクトリの名前は何ですか？",
-    "choices": ["cache/", "compiled_modules/", "cache/", "pycache"],
-    "correct": 4,
-    "category": 6
+    "question": "リストの要素をその場で（in-placeで）逆順にするメソッドは何ですか？",
+    "choices": [
+      "list.sort(reverse=True)",
+      "list.invert()",
+      "list.reverse()",
+      "reversed(list)"
+    ],
+    "correct": 3,
+    "category": 5,
+    "hint": "`list.reverse()` はリストの要素を、インプレース演算で逆順にします。新しいリストは返しません。",
+    "url": "https://docs.python.org/ja/3/tutorial/datastructures.html"
   },
   {
-    "question": "Pythonにおいて、モジュール名前空間を「ドット付きモジュール名」を使って構造化する手段は何と呼ばれますか？",
-    "choices": ["ライブラリ", "パッケージ", "クラス", "ディレクトリ"],
+    "question": "リストをスタック（後入れ先出し）として使う場合、要素を追加する操作（プッシュ）と取り出す操作（ポップ）にはどのメソッドの組み合わせが適していますか？",
+    "choices": [
+      "追加: `insert(0, x)`, 取り出し: `pop(0)`",
+      "追加: `append(x)`, 取り出し: `pop()`",
+      "追加: `extend([x])`, 取り出し: `remove(x)`",
+      "追加: `append(x)`, 取り出し: `pop(0)`"
+    ],
     "correct": 2,
-    "category": 6
+    "category": 5,
+    "hint": "スタックでは、最後に追加された要素が最初に取り出されます。スタックの一番上に要素を追加するには `append()` を使い、一番上から要素を取り出すには `pop()` をインデックスを指定せずに使います。",
+    "url": "https://docs.python.org/ja/3/tutorial/datastructures.html"
   },
   {
-    "question": "実行効率上の理由から、各モジュールはインタープリタの1セッションごとに何回だけインポートされますか？",
-    "choices": ["1回だけ", "必要なだけ何度でも", "モジュール名が変更されるたび", "最大10回まで"],
+    "question": "リスト内包表記 `[x**2 for x in range(5)]` の結果として正しいものはどれですか？",
+    "choices": [
+      "[0, 1, 4, 9, 16]",
+      "[1, 4, 9, 16, 25]",
+      "[0, 1, 2, 3, 4]",
+      "エラーが発生する"
+    ],
     "correct": 1,
-    "category": 6
+    "category": 5,
+    "hint": "リスト内包表記は、`for` ループで反復処理される各要素に対して式を評価した結果からなる新しいリストを生成します。`range(5)` は 0, 1, 2, 3, 4 を生成し、それぞれを2乗した結果のリストが返されます。",
+    "url": "https://docs.python.org/ja/3/tutorial/datastructures.html"
   },
   {
-    "question": "spamというモジュールをインポートするとき、インタープリタが最初に検索する対象は何ですか？",
-    "choices": ["sys.pathにあるspam.py", "PYTHONPATH変数内のディレクトリ", "その名前の組み込みモジュール", "カレントディレクトリにあるspam.py"],
+    "question": "リストの要素をインデックスで削除し、値を返さない文はどれですか？",
+    "choices": [
+      "pop()",
+      "remove()",
+      "del",
+      "clear()"
+    ],
     "correct": 3,
-    "category": 6
+    "category": 5,
+    "hint": "`del` 文は、リストからインデックスで指定した要素やスライスを削除します。これは `pop()` メソッドと違い、値を返しません。",
+    "url": "https://docs.python.org/ja/3/tutorial/datastructures.html"
   },
   {
-    "question": "モジュール検索パス（sys.path）の初期化において、PYTHONPATHが設定されていなかった場合に組み込みのデフォルト値に加えて、最も優先される（検索パスの先頭に追加される）場所は何ですか？",
-    "choices": ["標準ライブラリパス", "インストール方法に依存したデフォルト", "入力されたスクリプトのあるディレクトリ", "ユーザーのホームディレクトリ"],
-    "correct": 3,
-    "category": 6
-  },
-  {
-    "question": "コンパイル済みPythonファイル（.pyc）のキャッシュチェックがスキップされる2つのケースのうち、コマンドラインから直接モジュールが読み込まれた場合に該当する動作はどれですか？",
-    "choices": ["ソースモジュールがないため確認しない", "キャッシュを無視し常に再コンパイルされ結果を保存しない", "ソースの変更日時を比較する", "常に再コンパイルされるが結果を保存する"],
+    "question": "タプル(tuple)の主な特徴として正しいものはどれですか？",
+    "choices": [
+      "可変（ミュータブル）であり、要素の変更が可能",
+      "不変（イミュータブル）であり、要素の変更が不可能",
+      "常に同じ型の要素しか持てない",
+      "角括弧 `[]` を使って定義する"
+    ],
     "correct": 2,
-    "category": 6
+    "category": 5,
+    "hint": "タプルは不変（イミュータブル）です。つまり、一度作成するとその要素を代入によって変更することはできません。ただし、タプルがリストのような可変オブジェクトを含むことは可能です。",
+    "url": "https://docs.python.org/ja/3/tutorial/datastructures.html"
   },
   {
-    "question": "ディレクトリをパッケージとしてPythonに扱わせるために、例外的なケース（namespace package）を除いて必須となるファイルは何ですか？",
-    "choices": ["main.py", "setup.py", "init.py", "manifest.in"],
+    "question": "重複する要素を持たない、順序づけられていない要素の集まりを扱うデータ型は何ですか？",
+    "choices": [
+      "リスト (list)",
+      "タプル (tuple)",
+      "集合 (set)",
+      "辞書 (dict)"
+    ],
     "correct": 3,
-    "category": 6
+    "category": 5,
+    "hint": "集合（set）とは、重複する要素をもたない、順序づけられていない要素の集まりです。",
+    "url": "https://docs.python.org/ja/3/tutorial/datastructures.html"
   },
   {
-    "question": "from package import item を使ったインポートで、itemがパッケージ内で定義されている名前でなかった場合、import文は次にitemを何であると仮定してロードを試みますか？",
-    "choices": ["クラス名", "ファイルパス", "モジュール名", "関数名"],
-    "correct": 3,
-    "category": 6
-  },
-  {
-    "question": "from package import * が実行されたときにインポートすべきモジュール名のリストとしてパッケージ作者が__init__.pyに定義する特別な変数は何ですか？",
-    "choices": ["modules", "export", "list", "all"],
+    "question": "空の辞書を作成するための正しい構文はどれですか？",
+    "choices": [
+      "[]",
+      "()",
+      "set()",
+      "{}"
+    ],
     "correct": 4,
-    "category": 6
+    "category": 5,
+    "hint": "波括弧のペア `{}` は空の辞書を生成します。空の集合を作成するには `set()` を使用する必要がある点に注意してください。",
+    "url": "https://docs.python.org/ja/3/tutorial/datastructures.html"
   },
   {
-    "question": "sound.filters.vocoderモジュールがsound.effectsパッケージのechoモジュールを参照するために、明示的な相対importを使用する場合の正しい表記法はどれですか？",
-    "choices": ["from .echo import echo", "from .effects import echo", "from ..effects import echo", "from sound.effects import echo"],
+    "question": "辞書（dictionary）のループ処理で、キーと値を同時に取り出すために使われるメソッドは何ですか？",
+    "choices": [
+      "dict.keys()",
+      "dict.values()",
+      "dict.items()",
+      "dict.pairs()"
+    ],
     "correct": 3,
-    "category": 6
+    "category": 5,
+    "hint": "辞書に対してループを行う際、`items()` メソッドを使うと、キーとそれに対応する値を同時に取り出せます。",
+    "url": "https://docs.python.org/ja/3/tutorial/datastructures.html"
   },
   {
-    "question": "相対import（例： from . import echo）は、現在のモジュールの何に基づいて解決されますか？",
-    "choices": ["現在のディレクトリ名", "グローバルスコープ", "現在のモジュールのパッケージ名", "PYTHONPATHの先頭"],
+    "question": "シーケンスのループ処理で、要素のインデックスと要素自体を同時に取り出すために便利な組み込み関数は何ですか？",
+    "choices": [
+      "zip()",
+      "map()",
+      "enumerate()",
+      "range()"
+    ],
     "correct": 3,
-    "category": 6
+    "category": 5,
+    "hint": "シーケンスにわたるループを行う際、`enumerate()` 関数を使うと、要素のインデックスと要素を同時に取り出すことができます。",
+    "url": "https://docs.python.org/ja/3/tutorial/datastructures.html"
   },
   {
-    "question": "パッケージの init.py のコードが実行される前に、そのディレクトリ名の文字列を含んだシーケンスに初期化されるパッケージの特別な属性は何ですか？",
-    "choices": ["name", "path", "version", "file"],
+    "question": "リストをキュー（先入れ先出し）として効率的に使うために推奨されている、`collections`モジュールのクラスは何ですか？",
+    "choices": [
+      "collections.list",
+      "collections.queue",
+      "collections.deque",
+      "collections.stack"
+    ],
+    "correct": 3,
+    "category": 5,
+    "hint": "リストは先頭からの挿入や取り出しが遅いため、キューの実装には `collections.deque` を使うと良いでしょう。このクラスは両端に対する高速な追加（append）と取り出し（pop）を実現しています。",
+    "url": "https://docs.python.org/ja/3/tutorial/datastructures.html"
+  },
+  {
+    "question": "ネストしたリスト `matrix = [[1, 2], [3, 4]]` の行と列を入れ替える（転置する）リスト内包表記として正しいものはどれですか？",
+    "choices": [
+      "`[[row[i] for i in range(2)] for row in matrix]`",
+      "`[[row[i] for row in matrix] for i in range(2)]`",
+      "`[i[row] for row in matrix for i in range(2)]`",
+      "`[row for row in matrix for i in row]`"
+    ],
     "correct": 2,
-    "category": 6
+    "category": 5,
+    "hint": "ネストしたリストの内包表記では、外側のループが先に書かれ、内側のループが後に続きます。行と列を入れ替えるには、列のインデックス `i` で外側のループを回し、各行 `row` からそのインデックスの要素を取り出す必要があります。",
+    "url": "https://docs.python.org/ja/3/tutorial/datastructures.html"
   },
   {
-    "question": "Pythonの出力方法の一つで、開き引用符や三重の開き引用符の前に f または F を付けて文字列を始め、波括弧 { } の間に Python の式を書けるリテラルは何と呼ばれますか？",
-    "choices": ["ジェネレータ式", "書式指定ミニ文字列", "フォーマット済み文字列リテラル (f-string)", "アノテーション付き文字列"],
-    "correct": 3,
-    "category": 7
-  },
-  {
-    "question": "値の人間が読める表現を返すための関数で、特に文字列オブジェクトに対してクォートやバックスラッシュが追加されないのはどちらですか？",
-    "choices": ["repr()", "ascii()", "str()", "eval()"],
-    "correct": 3,
-    "category": 7
-  },
-  {
-    "question": "ファイルを開く open() 関数で、ファイルを追記用（ファイル終端に書き込む）に開くためのモード指定文字は何ですか？",
-    "choices": ["r+", "w", "a", "rb"],
-    "correct": 3,
-    "category": 7
-  },
-  {
-    "question": "ファイル操作において、処理中に例外が発生しても必ず最後にファイルを閉じることを保証するために使用が推奨されるキーワードは何ですか？",
-    "choices": ["try-finally", "except", "with", "yield"],
-    "correct": 3,
-    "category": 7
-  },
-  {
-    "question": "ファイルオブジェクトの f.read() メソッドが、オプションの size 引数を省略したり負の数にしたりした場合に読み出すのはどのようなデータですか？",
-    "choices": ["最初の1行だけ", "最大1024バイト", "ファイルの内容全て", "次の改行まで"],
-    "correct": 3,
-    "category": 7
-  },
-  {
-    "question": "Pythonのファイルオブジェクトに対してループを書く（for line in f:）方法の利点として、ソースで言及されているのは何ですか？",
-    "choices": ["ネットワーク通信を自動で処理する", "マルチスレッド環境での排他制御を提供する", "メモリを効率的に使い、高速で簡潔なコードになる", "ファイルをバイナリモードでしか開かない"],
-    "correct": 3,
-    "category": 7
-  },
-  {
-    "question": "文字列メソッドのうち、指定された幅のフィールド内に文字列が右寄せで入るように左側に空白を追加し、新しい文字列を返すものは何ですか？",
-    "choices": ["str.zfill()", "str.ljust()", "str.rjust()", "str.center()"],
-    "correct": 3,
-    "category": 7
-  },
-  {
-    "question": "Pythonのデータ階層をJSON形式の文字列表現に変換する処理は何と呼ばれますか？",
-    "choices": ["ハッシュ化", "トークン化", "シリアライズ", "パース"],
-    "correct": 3,
-    "category": 7
-  },
-  {
-    "question": "f-stringにおいて、{expression =} のように = 指定子を使用した場合、どのような形式で表示されますか？",
-    "choices": ["式の結果のみ", "式、等号、評価された文字列表現", "式と等号のみ", "評価された文字列表現と等号"],
+    "question": "`del a[2:4]` はリスト `a` に対してどのような操作を行いますか？",
+    "choices": [
+      "インデックス2と4の要素を削除する",
+      "インデックス2から4までの（4を含まない）要素のスライスを削除する",
+      "リストをクリアする",
+      "インデックス2と3の要素を `None` に置き換える"
+    ],
     "correct": 2,
-    "category": 7
+    "category": 5,
+    "hint": "`del` 文はリストからスライスを除去することもできます。`del a[2:4]` はインデックス2と3の要素をリストから削除します。",
+    "url": "https://docs.python.org/ja/3/tutorial/datastructures.html"
   },
   {
-    "question": "ファイルオブジェクトが with キーワードや f.close() の呼び出しによって閉じられた後、そのオブジェクトに対して f.read() などを実行しようとすると発生する例外は何ですか？",
-    "choices": ["IOError", "FileClosedError", "ValueError", "AttributeError"],
-    "correct": 3,
-    "category": 7
-  },
-  {
-    "question": "str() 関数と repr() 関数のうち、インタープリタに読める（あるいは同値となる構文がない場合は SyntaxError になるような）表現を返すための関数はどれですか？",
-    "choices": ["str()", "print()", "format()", "repr()"],
-    "correct": 4,
-    "category": 7
-  },
-  {
-    "question": "テキストモードでファイルを開き読み取りを行う場合、プラットフォーム固有の行末記号（例: Windowsの \r\n）はデフォルトでどのように変換されますか？",
-    "choices": ["自動的に削除される", "元の形式のまま残る", "単一の改行文字 \n に変換される", "エラーとなる"],
-    "correct": 3,
-    "category": 7
-  },
-  {
-    "question": "f-stringにおいて、値をフォーマットする前に repr() 関数を適用させるために使われる変換指定子の修飾子は何ですか？",
-    "choices": ["!s", "!r", "!a", "!d"],
+    "question": "集合 `a` と `b` があるとき、`a` と `b` の両方に存在する要素からなる新しい集合（積集合）を求める演算子はどれですか？",
+    "choices": [
+      "a | b",
+      "a & b",
+      "a - b",
+      "a ^ b"
+    ],
     "correct": 2,
-    "category": 7
+    "category": 5,
+    "hint": "集合演算子 `&` は、2つの集合の積集合（intersection）を返します。つまり、両方の集合に存在する要素のみを含む新しい集合が作られます。",
+    "url": "https://docs.python.org/ja/3/tutorial/datastructures.html"
   },
   {
-    "question": "ファイルオブジェクトの f.seek(offset, whence) メソッドにおいて、whence の値が 1 の場合、ファイル位置の計算の参照点となるのはどこですか？",
-    "choices": ["ファイルの先頭", "ファイルの終端", "現在のファイル位置", "ランダムな位置"],
-    "correct": 3,
-    "category": 7
-  },
-  {
-    "question": "ファイルをバイナリモードで開く場合（'b'がモードにつく場合）、open() 関数で指定してはならない引数は何ですか？",
-    "choices": ["filename", "mode", "encoding", "buffering"],
-    "correct": 3,
-    "category": 7
-  },
-  {
-    "question": "str.format() メソッドで、全てのローカルな変数が入った辞書を返す組み込み関数 vars() と組み合わせて、辞書のキーをキーワード引数として参照するために使われる特別な記法は何ですか？",
-    "choices": ["*", "**", "[]", "#"],
+    "question": "`zip(questions, answers)` はどのようなオブジェクトを返しますか？",
+    "choices": [
+      "2つのリストを連結した新しいリスト",
+      "各リストの要素をペアにしたタプルを要素とするイテレータ",
+      "2つのリストの要素を交互に並べた新しいリスト",
+      "ネストしたリスト"
+    ],
     "correct": 2,
-    "category": 7
+    "category": 5,
+    "hint": "`zip()` 関数は、複数のシーケンス型の要素をひとまとめにします。各シーケンスから同じインデックスの要素を取り出してタプルを作り、それらのタプルを返すイテレータを生成します。",
+    "url": "https://docs.python.org/ja/3/tutorial/datastructures.html"
   },
   {
-    "question": "f.readline() メソッドが空行を読み取った場合、ファイルの終端に達した場合と区別するために返される文字列の内容は何ですか？",
-    "choices": ["空の文字列 ''", "単一の改行文字 '\n'", "None", "EOF"],
+    "question": "シーケンスの辞書順比較において、`(1, 2, 3)` と `(1, 2, -1)` を比較した場合、結果はどうなりますか？",
+    "choices": [
+      "`(1, 2, 3)` の方が小さい",
+      "`(1, 2, -1)` の方が小さい",
+      "両者は等しい",
+      "比較できずエラーになる"
+    ],
     "correct": 2,
-    "category": 7
+    "category": 5,
+    "hint": "シーケンスの比較は辞書順で行われます。最初の2つの要素（1と2）は等しいので、3番目の要素が比較されます。`3` は `-1` よりも大きいため、`(1, 2, -1)` の方が小さいと判断されます。",
+    "url": "https://docs.python.org/ja/3/tutorial/datastructures.html"
   },
   {
-    "question": "f.write() を with キーワードや f.close() を使わずに呼び出した場合、プログラムが正常に終了しても発生する可能性がある警告として、ソースで指摘されているのは何ですか？",
-    "choices": ["ファイルが破損すること", "実引数がディスクに完全に書き込まれないこと", "メモリリークが発生すること", "ファイルの内容が文字化けすること"],
+    "question": "リスト `a` の浅いコピーを作成する2つの方法としてドキュメントに記載されているものはどれですか？",
+    "choices": [
+      "`a.copy()` と `list(a)`",
+      "`a.copy()` と `a[:]`",
+      "`a[:]` と `a.duplicate()`",
+      "`list(a)` と `a.clone()`"
+    ],
     "correct": 2,
-    "category": 7
+    "category": 5,
+    "hint": "`list.copy()` メソッドはリストの浅いコピーを返します。これはスライス表記 `a[:]` と同様です。",
+    "url": "https://docs.python.org/ja/3/tutorial/datastructures.html"
   },
   {
-    "question": "テキストファイルに対して f.seek(offset, whence) を実行する場合、ファイルの先頭からの相対位置に対するシークだけが許可されていますが、例外的に許可されているシーク操作は何ですか？",
-    "choices": ["seek(0, 1) で現在の位置へ", "seek(0, 2) でファイルの末尾へ", "seek(-1, 2) で末尾の1バイト前へ", "seek(0, 0) でファイルの終端へ"],
+    "question": "シーケンスの比較において、片方のシーケンスがもう一方の先頭部分にあたる部分シーケンスだった場合（例: `(1, 2)` と `(1, 2, 4)`）、どちらが小さいと判断されますか？",
+    "choices": [
+      "長い方のシーケンス",
+      "短い方のシーケンス",
+      "等しいとみなされる",
+      "エラーになる"
+    ],
     "correct": 2,
-    "category": 7
+    "category": 5,
+    "hint": "片方のシーケンスがもう一方の先頭部分にあたる部分シーケンスならば、短い方のシーケンスが小さいシーケンスとみなされます。",
+    "url": "https://docs.python.org/ja/3/tutorial/datastructures.html"
   },
   {
-    "question": "JSONとは対照的に、任意の複雑なPythonオブジェクトをシリアライズ可能だが、信頼できない送信元からのデータは安全ではない（任意のコードが実行される危険性がある）Python固有のプロトコルは何ですか？",
-    "choices": ["YAML", "XML", "JSON", "pickle"],
-    "correct": 4,
-    "category": 7
-  },
-  {
-    "question": "Pythonのエラーのうち、構文解析エラー (parsing error) としても知られ、コードの構造的な誤りによって発生するものは何ですか？",
-    "choices": ["トレースバック", "実行時エラー", "例外", "構文エラー"],
-    "correct": 4,
-    "category": 8
-  },
-  {
-    "question": "文や式が構文的に正しくても、実行中に検出される可能性のあるエラーで、常に致命的とは限らないものは何と呼ばれますか？",
-    "choices": ["例外 (exception)", "セグメンテーション違反", "アサーションエラー", "構文エラー"],
+    "question": "集合内包表記 `{x for x in 'abracadabra' if x not in 'abc'}` の結果はどうなりますか？",
+    "choices": [
+      "{'r', 'd'}",
+      "{'a', 'b', 'c', 'r', 'd'}",
+      "['r', 'd']",
+      "エラーが発生する"
+    ],
     "correct": 1,
-    "category": 8
+    "category": 5,
+    "hint": "集合内包表記は、リスト内包表記と同様に動作しますが、結果として集合を生成します。この式は 'abracadabra' の文字のうち 'a', 'b', 'c' ではない文字、つまり 'r' と 'd' の集合を作ります。",
+    "url": "https://docs.python.org/ja/3/tutorial/datastructures.html"
   },
   {
-    "question": "例外処理を行う try 文において、例外が発生しなかった場合に、全ての except 節よりも後ろに置かれて実行されるオプションの節は何ですか？",
-    "choices": ["finally 節", "else 節", "except 節", "raise 節"],
+    "question": "`list.insert()`, `list.remove()`, `list.sort()` のようなリストをその場で変更するメソッドの戻り値は何ですか？",
+    "choices": [
+      "変更後のリスト",
+      "`True`",
+      "`None`",
+      "変更された要素数"
+    ],
+    "correct": 3,
+    "category": 5,
+    "hint": "リストを操作するメソッド（`insert`, `remove`, `sort`など）の戻り値は `None` です。これは Python の変更可能なデータ構造全てについての設計上の原則です。",
+    "url": "https://docs.python.org/ja/3/tutorial/datastructures.html"
+  },
+  {
+    "question": "Pythonで、他のファイルに書かれた定義（関数や変数）を利用可能にするための仕組みは何ですか？",
+    "choices": [
+      "インクルード (include)",
+      "モジュール (module)",
+      "ライブラリ (library)",
+      "コンポーネント (component)"
+    ],
     "correct": 2,
-    "category": 8
+    "category": 6,
+    "hint": "Pythonでは定義をファイルに書いておき、スクリプトの中やインタプリタの対話インスタンス上で使う方法があります。このファイルをモジュールと呼びます。",
+    "url": "https://docs.python.org/ja/3/tutorial/modules.html"
   },
   {
-    "question": "try 文において、例外の発生有無に関わらず、try 文が終わる前の最後の処理として必ず実行されることが保証されている節は何ですか？",
-    "choices": ["except 節", "else 節", "with 節", "finally 節"],
-    "correct": 4,
-    "category": 8
-  },
-  {
-    "question": "例外を明示的に発生させるために使用され、例外インスタンスまたは例外クラスを引数として取る文は何ですか？",
-    "choices": ["throw", "send", "raise", "yield"],
-    "correct": 3,
-    "category": 8
-  },
-  {
-    "question": "ファイルやネットワーク接続のような外部リソースが、利用の成否にかかわらず不要になった際に、即座に正しくクリーンアップされることを保証する文は何ですか？",
-    "choices": ["while 文", "with 文", "for 文", "try 文"],
+    "question": "モジュール `fibo` をインポートし、その中の関数 `fib` を呼び出すための正しい構文はどれですか？",
+    "choices": [
+      "import fibo; fib()",
+      "import fibo; fibo.fib()",
+      "import fibo.fib; fibo.fib()",
+      "load fibo; fibo.fib()"
+    ],
     "correct": 2,
-    "category": 8
+    "category": 6,
+    "hint": "`import fibo` はモジュール名 `fibo` だけを現在の名前空間に追加します。モジュール内の関数には、モジュール名を付けて `fibo.fib()` のようにアクセスします。",
+    "url": "https://docs.python.org/ja/3/tutorial/modules.html"
   },
   {
-    "question": "組み込み例外のうち、すべての例外に共通する基底クラスは何ですか？",
-    "choices": ["Exception", "Error", "BaseException", "SystemExit"],
+    "question": "モジュール内で、そのモジュール自身の名前（文字列）が格納されているグローバル変数は何ですか？",
+    "choices": [
+      "__module__",
+      "__self__",
+      "__name__",
+      "__file__"
+    ],
     "correct": 3,
-    "category": 8
+    "category": 6,
+    "hint": "モジュールの中では、(文字列の)モジュール名をグローバル変数 `__name__` で取得できます。",
+    "url": "https://docs.python.org/ja/3/tutorial/modules.html"
   },
   {
-    "question": "except 節で例外名を指定した後、例外インスタンスを変数に紐づけるために使用されるキーワードは何ですか？",
-    "choices": ["to", "bind", "as", "is"],
-    "correct": 3,
-    "category": 8
-  },
-  {
-    "question": "Pythonにおいて、未定義の名前を参照しようとしたときに発生する組み込み例外は何ですか？",
-    "choices": ["ZeroDivisionError", "TypeError", "NameError", "AttributeError"],
-    "correct": 3,
-    "category": 8
-  },
-  {
-    "question": "except 節で特定の例外を指定しない場合（ワイルドカードとして）、ほぼ全ての致命的でない例外を捕捉するために使用されるクラスは何ですか？",
-    "choices": ["SystemError", "RuntimeError", "Exception", "BaseError"],
-    "correct": 3,
-    "category": 8
-  },
-  {
-    "question": "try文における except 節の例外マッチングについて、以下のうち正しい記述はどれですか？",
-    "choices": ["派生クラスが書かれた except 節は、その基底クラスのインスタンスにマッチする", "基底クラスが書かれた except 節は、その派生クラスのインスタンスにマッチする", "except 節は、その例外と完全に一致するインスタンスにしかマッチしない", "except 節でタプルを使うと、マッチング順序が自動で最適化される"],
+    "question": "`from fibo import fib` という構文を使った場合、`fib` 関数をどのように呼び出しますか？",
+    "choices": [
+      "fibo.fib()",
+      "fib()",
+      "fibo->fib()",
+      "この構文は不正"
+    ],
     "correct": 2,
-    "category": 8
+    "category": 6,
+    "hint": "`from fibo import fib` は、モジュール `fibo` 内の `fib` という名前を、現在の名前空間に直接取り込みます。そのため、モジュール名を付けずに `fib()` として直接呼び出すことができます。",
+    "url": "https://docs.python.org/ja/3/tutorial/modules.html"
   },
   {
-    "question": "raise 文に例外クラス（例: ValueError）が渡された場合、例外が実際に送出される前にインタープリタが行う暗黙的な処理は何ですか？",
-    "choices": ["例外クラスが None に変換される", "args 属性が空のタプルで初期化される", "引数無しのコンストラクタが呼び出されインスタンス化される", "BaseException に変換され送出される"],
-    "correct": 3,
-    "category": 8
-  },
-  {
-    "question": "例外の連鎖において、except 節の中で未処理の例外が発生した場合、新しい例外のエラーメッセージに古い例外の情報を含めるためのデフォルトの動作は何ですか？",
-    "choices": ["古い例外は完全に無視され新しい例外のみが表示される", "from 句を使って明示的に連鎖させる必要がある", "古い例外は処理された例外のエラーメッセージに自動的に含まれる", "自動的に from None が適用される"],
-    "correct": 3,
-    "category": 8
-  },
-  {
-    "question": "明示的な例外の連鎖を無効にし、前の例外の詳細を新しい例外のエラーメッセージに含ませたくない場合、raise 文に from 句で指定する値は何ですか？",
-    "choices": ["pass", "None", "False", "NoLink"],
-    "correct": 2,
-    "category": 8
-  },
-  {
-    "question": "ユーザー定義例外を作成する際、ソースで推奨されている一般的な命名規則は何ですか？",
-    "choices": ["動詞で始まる名前にする", "Exceptionで終わる名前にする", "クラス名がErrorで終わるようにする", "アンダースコアで始まる名前にする"],
-    "correct": 3,
-    "category": 8
-  },
-  {
-    "question": "例外の発生後に、エラーに関する付加的な情報（文字列）を例外インスタンスに追加するために使用されるメソッドは何ですか？",
-    "choices": ["append_info()", "set_traceback()", "add_note()", "attach_message()"],
-    "correct": 3,
-    "category": 8
-  },
-  {
-    "question": "複数の関連しない例外を一つにまとめ、同時に送出できるようにする組み込みのクラスは何ですか？",
-    "choices": ["AggregateException", "ExceptionList", "ExceptionGroup", "MultiError"],
-    "correct": 3,
-    "category": 8
-  },
-  {
-    "question": "ExceptionGroupを捕捉する際に使用され、グループの中にある特定の型に一致した例外だけを選択して処理できる構文は何ですか？",
-    "choices": ["except if", "except for", "except*", "catch group"],
-    "correct": 3,
-    "category": 8
-  },
-  {
-    "question": "finally 節の実行中に、try節またはexcept節で処理されなかった例外が発生していた場合、finally 節の処理が終わった後、その例外はどうなりますか？",
-    "choices": ["その例外は破棄される", "その例外は自動的にログに記録される", "その例外は再送出される", "finally 節内のコードが中断される"],
-    "correct": 3,
-    "category": 8
-  },
-  {
-    "question": "finally 節で break, continue, または return 文を実行することが非推奨とされている理由は何ですか？",
-    "choices": ["常にメモリリークを引き起こすため", "実行環境によって動作が不安定になるため", "例外の再送出が抑制され混乱を招くため", "Python 3.14 より前のバージョンではサポートされていないため"],
-    "correct": 3,
-    "category": 8
-  },
-  {
-    "question": "Pythonにおいて、クラス定義によって作成される新しいオブジェクトの「型」は、通常何と呼ばれますか？", 
-    "choices": ["データメンバ", "クラス", "インスタンス", "モジュール"], 
-    "correct": 2, 
-    "category": 9 
-  },
-  {
-    "question": "Pythonのクラス機構が提供する、データと機能を組み合わせる方法は何と呼ばれますか？",
-    "choices": ["継承", "クラス", "スコープ", "名前空間"],
-    "correct": 2,
-    "category": 9
-  },
-  {
-    "question": "Pythonのクラスメソッドの宣言で、メソッドが作用するオブジェクト自体を表すために明示しなければならない第一引数の一般的な慣習名は？",
-    "choices": ["this", "obj", "current", "self"],
-    "correct": 4,
-    "category": 9
-  },
-  {
-    "question": "Pythonのスコープにおいて、名前が参照される際に最初に探される、最も内側のスコープは何ですか？",
-    "choices": ["外側の関数スコープ", "ローカルスコープ", "グローバルスコープ", "ビルトインスコープ"],
-    "correct": 2,
-    "category": 9
-  },
-  {
-    "question": "クラス定義から正常に抜けると、クラス定義で作成された名前空間の内容をくるむラッパーとして生成されるオブジェクトは何ですか？",
-    "choices": ["モジュールオブジェクト", "インスタンスオブジェクト", "関数オブジェクト", "クラスオブジェクト"],
-    "correct": 4,
-    "category": 9
-  },
-  {
-    "question": "クラスオブジェクトに対して、新しいインスタンスを生成するために使われる記法は、関数記法の形式で何を呼び出すのと同等ですか？",
-    "choices": ["メソッド", "クラス", "属性", "デコレータ"],
-    "correct": 2,
-    "category": 9
-  },
-  {
-    "question": "クラスのインスタンス化の際に、新しく作られたインスタンスに対して自動的に呼び出され、初期状態をカスタマイズするために使用される特殊メソッドは何ですか？",
-    "choices": ["new()", "main()", "init()", "del()"],
-    "correct": 3, 
-    "category": 9
-  },
-  {
-    "question": "リストや辞書のような変更可能な（mutable）オブジェクトがクラス変数として使われた場合、どのような問題が起こる可能性がありますか？",
-    "choices": ["実行速度が極端に低下する", "インスタンスが作成できなくなる", "全てのインスタンスによってそのデータが共有されてしまう", "デバッガで追跡できなくなる"],
-    "correct": 3,
-    "category": 9
-  },
-  {
-    "question": "Pythonにおいて、コンテナオブジェクトにわたってループを行う for 文の裏側で、要素に一つずつアクセスするために使用されるプロトコルは何ですか？",
-    "choices": ["ジェネレータプロトコル", "イテレータプロトコル", "オブジェクトプロトコル", "オーバーロードプロトコル"], 
-    "correct": 2,
-    "category": 9
-  },
-  {
-    "question": "イテレータがこれ以上要素がないことを通知するために送出する例外は何ですか？",
-    "choices": ["IndexError", "GeneratorExit", "StopIteration", "ValueError"],
-    "correct": 3,
-    "category": 9
-  },
-  {
-    "question": "関数内でローカルでもグローバルでもない外側のスコープの変数に再束縛するために使用される文は何ですか？",
-    "choices": ["global", "outer", "nonlocal", "enclosing"],
-    "correct": 3,
-    "category": 9
-  },
-  {
-    "question": "Pythonで、オブジェクトに対する代入がデータをコピーしないのは、他の言語で何として知られている現象と関係していますか？",
-    "choices": ["オーバーライド", "参照渡し", "別名づけ (alias)", "名前マングリング"],
-    "correct": 3, 
-    "category": 9
-  }, 
-  {
-    "question": "Pythonにおける属性検索において、インスタンス変数とクラス変数が同じ名前を持っていた場合、どちらが優先されますか？",
-    "choices": ["インスタンス属性", "クラス属性", "最初に定義された方", "エラーが発生する"],
+    "question": "モジュール `fibo` を `fib` という別名でインポートするための正しい構文はどれですか？",
+    "choices": [
+      "import fibo as fib",
+      "import fibo rename fib",
+      "import fibo is fib",
+      "import fib = fibo"
+    ],
     "correct": 1,
-    "category": 9
+    "category": 6,
+    "hint": "モジュール名の後に `as` を付けると、その後の名前でモジュールが束縛されます。`import fibo as fib` とすると、`fib.fib()` のようにしてモジュール内の関数にアクセスできます。",
+    "url": "https://docs.python.org/ja/3/tutorial/modules.html"
   },
   {
-    "question": "派生クラスが基底クラスのメソッドを上書き（オーバーライド）した場合、PythonではそのメソッドはC++でいうところのどのような性質を持ちますか？",
-    "choices": ["static", "friend", "abstract", "virtual (仮想関数)"],
-    "correct": 4,
-    "category": 9
-  },
-  {
-    "question": "Pythonのメソッドにおいて、インスタンスの非データ属性が参照された際、インスタンスオブジェクトと関数オブジェクトの両方への参照がパックされて生成されるオブジェクトは何ですか？",
-    "choices": ["クラスオブジェクト", "データ属性", "メソッドオブジェクト", "ジェネレータオブジェクト"],
-    "correct": 3,
-    "category": 9
-  },
-  {
-    "question": "Pythonの多重継承におけるメソッド解決順序（MRO）を線形化する動的アルゴリズムの主要な要件として、基底クラスが複数回アクセスされないように順序を線形化し、かつ崩さない順序は何ですか？",
-    "choices": ["右から左への順序", "左から右への順序", "深さ優先の順序", "幅優先の順序"],
+    "question": "`from fibo import *` のようにワイルドカードを使ってインポートする方法が一般的に推奨されない理由は何ですか？",
+    "choices": [
+      "パフォーマンスが極端に悪化するため",
+      "未知の名前が読み込まれ、定義済みの名前を上書きしてしまう可能性があるため",
+      "一部のモジュールでしかサポートされていないため",
+      "Python 3では廃止された機能であるため"
+    ],
     "correct": 2,
-    "category": 9
+    "category": 6,
+    "hint": "殆どの場面で、Pythonプログラマーはこの書き方を使いません。未知の名前がインタープリターに読み込まれ、定義済みの名前を上書きしてしまう可能性があり、可読性に乏しいコードになるからです。",
+    "url": "https://docs.python.org/ja/3/tutorial/modules.html"
   },
   {
-    "question": "Pythonで「プライベート変数」として扱われる慣習として、先頭に二個以上の下線文字（__spam）を持つ識別子に対して行われる、名前のテキスト置換の仕組みは何と呼ばれますか？",
-    "choices": ["データ抽象化", "名前マッピング", "名前マングリング", "動的解決"],
+    "question": "組み込み関数 `dir()` の役割は何ですか？",
+    "choices": [
+      "現在の作業ディレクトリを表示する",
+      "モジュールが定義している名前のリストを返す",
+      "モジュールのドキュメントを表示する",
+      "Pythonのインストールディレクトリを表示する"
+    ],
+    "correct": 2,
+    "category": 6,
+    "hint": "組み込み関数 `dir()` は、あるモジュールがどんな名前を定義しているか調べるために使われます。ソートされた文字列のリストを返します。",
+    "url": "https://docs.python.org/ja/3/tutorial/modules.html"
+  },
+  {
+    "question": "Pythonのモジュール名前空間を「ドット付きモジュール名」を使って構造化する手段を何と呼びますか？",
+    "choices": [
+      "ライブラリ",
+      "フレームワーク",
+      "パッケージ",
+      "コレクション"
+    ],
     "correct": 3,
-    "category": 9
+    "category": 6,
+    "hint": "パッケージは、Pythonのモジュール名前空間を「ドット付きモジュール名」を使って構造化する手段です。例えば、モジュール名 `A.B` は、`A` というパッケージのサブモジュール `B` を表します。",
+    "url": "https://docs.python.org/ja/3/tutorial/modules.html"
   },
   {
-    "question": "名前マングリング（__spam）が識別子に対してテキスト置換される際、classnameをクラス名として、どのように変換されますか？",
-    "choices": ["_classname__spam", "classname__spam", "public_classname_spam", "_private_spam"],
+    "question": "あるディレクトリをPythonにパッケージとして扱わせるために、そのディレクトリ内に置く必要があるファイルは何ですか？",
+    "choices": [
+      "main.py",
+      "package.json",
+      "__init__.py",
+      "setup.py"
+    ],
+    "correct": 3,
+    "category": 6,
+    "hint": "ファイルを含むディレクトリをパッケージとしてPythonに扱わせるには、ファイル `__init__.py` が必要です。このファイルは空でも構いません。",
+    "url": "https://docs.python.org/ja/3/tutorial/modules.html"
+  },
+  {
+    "question": "モジュールを修正した後、インタプリタを再起動せずに変更を反映させるための一般的な方法はどれですか？",
+    "choices": [
+      "再度 `import` 文を実行する",
+      "`importlib.reload()` を使用する",
+      "モジュールを `del` してから再度 `import` する",
+      "自動的に反映される"
+    ],
+    "correct": 2,
+    "category": 6,
+    "hint": "実行効率上の理由で、各モジュールはインタープリタの1セッションごとに1回だけインポートされます。モジュールを修正した場合は、`import importlib; importlib.reload(modulename)` のように `importlib.reload()` を使って再読み込みする必要があります。",
+    "url": "https://docs.python.org/ja/3/tutorial/modules.html"
+  },
+  {
+    "question": "Pythonモジュールをスクリプトとして直接実行したとき、そのモジュールの `__name__` 変数には何が設定されますか？",
+    "choices": [
+      "モジュール名",
+      "`'__main__'`",
+      "`'__script__'`",
+      "空の文字列"
+    ],
+    "correct": 2,
+    "category": 6,
+    "hint": "Pythonモジュールをスクリプトとして実行すると、`__name__` に `'__main__'` が設定されます。この性質を利用して、モジュールがインポートされた時とスクリプトとして実行された時で動作を分けることができます。",
+    "url": "https://docs.python.org/ja/3/tutorial/modules.html"
+  },
+  {
+    "question": "Pythonがモジュールを探す際に検索するディレクトリのリストが格納されている `sys` モジュールの変数は何ですか？",
+    "choices": [
+      "sys.modules",
+      "sys.path",
+      "sys.dirs",
+      "sys.search_path"
+    ],
+    "correct": 2,
+    "category": 6,
+    "hint": "`sys.path` は文字列からなるリストで、インタープリタがモジュールを検索するときのパスを決定します。このリストはプログラムから修正することも可能です。",
+    "url": "https://docs.python.org/ja/3/tutorial/modules.html"
+  },
+  {
+    "question": "コンパイル済みのPythonモジュールファイル（.pyc）がキャッシュされるディレクトリのデフォルト名は何ですか？",
+    "choices": [
+      ".cache",
+      "py_cache",
+      ".pyc",
+      "__pycache__"
+    ],
+    "correct": 4,
+    "category": 6,
+    "hint": "モジュールの読み込みを高速化するため、Pythonはコンパイル済みの各モジュールを `__pycache__` ディレクトリにキャッシュします。",
+    "url": "https://docs.python.org/ja/3/tutorial/modules.html"
+  },
+  {
+    "question": "パッケージの `__init__.py` ファイルに `__all__` という名前のリストを定義すると、どのような効果がありますか？",
+    "choices": [
+      "パッケージのバージョン情報を指定する",
+      "`from package import *` が実行されたときにインポートされるモジュール名を指定する",
+      "パッケージからエクスポートを禁止するモジュールを指定する",
+      "パッケージの依存関係を定義する"
+    ],
+    "correct": 2,
+    "category": 6,
+    "hint": "パッケージの `__init__.py` コードに `__all__` という名前のリストが定義されていれば、`from package import *` が現れたときにインポートすべきモジュール名のリストとして使われます。",
+    "url": "https://docs.python.org/ja/3/tutorial/modules.html"
+  },
+  {
+    "question": "`sound` パッケージ内の `effects` サブパッケージから `echo` モジュールをインポートする「明示的な相対インポート」の構文として正しいものはどれですか？(現在のモジュールが `sound.filters.vocoder` の場合)",
+    "choices": [
+      "from `..effects` import `echo`",
+      "from `.effects` import `echo`",
+      "from `sound.effects` import `echo`",
+      "from `...sound.effects` import `echo`"
+    ],
     "correct": 1,
-    "category": 9
+    "category": 6,
+    "hint": "明示的な相対インポートでは、先頭のドットで現在および親パッケージを指定します。`sound.filters.vocoder` から見て、`sound.effects` は親パッケージ(`sound`)の兄弟なので、`..` で親に上がり、`effects` を指定します。",
+    "url": "https://docs.python.org/ja/3/tutorial/modules.html"
   },
   {
-    "question": "ジェネレータがイテレータを作成するために使用し、何らかのデータを返すときに使う文は何ですか？",
-    "choices": ["return", "emit", "yield", "next"],
-    "correct": 3,
-    "category": 9
+    "question": "Pythonコマンドの `-O` スイッチと `-OO` スイッチの役割に関する説明で正しいものはどれですか？",
+    "choices": [
+      "`-O` は最適化を無効にし、`-OO` はさらにデバッグ情報を追加する",
+      "`-O` は `assert` 文を除去し、`-OO` は `assert` 文と `__doc__` 文字列を除去する",
+      "`-O` は `__doc__` 文字列のみを除去し、`-OO` は `assert` 文のみを除去する",
+      "両方とも同じ最適化を行い、`opt-` タグの付いた `.pyc` ファイルを生成する"
+    ],
+    "correct": 2,
+    "category": 6,
+    "hint": "コンパイル済みモジュールのサイズを小さくするために、`-O` または `-OO` スイッチが使えます。`-O` は `assert` 文を、`-OO` は `assert` 文と `__doc__` 文字列を除去します。",
+    "url": "https://docs.python.org/ja/3/tutorial/modules.html"
   },
   {
-    "question": "ジェネレータ式が、同じ内容を返すリスト内包表記と比較して持つ利点は何ですか？",
-    "choices": ["処理速度が常に速い", "より多くの柔軟性がある", "メモリに優しいことが多い", "定義構文が角括弧を使用する"],
-    "correct": 3,
-    "category": 9
+    "question": "シンボリックリンクをサポートするファイルシステムで、スクリプトがシンボリックリンク経由で実行された場合、モジュール検索パスにはどのディレクトリが追加されますか？",
+    "choices": [
+      "シンボリックリンクが置かれているディレクトリ",
+      "シンボリックリンクをたどった後の、実際のスクリプトファイルがあるディレクトリ",
+      "両方のディレクトリ",
+      "どちらのディレクトリも追加されない"
+    ],
+    "correct": 2,
+    "category": 6,
+    "hint": "入力されたスクリプトのあるディレクトリはシンボリックリンクをたどった後に計算されます。言い換えるとシンボリックリンクを含むディレクトリはモジュール検索パスに追加されません。",
+    "url": "https://docs.python.org/ja/3/tutorial/modules.html"
   },
-  { "question": "os モジュールで提供されている、現在の作業ディレクトリを返す関数は何ですか？", "choices": ["os.getdir()", "os.pwd()", "os.getcwd()", "os.currentdir()"], "correct": 3, "category": 10 }, { "question": "os モジュールと組み込み関数の open() との間で名前が競合するのを避けるために推奨されているインポート形式は何ですか？", "choices": ["import os", "from os import *", "import os as operating_system", "import open as os_open"], "correct": 1, "category": 10 }, { "question": "ファイルやディレクトリの日常的な管理作業のために、コピーや移動といった高水準のインターフェースを提供するモジュールは何ですか？", "choices": ["os", "sys", "shutil", "glob"], "correct": 3, "category": 10 }, { "question": "ディレクトリのワイルドカード検索からファイルのリストを生成するための関数を提供するモジュールは何ですか？", "choices": ["re", "glob", "os.path", "sys.files"], "correct": 2, "category": 10 }, { "question": "コマンドライン引数がリストとして保存される sys モジュールの属性は何ですか？", "choices": ["sys.args", "sys.params", "sys.cli", "sys.argv"], "correct": 4, "category": 10 }, { "question": "sys モジュールの属性のうち、警告やエラーメッセージを出力するために便利で、stdout がリダイレクトされた場合でも読めるようにするために存在するものは何ですか？", "choices": ["sys.stdin", "sys.stderr", "sys.input", "sys.log"], "correct": 2, "category": 10 }, { "question": "スクリプトを終了させる最も直接的な方法である sys モジュールの関数は何ですか？", "choices": ["sys.stop()", "sys.abort()", "sys.terminate()", "sys.exit()"], "correct": 4, "category": 10 }, { "question": "より高度な文字列処理のために正規表現を提供し、複雑な一致検索や操作に対して簡潔な解決策を提供するモジュールは何ですか？", "choices": ["string", "re", "regex", "search"], "correct": 2, "category": 10 }, { "question": "浮動小数点演算のための C 言語ライブラリ関数にアクセスする手段を提供するモジュールは何ですか？", "choices": ["float", "decimal", "math", "numeric"], "correct": 3, "category": 10 }, { "question": "数値データの基礎的な統計的特性（平均、中央値、分散等）を計算するモジュールは何ですか？", "choices": ["random", "stats", "statistics", "analysis"], "correct": 3, "category": 10 }, { "question": "日付や時刻を操作するためのクラスを提供し、タイムゾーン対応オブジェクトもサポートしているモジュールは何ですか？", "choices": ["time", "calendar", "datetime", "clock"], "correct": 3, "category": 10 }, { "question": "一般的なデータアーカイブと圧縮形式（zlib, gzip, bz2, lzmaなど）によってサポートされている機能は何ですか？", "choices": ["データ暗号化", "データ検証", "データ圧縮", "データ変換"], "correct": 3, "category": 10 }, { "question": "Pythonコードのパフォーマンスを計測するために、小さい粒度での計測を提供するモジュールは何ですか？", "choices": ["profile", "pstats", "unittest", "timeit"], "correct": 4, "category": 10 }, { "question": "プログラムのdocstringに埋め込まれたテストの評価を行うためのツールを提供し、使用例をドキュメントに追加するアプローチをサポートするモジュールは何ですか？", "choices": ["unittest", "testtools", "doctest", "pycheck"], "correct": 3, "category": 10 }, { "question": "Pythonの「バッテリー同梱」哲学を体現し、遠隔手続き呼び出し (remote procedure call) をサポートするために提供されているモジュールは何ですか？", "choices": ["xml.sax", "xmlrpc.client", "poplib", "json"], "correct": 2, "category": 10 }, { "question": "コマンドライン引数を処理するための洗練された仕組みを提供し、ファイル名やオプション（例: --lines）の設定を可能にするモジュールは何ですか？", "choices": ["sys", "getopt", "argparse", "commander"], "correct": 3, "category": 10 }, { "question": "URLからデータを取得するためのモジュールは何ですか？", "choices": ["httplib", "urllib.request", "requests", "ftplib"], "correct": 2, "category": 10 }, { "question": "ランダムモジュールにおいて、[0.0, 1.0) の区間内のランダムな float を返す関数は何ですか？", "choices": ["random.randfloat()", "random.uniform(0, 1)", "random.random()", "random.integer()"], "correct": 3, "category": 10 }, { "question": "unittest モジュールが doctest よりも優れている点として、ソースで言及されているのは何ですか？", "choices": ["よりシンプルな構文で記述できる", "docstringに埋め込む必要がない", "より網羅的なテストセットを別のファイルで管理できる", "自動的にテストカバレッジを計算できる"], "correct": 3, "category": 10 }, { "question": "SQLite データベースライブラリのラッパーであり、永続的なデータベース接続を提供するモジュールは何ですか？", "choices": ["mysql.connector", "postgresql", "sqlite3", "dbm"], "correct": 3, "category": 10 },
-  { "question": "reprlib モジュールが提供する機能は、主にどのような種類のオブジェクトを扱う際に役立ちますか？", "choices": ["日時オブジェクト", "数値演算の結果", "大きなコンテナや深くネストしたコンテナ", "ファイルオブジェクト"], "correct": 3, "category": 11 }, { "question": "pprint モジュールの pretty printer が、組み込み型やユーザ定義型をわかりやすく表示するために行うことは何ですか？", "choices": ["出力を単一行に強制する", "文字列の引用符を削除する", "改行とインデントを追加してデータ構造を明確にする", "バイナリデータをテキストに変換する"], "correct": 3, "category": 11 }, { "question": "textwrap モジュールが提供する fill() メソッドの主な用途は何ですか？", "choices": ["バイナリデータを構造化する", "指定したスクリーン幅に文章を調整する", "数値の桁区切りを設定する", "文字列内のプレースホルダを置換する"], "correct": 2, "category": 11 }, { "question": "locale モジュールがアクセスするデータベースは、どのような情報を含んでいますか？", "choices": ["標準ライブラリのモジュールリスト", "ハードウェア設定", "文化により異なるデータ表現形式", "ネットワーク接続情報"], "correct": 3, "category": 11 }, { "question": "string モジュールに含まれる Template クラスが提供する、エンドユーザーが簡単に編集できる簡単な構文を備えたものは何ですか？", "choices": ["正規表現", "関数定義", "文字列テンプレート", "クラス定義"], "correct": 3, "category": 11 }, { "question": "string.Template を使用する際、プレースホルダの後ろにスペースを挟まずに英数文字を続けるために、プレースホルダの周りを囲む記号は何ですか？", "choices": ["[]", "()", "<>", "{}"], "correct": 4, "category": 11 }, { "question": "string.Template の substitute() メソッドが、プレースホルダに相当する値がない場合に送出する例外は何ですか？", "choices": ["ValueError", "TypeError", "KeyError", "AttributeError"], "correct": 3, "category": 11 }, { "question": "string.Template の safe_substitute() メソッドが、欠落したデータがある場合にどのように動作しますか？", "choices": ["エラーメッセージを出力し、処理を停止する", "欠落したプレースホルダをそのままにして出力する", "None を挿入する", "プレースホルダを空文字列に置換する"], "correct": 2, "category": 11 }, { "question": "struct モジュールが提供する pack() や unpack() といった関数が操作するデータの形式は何ですか？", "choices": ["JSONデータ", "テキストデータ", "バイナリレコード形式", "XMLデータ"], "correct": 3, "category": 11 }, { "question": "struct モジュールで、バイトオーダーがリトルエンディアンであることを示すパック符号は何ですか？", "choices": [">", "@", "=", "<"], "correct": 4, "category": 11 }, { "question": "threading モジュールの主な目的として、ソースで述べられているのは何ですか？", "choices": ["外部ファイルの圧縮", "データ永続化の管理", "非依存の複数のタスクを分割すること", "正規表現の処理"], "correct": 3, "category": 11 }, { "question": "マルチスレッドアプリケーションにおいて、データやリソースを共有するスレッド間の調整の問題を解決するために、threading モジュールが提供するものは何ですか？", "choices": ["ジェネレータ", "デコレータ", "同期プリミティブ (ロック、イベント、セマフォなど)", "名前マングリング"], "correct": 3, "category": 11 }, { "question": "スレッド間の通信や調整において、設計が容易になり、可読性が高まり、信頼性が増すとして推奨されているオブジェクトは何ですか？", "choices": ["Dictionary オブジェクト", "Queue オブジェクト", "Set オブジェクト", "List オブジェクト"], "correct": 2, "category": 11 }, { "question": "logging モジュールにおいて、デフォルトで出力が抑制され、標準エラーに送信されないメッセージのプライオリティレベルはどれですか？", "choices": ["WARNING と ERROR", "ERROR と CRITICAL", "DEBUG と INFO", "CRITICAL のみ"], "correct": 3, "category": 11 }, { "question": "Pythonがオブジェクトのメモリ管理を行う仕組みとして、ほとんどのオブジェクトで用いられている方式は何ですか？", "choices": ["マーク＆スイープ", "コピーGC", "参照カウント方式", "世代別ガベージコレクション"], "correct": 3, "category": 11 }, { "question": "weakref モジュールが提供するツールは、オブジェクトへの参照を作らずに何を行うことを可能にしますか？", "choices": ["オブジェクトの属性を変更する", "オブジェクトの型を検証する", "オブジェクトを追跡する", "オブジェクトをシリアライズする"], "correct": 3, "category": 11 }, { "question": "array モジュールが提供する array オブジェクトは、組み込みリストと比べて、主にどのような特徴を持っていますか？", "choices": ["バイナリ整数のみを格納する", "同種のデータのみをよりコンパクトに格納する", "左端からの追加と取り出しが速い", "オブジェクトへの弱参照をサポートする"], "correct": 2, "category": 11 }, { "question": "collections モジュールが提供する deque オブジェクトが、特に向いている実装は何ですか？", "choices": ["ヒープソート", "木構造の幅優先探索", "バイナリデータの読み書き", "正規表現による検索"], "correct": 2, "category": 11 }, { "question": "heapq モジュールがリストをヒープとして操作する際に、最も低い値を持つエントリがつねに配置されるリストの位置は何ですか？", "choices": ["末尾", "中央", "ランダムな位置", "ゼロの位置 (インデックス 0)"], "correct": 4, "category": 11 }, { "question": "decimal モジュールが提供する Decimal データ型が、組み込みの float に比べて特に有用なアプリケーションの例として挙げられているのは何ですか？", "choices": ["科学計算", "3Dグラフィックス", "ゲーム開発", "財務アプリケーション"], "correct": 4, "category": 11 },
-  { "question": "Pythonアプリケーションが標準ライブラリ以外のパッケージやモジュールを利用する際、異なるアプリケーション間でバージョンの競合が発生する問題を解決するための手段は何ですか？", "choices": ["グローバル環境のアップグレード", "仮想環境", "pip の --global オプション", "標準ライブラリの削除"], "correct": 2, "category": 12 }, { "question": "仮想環境の作成・管理に使われるモジュール名は次のうちどれですか？", "choices": ["env", "virtualenv", "venv", "pipenv"], "correct": 3, "category": 12 }, { "question": "仮想環境を作成する際に、実行された Python のバージョンがインストールされることを確認するために利用できるオプションは何ですか？", "choices": ["--install", "--version", "--copy", "--system-site-packages"], "correct": 2, "category": 12 }, { "question": "Unix または Mac OS で、仮想環境を有効化するために bash shell で実行するスクリプトを含むディレクトリと、そのスクリプト名は何ですか？", "choices": ["/usr/bin/activate", "/etc/venv/activate", "/bin/activate.sh", "tutorial-env/bin/activate"], "correct": 4, "category": 12 }, { "question": "仮想環境を有効化すると、シェルのプロンプトに表示されるようになる情報は何ですか？", "choices": ["現在のディレクトリのパス", "利用中の仮想環境", "Pythonのバージョン", "利用可能なメモリ量"], "correct": 2, "category": 12 }, { "question": "仮想環境を無効化するためにターミナルに入力するコマンドは何ですか？", "choices": ["exit", "deactivate", "env_stop", "disable"], "correct": 2, "category": 12 }, { "question": "パッケージをインストール、アップグレード、削除するために使用されるプログラムは何ですか？", "choices": ["setup", "PyPI", "conda", "pip"], "correct": 4, "category": 12 }, { "question": "特定のバージョンのパッケージ（例：requests）をインストールするために、パッケージ名のあとに続けて指定する記法は何ですか？", "choices": ["@2.6.0", "=2.6.0", "->2.6.0", "==2.6.0"], "correct": 4, "category": 12 }, { "question": "パッケージを最新版に更新するために pip コマンドで使うオプションは何ですか？", "choices": ["--latest", "--update", "--upgrade", "--new"], "correct": 3, "category": 12 }, { "question": "pip のサブコマンドのうち、仮想環境にインストールされた全てのパッケージを表示するものは何ですか？", "choices": ["show", "list", "check", "info"], "correct": 2, "category": 12 }, { "question": "Python Package Index からパッケージをインストールする際に pip がデフォルトで使用するリポジトリは何ですか？", "choices": ["PyPI (Python Package Index)", "GitHub", "Anaconda Cloud", "pip index"], "correct": 1, "category": 12 }, { "question": "仮想環境は、アプリケーションAがバージョン1.0のモジュールを要求し、アプリケーションBがバージョン2.0を要求するといった、モジュールのバージョン間の何を解決しますか？", "choices": ["パフォーマンスの不一致", "命名規則の不一致", "要求の衝突", "セキュリティの脆弱性"], "correct": 3, "category": 12 }, { "question": "venv モジュールを使って仮想環境を作成する際に、仮想環境を置くディレクトリの一般的な場所として推奨されている名前は何ですか？", "choices": [".venv", "env_cache", "virtual_dir", "python_env"], "correct": 1, "category": 12 }, { "question": "venv によって作成された .venv ディレクトリが、一部のツールでサポートされているどの環境変数定義ファイルとのクラッシュを防止すると述べられていますか？", "choices": [".bin", ".config", ".env", ".cache"], "correct": 3, "category": 12 }, { "question": "Windowsで仮想環境を有効化するために実行するスクリプトのパスは、UnixやMac OSとは異なり、どのサブディレクトリ内にありますか？", "choices": ["bin", "Executables", "Scripts", "Libs"], "correct": 3, "category": 12 }, { "question": "仮想環境が有効化された状態で python を実行すると、どの Python インタプリタが実行されるようになりますか？", "choices": ["システムのデフォルトの Python", "標準ライブラリの Python", "仮想環境の Python", "最新版の Python"], "correct": 3, "category": 12 }, { "question": "pip のサブコマンドのうち、インストールされたパッケージ一覧を、 pip install が解釈するフォーマットで生成するものは何ですか？", "choices": ["list", "generate", "freeze", "export"], "correct": 3, "category": 12 }, { "question": "pip freeze で生成されたインストール済みパッケージのリストを保存するための一般的な慣習ファイル名は何ですか？", "choices": ["packages.txt", "install_list.txt", "requirements.txt", "dependencies.txt"], "correct": 3, "category": 12 }, { "question": "requirements.txt ファイルを使って必要なパッケージを一括でインストールするために、 pip install とともに使用されるオプションは何ですか？", "choices": ["--batch", "-a", "-r", "--file"], "correct": 3, "category": 12 }, { "question": "python -m pip show コマンドを実行した際に表示される情報に含まれる属性のうち、パッケージのバージョンを示すフィールドは何ですか？", "choices": ["Name", "Summary", "Version", "Location"], "correct": 3, "category": 12 },
-  { "question": "Pythonの対話型インタープリタで、現在の入力行の編集機能や履歴置換機能を実装するために利用されているライブラリは何ですか？", "choices": ["GNU Readline ライブラリ", "Korn シェルライブラリ", "GNU Bash シェルライブラリ", "Python History ライブラリ"], "correct": 1, "category": 14 }, { "question": "Pythonの対話型インタープリタにおいて、変数名やモジュール名の補完機能を呼び出すためのキーは何ですか？", "choices": ["Enter キー", "Ctrl キー", "Tab キー", "Shift キー"], "correct": 3, "category": 14 }, { "question": "Pythonの対話型インタープリタのタブ補完機能が、ドットで区切られた式（例: string.a）に対して補完候補を示すために行うことは何ですか？", "choices": ["式の評価をスキップする", "最後の '.' までの式を評価し、結果オブジェクトの属性を検索する", "全ての利用可能なモジュール名を検索する", "現在のローカル変数を全てリストする"], "correct": 2, "category": 14 }, { "question": "Pythonの対話型インタープリタのデフォルト設定において、履歴が保存されるファイルの名前は何ですか？", "choices": [".bash_history", "history.log", ".python_history", "python.cache"], "correct": 3, "category": 14 }, { "question": "履歴ファイル（.python_history）は、どのディレクトリに保存されますか？", "choices": ["システムのテンポラリディレクトリ", "現在の作業ディレクトリ", "インタプリタがインストールされたディレクトリ", "ユーザーディレクトリ"], "correct": 4, "category": 14 }, { "question": "対話的インタープリタの代替の一つとして挙げられており、タブ補完、オブジェクト探索、先進的な履歴管理といった機能を持つものは何ですか？", "choices": ["bpython", "IDLE", "PyCharm", "IPython"], "correct": 4, "category": 14 }, { "question": "代替インタープリタの一つである IPython の特徴として、ソースで言及されているのは何ですか？", "choices": ["グラフィカルなデバッガ機能", "行を継続するときの正しいインデント提示", "他のアプリケーションにカスタマイズされたり、組み込まれたりすること", "コードの自動最適化機能"], "correct": 3, "category": 14 }, { "question": "もう一つの優れた対話的インターフェースとして、IPythonと並んで挙げられているのは何ですか？", "choices": ["Jupyter", "bpython", "PyDev", "Thonny"], "correct": 2, "category": 14 }, { "question": "現在の対話型インタープリタの機能について、まだ改善の要望が残されている点として挙げられている、パーサが次の行で INDENT トークンが必要かどうかを知っている機能は何ですか？", "choices": ["行を継続するときに正しいインデントを提示すること", "シンボルテーブルを使った補完機構の改善", "括弧やクォートなどの対応チェック", "履歴置換機能の強化"], "correct": 1, "category": 14 }, { "question": "ドットで区切られた式（例：obj.attr）のタブ補完において、式に getattr() メソッドを持ったオブジェクトが含まれている場合に注意すべき点は何ですか？", "choices": ["補完候補が空になること", "補完機能が機能しなくなること", "getattr() がアプリケーション定義のコードを実行するかもしれないこと", "履歴が保存されなくなること"], "correct": 3, "category": 14 }, { "question": "GNU Readline ライブラリによって実装されている、編集機能や履歴置換機能が似ているとされているシェルは何ですか？", "choices": ["Z シェル (Zsh) と C シェル (Csh)", "Korn シェルと GNU Bash シェル", "Fish シェルと Tcsh", "PowerShell と CMD"], "correct": 2, "category": 14 }, { "question": "現在のインタープリタの要望として残されている機能のうち、括弧やクォートなどの対応をチェックする（あるいは指示する）コマンドは、どのような点で有用だと述べられていますか？", "choices": ["バグ報告の自動化のため", "コードの可読性を高めるため", "対話的なコード入力を容易にするため", "メモリ使用量を削減するため"], "correct": 3, "category": 14 }, { "question": "タブ補完と履歴編集は、Pythonインタプリタの起動時にどのような状態で有効化されますか？", "choices": ["ユーザーが手動で設定ファイルを編集する", "デフォルトで無効化されている", "自動的に有効化される", "環境変数に依存する"], "correct": 3, "category": 14 }, { "question": "一度保存された履歴ファイルは、いつ再び利用することができますか？", "choices": ["Pythonを再インストールした後", "次回、対話的なインタープリタのセッションで", "同じディレクトリでスクリプトを実行したとき", "インタープリタを再起動した後、手動でロードしたとき"], "correct": 2, "category": 14 }, { "question": "「次のトピックへ」として指定されている、15章のタイトルは何ですか？", "choices": ["クラスと継承", "ジェネレータの使い方", "浮動小数点演算、その問題と制限", "モジュールのデバッグ"], "correct": 3, "category": 14 }, { "question": "このドキュメントが最後に更新された日付は何ですか？", "choices": ["2024年1月1日", "2025年12月09日", "2001年12月09日", "2023年10月27日"], "correct": 2, "category": 14 }, { "question": "このページ（Python チュートリアルの14章）がライセンスされているバージョンは何ですか？", "choices": ["Zero Clause BSDライセンス", "MITライセンス", "Python Software Foundation License Version 2", "GNU GPL v3"], "correct": 3, "category": 14 }, { "question": "このドキュメントを構築するために使用されたツールは何ですか？", "choices": ["reStructuredText", "Sphinx", "LaTeX", "MkDocs"], "correct": 2, "category": 14 }, { "question": "対話的インタープリタの補完機構の改善要望として、インタープリタの何を使ってもよいかもしれないと述べられていますか？", "choices": ["OSの環境変数", "ローカルファイルのインデックス", "インタープリタのシンボルテーブル", "外部データベース"], "correct": 3, "category": 14 }, { "question": "Pythonの対話型インタープリタの現在の機能は、初期の版のインタープリタと比べてどのような進歩だと見なされていますか？", "choices": ["セキュリティの強化", "グラフィック機能の追加", "大きな進歩", "互換性の向上"], "correct": 3, "category": 14 }
+  {
+    "question": "`dir()` 関数に引数を与えずに呼び出した場合、何がリストされますか？",
+    "choices": [
+      "組み込み関数の名前",
+      "標準ライブラリのモジュール名",
+      "現在のローカルスコープで定義している名前",
+      "空のリスト"
+    ],
+    "correct": 3,
+    "category": 6,
+    "hint": "引数がない場合、`dir()` は現在定義している名前（変数、モジュール、関数など）を列挙します。",
+    "url": "https://docs.python.org/ja/3/tutorial/modules.html"
+  },
+  {
+    "question": "パッケージの特別な属性 `__path__` は何を含んでいますか？",
+    "choices": [
+      "パッケージのドキュメント文字列",
+      "パッケージの作者名",
+      "パッケージ内のモジュールやサブパッケージを検索するディレクトリのリスト",
+      "パッケージのバージョン番号"
+    ],
+    "correct": 3,
+    "category": 6,
+    "hint": "`__path__` 属性は、パッケージの `__init__.py` が収められているディレクトリ名の文字列を含んだシーケンスとして初期化されます。これを変更することで、そのパッケージのモジュール検索パスに影響を与えられます。",
+    "url": "https://docs.python.org/ja/3/tutorial/modules.html"
+  },
+  {
+    "question": "`sys.path` が初期化される際、最も優先される（リストの先頭に追加される）ディレクトリはどれですか？",
+    "choices": [
+      "Pythonのインストールディレクトリ",
+      "環境変数 `PYTHONPATH` で指定されたディレクトリ",
+      "入力されたスクリプトのあるディレクトリ（またはカレントディレクトリ）",
+      "site-packages ディレクトリ"
+    ],
+    "correct": 3,
+    "category": 6,
+    "hint": "モジュール検索パス `sys.path` は、入力されたスクリプトのあるディレクトリ、`PYTHONPATH`、インストール依存のデフォルトの順で初期化されます。スクリプトファイルを含むディレクトリが検索パスの先頭に追加されます。",
+    "url": "https://docs.python.org/ja/3/tutorial/modules.html"
+  },
+  {
+    "question": "文字列の頭に `f` を付け、式を `{}` で囲むことで値を埋め込むことができる文字列リテラルを何と呼びますか？",
+    "choices": [
+      "テンプレート文字列",
+      "フォーマット済み文字列リテラル (f-string)",
+      "raw文字列",
+      "バイト文字列"
+    ],
+    "correct": 2,
+    "category": 7,
+    "hint": "フォーマット済み文字列リテラル（f-string）を使うには、開き引用符の前に `f` または `F` を付けて文字列を始めます。内側では `{expression}` の形式でPythonの式を埋め込めます。",
+    "url": "https://docs.python.org/ja/3/tutorial/inputoutput.html"
+  },
+  {
+    "question": "`str()` 関数と `repr()` 関数の主な違いは何ですか？",
+    "choices": [
+      "`str()` は人間が読める表現、`repr()` はインタプリタが読める表現を返すことを目的とする",
+      "`str()` は文字列専用、`repr()` は数値専用",
+      "`str()` はオブジェクトの表現を返し、`repr()` はそのメモリ上のアドレスを返す",
+      "両者に違いはなく、同じ値を返す"
+    ],
+    "correct": 1,
+    "category": 7,
+    "hint": "`str()` 関数は値の人間に読める表現を返すためのもので、`repr()` 関数はインタープリタに読める表現を返すためのものです。例えば文字列 `s` に対して `repr(s)` はクォートを含んだ表現を返します。",
+    "url": "https://docs.python.org/ja/3/tutorial/inputoutput.html"
+  },
+  {
+    "question": "文字列のメソッド `str.format()` を使って、 `{0}` と `{1}` のように数値を指定する書式設定方法を何と呼びますか？",
+    "choices": [
+      "キーワード引数による指定",
+      "順序引数による指定",
+      "自動的な指定",
+      "インデックス指定"
+    ],
+    "correct": 2,
+    "category": 7,
+    "hint": "`str.format()` メソッドでは、括弧の中の数字は渡されたオブジェクトの位置を表すのに使えます。これを順序引数による指定と呼びます。例: `'{0} and {1}'.format('spam', 'eggs')`",
+    "url": "https://docs.python.org/ja/3/tutorial/inputoutput.html"
+  },
+  {
+    "question": "ファイルを開くための組み込み関数は何ですか？",
+    "choices": [
+      "file()",
+      "open()",
+      "read()",
+      "create()"
+    ],
+    "correct": 2,
+    "category": 7,
+    "hint": "`open()` はファイルオブジェクトを返します。通常、`open(filename, mode)` のようにファイル名とモードを指定して呼び出されます。",
+    "url": "https://docs.python.org/ja/3/tutorial/inputoutput.html"
+  },
+  {
+    "question": "ファイルを書き込み専用で開くためのモード指定子は何ですか？（同名の既存ファイルは消去されます）",
+    "choices": [
+      "'r'",
+      "'w'",
+      "'a'",
+      "'x'"
+    ],
+    "correct": 2,
+    "category": 7,
+    "hint": "ファイルを書き込み専用で開くにはモードに `'w'` を指定します。このモードでは、同名の既存のファイルがあればその内容は消去されます。",
+    "url": "https://docs.python.org/ja/3/tutorial/inputoutput.html"
+  },
+  {
+    "question": "ファイル操作において `with` 文を使うことの主な利点は何ですか？",
+    "choices": [
+      "ファイルの読み書きが高速になる",
+      "ファイルが存在しない場合に自動的に作成する",
+      "処理中に例外が発生しても、必ず最後にファイルが正しく閉じられる",
+      "バイナリモードでのみ使用できる"
+    ],
+    "correct": 3,
+    "category": 7,
+    "hint": "`with` キーワードを使うのは良い習慣です。その利点は、処理中に例外が発生しても必ず最後にファイルをちゃんと閉じることです。",
+    "url": "https://docs.python.org/ja/3/tutorial/inputoutput.html"
+  },
+  {
+    "question": "ファイルから1行だけを読み取るファイルオブジェクトのメソッドは何ですか？",
+    "choices": [
+      "f.read()",
+      "f.get_line()",
+      "f.readline()",
+      "f.readlines()"
+    ],
+    "correct": 3,
+    "category": 7,
+    "hint": "`f.readline()` はファイルから1行だけを読み取ります。ファイルの終端に達すると空の文字列 `''` を返します。",
+    "url": "https://docs.python.org/ja/3/tutorial/inputoutput.html"
+  },
+  {
+    "question": "Pythonのデータ階層をJSON形式の文字列表現に変換する処理を何と呼びますか？",
+    "choices": [
+      "パース (parsing)",
+      "デシリアライズ (deserializing)",
+      "シリアライズ (serializing)",
+      "フォーマット (formatting)"
+    ],
+    "correct": 3,
+    "category": 7,
+    "hint": "`json` モジュールは、Pythonのデータ階層を取り、文字列表現に変換します。この処理はシリアライズと呼ばれます。",
+    "url": "https://docs.python.org/ja/3/tutorial/inputoutput.html"
+  },
+  {
+    "question": "PythonオブジェクトをJSON形式の文字列にシリアライズするための `json` モジュールの関数は何ですか？",
+    "choices": [
+      "json.load()",
+      "json.dump()",
+      "json.loads()",
+      "json.dumps()"
+    ],
+    "correct": 4,
+    "category": 7,
+    "hint": "オブジェクトをそのJSON形式の文字列表現にするには `json.dumps()` 関数を使用します。",
+    "url": "https://docs.python.org/ja/3/tutorial/inputoutput.html"
+  },
+  {
+    "question": "JSON形式のデータを含むテキストファイルからPythonオブジェクトをデシリアライズするための `json` モジュールの関数は何ですか？",
+    "choices": [
+      "json.load()",
+      "json.dump()",
+      "json.loads()",
+      "json.dumps()"
+    ],
+    "correct": 1,
+    "category": 7,
+    "hint": "デシリアライズするには `json.load(f)` を使用します。ここで `f` は読み込み用に開かれたテキストファイルオブジェクトです。",
+    "url": "https://docs.python.org/ja/3/tutorial/inputoutput.html"
+  },
+  {
+    "question": "f-string `f'{math.pi:.3f}'` はどのような出力をしますか？",
+    "choices": [
+      "'3.141'",
+      "'3.142'",
+      "'3.14'",
+      "エラーが発生する"
+    ],
+    "correct": 2,
+    "category": 7,
+    "hint": "f-stringでは、`:` の後にフォーマット指定子を記述できます。`.3f` は浮動小数点数を小数点以下3桁に丸めてフォーマットすることを意味します。`math.pi` (約3.14159) は '3.142' になります。",
+    "url": "https://docs.python.org/ja/3/tutorial/inputoutput.html"
+  },
+  {
+    "question": "f-stringで値の `repr()` 表現を埋め込むために使用する変換フラグはどれですか？",
+    "choices": [
+      "!s",
+      "!a",
+      "!r",
+      "!d"
+    ],
+    "correct": 3,
+    "category": 7,
+    "hint": "f-stringでは他の修飾子を使い、フォーマットする前に値を変換できます。`!a` は `ascii()` を、`!s` は `str()` を、`!r` は `repr()` を適用します。",
+    "url": "https://docs.python.org/ja/3/tutorial/inputoutput.html"
+  },
+  {
+    "question": "文字列メソッド `zfill(5)` を `'12'` に適用した結果はどうなりますか？",
+    "choices": [
+      "'12000'",
+      "'00012'",
+      "'   12'",
+      "'12   '"
+    ],
+    "correct": 2,
+    "category": 7,
+    "hint": "`str.zfill()` メソッドは、数値文字列の左側をゼロで埋めます。`'12'.zfill(5)` の結果は `'00012'` となります。",
+    "url": "https://docs.python.org/ja/3/tutorial/inputoutput.html"
+  },
+  {
+    "question": "ファイルをバイナリモードで開くために、モード指定子に追加する文字は何ですか？",
+    "choices": [
+      "x",
+      "b",
+      "t",
+      "u"
+    ],
+    "correct": 2,
+    "category": 7,
+    "hint": "モードに `'b'` をつけるとファイルをバイナリモードで開きます。バイナリモードでのデータは `bytes` オブジェクトで読み書きします。",
+    "url": "https://docs.python.org/ja/3/tutorial/inputoutput.html"
+  },
+  {
+    "question": "テキストモードでファイルを開く際にエンコーディングが指定されない場合、何が使用されますか？",
+    "choices": [
+      "常にUTF-8",
+      "常にASCII",
+      "プラットフォーム依存のデフォルト",
+      "エラーが発生する"
+    ],
+    "correct": 3,
+    "category": 7,
+    "hint": "エンコーディングが指定されなければ、デフォルトはプラットフォーム依存です。異なるエンコーディングを指定したい場合以外は `encoding=\"utf-8\"` の指定がおすすめです。",
+    "url": "https://docs.python.org/ja/3/tutorial/inputoutput.html"
+  },
+  {
+    "question": "ファイルオブジェクトの `seek(-3, 2)` はどのような操作を行いますか？",
+    "choices": [
+      "先頭から3バイト目に移動する",
+      "現在の位置から3バイト前に移動する",
+      "末尾から3バイト目に移動する",
+      "エラーが発生する"
+    ],
+    "correct": 3,
+    "category": 7,
+    "hint": "`f.seek(offset, whence)` はファイル位置を変更します。`whence` が 2 の場合、ファイルの終端を参照点として使います。したがって、`seek(-3, 2)` は末尾から3バイト目の位置に移動します。",
+    "url": "https://docs.python.org/ja/3/tutorial/inputoutput.html"
+  },
+  {
+    "question": "テキストファイルに対して `f.seek()` を使用する場合の制約として正しいものはどれですか？",
+    "choices": [
+      "任意のオフセット値が使用できる",
+      "ファイルの末尾へのシークはできない",
+      "有効なオフセット値は `f.tell()` から返された値か 0 のいずれかであり、参照点はファイルの先頭のみ（例外あり）",
+      "バイナリモードより高速に動作する"
+    ],
+    "correct": 3,
+    "category": 7,
+    "hint": "テキストファイルでは、ファイルの先頭からの相対位置に対するシークだけが許可されています（例外として `seek(0, 2)` は可能）。有効なオフセット値は `f.tell()` から返された値か 0 に限られます。",
+    "url": "https://docs.python.org/ja/3/tutorial/inputoutput.html"
+  },
+  {
+    "question": "`f.read(size)` で `size` が省略されたり負の数だった場合、どのような動作になりますか？",
+    "choices": [
+      "エラーが発生する",
+      "1バイトだけ読み込む",
+      "ファイルの内容全てを読み出して返す",
+      "空の文字列を返す"
+    ],
+    "correct": 3,
+    "category": 7,
+    "hint": "`size` が省略されたり負の数であった場合、`f.read()` はファイルの内容全てを読み出して返します。",
+    "url": "https://docs.python.org/ja/3/tutorial/inputoutput.html"
+  },
+  {
+    "question": "JSONファイルはどのエンコーディングでエンコードすることが推奨されていますか？",
+    "choices": [
+      "ASCII",
+      "プラットフォームのデフォルト",
+      "UTF-8",
+      "UTF-16"
+    ],
+    "correct": 3,
+    "category": 7,
+    "hint": "JSONファイルは必ずUTF-8でエンコードします。JSONファイルをテキストファイルとして読み書きで開くときには、`encoding=\"utf-8\"` を指定します。",
+    "url": "https://docs.python.org/ja/3/tutorial/inputoutput.html"
+  },
+  {
+    "question": "`pickle` モジュールと `json` モジュールの違いに関する記述として正しいものはどれですか？",
+    "choices": [
+      "`json` はPython専用だが、`pickle` は言語非依存である",
+      "`pickle` は任意の複雑なPythonオブジェクトをシリアライズできるが、`json` は基本的なデータ型に限られる",
+      "`pickle` は常に安全だが、`json` は信頼できないデータに対して危険である",
+      "両者は完全に同じ機能を持つ"
+    ],
+    "correct": 2,
+    "category": 7,
+    "hint": "`pickle` はPythonに特有のプロトコルで、任意の複雑なPythonオブジェクトをシリアライズ可能です。一方、`json` は他の言語とのデータ交換に適しています。また、`pickle` は信頼できないデータに対して安全ではありません。",
+    "url": "https://docs.python.org/ja/3/tutorial/inputoutput.html"
+  },
+  {
+    "question": "Pythonのエラーには、構文エラーと、実行中に検出されるエラーの2種類があります。後者は何と呼ばれますか？",
+    "choices": [
+      "警告 (Warning)",
+      "バグ (Bug)",
+      "例外 (Exception)",
+      "障害 (Fault)"
+    ],
+    "correct": 3,
+    "category": 8,
+    "hint": "実行中に検出されたエラーは例外と呼ばれ、致命的とは限りません。例として ZeroDivisionError, NameError, TypeError などがあります。",
+    "url": "https://docs.python.org/ja/3/tutorial/errors.html"
+  },
+  {
+    "question": "例外を処理するために使用される文の基本的な形式は何ですか？",
+    "choices": [
+      "if...else",
+      "switch...case",
+      "try...except",
+      "do...while"
+    ],
+    "correct": 3,
+    "category": 8,
+    "hint": "`try` 文は例外処理に使われます。まず `try` 節が実行され、例外が発生すると、例外型に一致する `except` 節が実行されます。",
+    "url": "https://docs.python.org/ja/3/tutorial/errors.html"
+  },
+  {
+    "question": "`try`...`except` 文において、`try` 節で例外が発生しなかった場合にのみ実行される、オプションの節は何ですか？",
+    "choices": [
+      "finally",
+      "else",
+      "then",
+      "success"
+    ],
+    "correct": 2,
+    "category": 8,
+    "hint": "`try ... except` 文には、オプションで `else` 節を設けることができます。`else` 節は `try` 節で全く例外が送出されなかったときに実行されるコードを書くのに役立ちます。",
+    "url": "https://docs.python.org/ja/3/tutorial/errors.html"
+  },
+  {
+    "question": "プログラムで意図的に特定の例外を発生させるために使用する文は何ですか？",
+    "choices": [
+      "throw",
+      "error",
+      "raise",
+      "exception"
+    ],
+    "correct": 3,
+    "category": 8,
+    "hint": "`raise` 文を使って、特定の例外を発生させることができます。例: `raise NameError('HiThere')`",
+    "url": "https://docs.python.org/ja/3/tutorial/errors.html"
+  },
+  {
+    "question": "`try` 文において、例外が発生したかどうかにかかわらず、最後に必ず実行されるクリーンアップ動作を定義するためのオプションの節は何ですか？",
+    "choices": [
+      "else",
+      "cleanup",
+      "always",
+      "finally"
+    ],
+    "correct": 4,
+    "category": 8,
+    "hint": "`try` 文には `finally` 節を設けることができます。この節はクリーンアップ動作を定義するためのもので、`try` 文が終わる前の最後の処理として、どんな状況でも必ず実行されます。",
+    "url": "https://docs.python.org/ja/3/tutorial/errors.html"
+  },
+  {
+    "question": "ユーザーがプログラムに割り込みをかけたとき（例: Control-C）に送出される例外は何ですか？",
+    "choices": [
+      "InterruptError",
+      "StopIteration",
+      "KeyboardInterrupt",
+      "SystemExit"
+    ],
+    "correct": 3,
+    "category": 8,
+    "hint": "ユーザーが生成した割り込みは、`KeyboardInterrupt` 例外が送出されることで通知されます。",
+    "url": "https://docs.python.org/ja/3/tutorial/errors.html"
+  },
+  {
+    "question": "ファイルなどのオブジェクトを扱った後、常に正しくクリーンアップされることを保証する、`finally` 節の代わりによく使われる文は何ですか？",
+    "choices": [
+      "using",
+      "with",
+      "auto",
+      "manage"
+    ],
+    "correct": 2,
+    "category": 8,
+    "hint": "`with` 文はファイルのようなオブジェクトが常に、即座に正しくクリーンアップされることを保証します。`with` 文が実行されたあとで、たとえ処理中に問題があったとしても、オブジェクトは常にクローズされます。",
+    "url": "https://docs.python.org/ja/3/tutorial/errors.html"
+  },
+  {
+    "question": "独自の例外を定義する際、通常どのクラスから派生させますか？",
+    "choices": [
+      "object",
+      "BaseException",
+      "Exception",
+      "Error"
+    ],
+    "correct": 3,
+    "category": 8,
+    "hint": "ユーザー定義の例外クラスは、典型的に `Exception` クラスから、直接または間接的に派生させます。",
+    "url": "https://docs.python.org/ja/3/tutorial/errors.html"
+  },
+  {
+    "question": "`except` 節で捕捉した例外を、再度送出するための `raise` 文の正しい使い方はどれですか？",
+    "choices": [
+      "`raise current_exception`",
+      "`raise`",
+      "`raise last`",
+      "`raise same`"
+    ],
+    "correct": 2,
+    "category": 8,
+    "hint": "例外が発生したかどうかを判定したいだけで、その例外を処理するつもりがなければ、引数なしの単純な形式の `raise` 文を使って例外を再送出させることができます。",
+    "url": "https://docs.python.org/ja/3/tutorial/errors.html"
+  },
+  {
+    "question": "すべての例外に共通する基底クラスは何ですか？",
+    "choices": [
+      "Exception",
+      "BaseException",
+      "StandardError",
+      "object"
+    ],
+    "correct": 2,
+    "category": 8,
+    "hint": "`BaseException` はすべての例外に共通する基底クラスです。そのサブクラスの一つである `Exception` は、致命的でない例外すべての基底クラスです。",
+    "url": "https://docs.python.org/ja/3/tutorial/errors.html"
+  },
+  {
+    "question": "ある例外が他の例外から直接影響されていることを示すために、`raise` 文で使用するオプションの句は何ですか？",
+    "choices": [
+      "as",
+      "from",
+      "with",
+      "caused_by"
+    ],
+    "correct": 2,
+    "category": 8,
+    "hint": "`raise` 文にオプションの `from` 句を指定することで、ある例外が他の例外（例外の連鎖）から直接影響されていることを示すことができます。例: `raise RuntimeError from exc`",
+    "url": "https://docs.python.org/ja/3/tutorial/errors.html"
+  },
+  {
+    "question": "複数の関連しない例外をまとめて送出するために使われる、組み込みの例外クラスは何ですか？",
+    "choices": [
+      "MultiException",
+      "ExceptionList",
+      "ExceptionGroup",
+      "AggregateException"
+    ],
+    "correct": 3,
+    "category": 8,
+    "hint": "組み込みの `ExceptionGroup` は例外インスタンスのリストをまとめ、同時に送出できるようにします。",
+    "url": "https://docs.python.org/ja/3/tutorial/errors.html"
+  },
+  {
+    "question": "`ExceptionGroup` の中の特定の型の例外だけを選択して処理するための構文はどれですか？",
+    "choices": [
+      "except",
+      "except*",
+      "catch",
+      "handle"
+    ],
+    "correct": 2,
+    "category": 8,
+    "hint": "`except` の代わりに `except*` を使用すると、グループの中にある特定の型に一致した例外だけを選択して処理できます。",
+    "url": "https://docs.python.org/ja/3/tutorial/errors.html"
+  },
+  {
+    "question": "捕捉した例外に追加の情報を（ノートとして）付加するためのメソッドは何ですか？",
+    "choices": [
+      "e.append_info()",
+      "e.add_note()",
+      "e.add_message()",
+      "e.annotate()"
+    ],
+    "correct": 2,
+    "category": 8,
+    "hint": "例外は `add_note(note)` メソッドを持ちます。このメソッドは文字列を受け取り、例外のノートのリストに追加します。",
+    "url": "https://docs.python.org/ja/3/tutorial/errors.html"
+  },
+  {
+    "question": "`except (RuntimeError, TypeError)` のように、タプルを使って複数の例外を1つの `except` 節で指定した場合、どのような動作になりますか？",
+    "choices": [
+      "`RuntimeError` と `TypeError` が同時に発生した場合にのみ処理される",
+      "指定された例外のいずれかが発生した場合に処理される",
+      "タプルで指定することはできない",
+      "`RuntimeError` のみが処理される"
+    ],
+    "correct": 2,
+    "category": 8,
+    "hint": "`except` 節では丸括弧で囲ったタプルという形で複数の例外を指定できます。これにより、リストされた例外のいずれかが発生した場合にそのハンドラが実行されます。",
+    "url": "https://docs.python.org/ja/3/tutorial/errors.html"
+  },
+  {
+    "question": "派生クラス `D` が基底クラス `B` を継承している場合（`class D(B): pass`）、`except B:` は `D` のインスタンスである例外を捕捉できますか？",
+    "choices": [
+      "はい、捕捉できます。",
+      "いいえ、捕捉できません。",
+      "厳密に `B` 型の例外のみ捕捉できます。",
+      "エラーになります。"
+    ],
+    "correct": 1,
+    "category": 8,
+    "hint": "`except` 節内のクラスは、そのクラスや派生クラスのインスタンスである例外とマッチします。したがって、基底クラスを指定した `except` 節は、その派生クラスの例外も捕捉します。",
+    "url": "https://docs.python.org/ja/3/tutorial/errors.html"
+  },
+  {
+    "question": "`finally` 節内で `return` 文を実行した場合、どのような結果になりますか？",
+    "choices": [
+      "`try` 節の `return` 値が優先される。",
+      "`finally` 節の `return` 文からの値が返される。",
+      "例外が送出される。",
+      "プログラムが終了する。"
+    ],
+    "correct": 2,
+    "category": 8,
+    "hint": "`finally` 句に `return` 文が含まれる場合、返される値は `finally` 句の `return` 文からのものになります。この動作は混乱を招くため推奨されていません。",
+    "url": "https://docs.python.org/ja/3/tutorial/errors.html"
+  },
+  {
+    "question": "自動的な例外の連鎖を無効にするために、`raise` 文で `from` の後に何を指定しますか？",
+    "choices": [
+      "`False`",
+      "`None`",
+      "`self`",
+      "何も指定しない"
+    ],
+    "correct": 2,
+    "category": 8,
+    "hint": "自動的な例外の連鎖を無効にするには `from None` を指定します。例: `raise RuntimeError from None`",
+    "url": "https://docs.python.org/ja/3/tutorial/errors.html"
+  },
+  {
+    "question": "`except Exception as inst:` のように書いた場合、例外の引数にアクセスするための属性は何ですか？",
+    "choices": [
+      "inst.arguments",
+      "inst.params",
+      "inst.args",
+      "inst.values"
+    ],
+    "correct": 3,
+    "category": 8,
+    "hint": "例外インスタンスは一般的に引数を保持する `args` 属性を持ちます。`inst.args` のようにアクセスできます。",
+    "url": "https://docs.python.org/ja/3/tutorial/errors.html"
+  },
+  {
+    "question": "`try-except-else-finally` 構造において、`finally` 節が `else` 節の実行中に発生した例外をどのように扱うか説明してください。",
+    "choices": [
+      "例外を無視する",
+      "例外を捕捉して処理する",
+      "`finally` 節を実行した後に例外を再送出する",
+      "`finally` 節は実行されない"
+    ],
+    "correct": 3,
+    "category": 8,
+    "hint": "`except` 節または `else` 節の実行中に例外が発生することがあり得ます。その場合も、`finally` 節が実行された後に例外が再送出されます。",
+    "url": "https://docs.python.org/ja/3/tutorial/errors.html"
+  },
+  {
+    "question": "クラスを定義するための基本的な構文はどれですか？",
+    "choices": [
+      "define MyClass: ...",
+      "class MyClass: ...",
+      "struct MyClass: ...",
+      "object MyClass: ..."
+    ],
+    "correct": 2,
+    "category": 9,
+    "hint": "クラス定義の最も単純な形式は `class ClassName: <statement-1> ... <statement-N>` です。",
+    "url": "https://docs.python.org/ja/3/tutorial/classes.html"
+  },
+  {
+    "question": "クラスがインスタンス化される際に自動的に呼び出され、インスタンスを初期化するための特殊メソッドの名前は何ですか？",
+    "choices": [
+      "__setup__()",
+      "__new__()",
+      "__init__()",
+      "__start__()"
+    ],
+    "correct": 3,
+    "category": 9,
+    "hint": "クラスには `__init__()` という名前の特殊メソッドを定義できます。クラスをインスタンス化すると、新しく作られたクラスインスタンスに対して自動的に `__init__()` が呼び出されます。",
+    "url": "https://docs.python.org/ja/3/tutorial/classes.html"
+  },
+  {
+    "question": "クラスのメソッド定義において、インスタンスオブジェクト自身を参照するために慣習的に使われる第一引数の名前は何ですか？",
+    "choices": [
+      "this",
+      "object",
+      "instance",
+      "self"
+    ],
+    "correct": 4,
+    "category": 9,
+    "hint": "メソッド関数の宣言では、オブジェクト自体を表す第一引数を明示しなければなりません。よく、この第一引数を `self` と呼びますが、これは単なる慣習です。",
+    "url": "https://docs.python.org/ja/3/tutorial/classes.html"
+  },
+  {
+    "question": "クラスのすべてのインスタンスで共有される変数を何と呼びますか？",
+    "choices": [
+      "インスタンス変数",
+      "ローカル変数",
+      "クラス変数",
+      "グローバル変数"
+    ],
+    "correct": 3,
+    "category": 9,
+    "hint": "インスタンス変数はそれぞれのインスタンスについて固有のデータのためのもので、クラス変数はそのクラスのすべてのインスタンスによって共有される属性やメソッドのためのものです。",
+    "url": "https://docs.python.org/ja/3/tutorial/classes.html"
+  },
+  {
+    "question": "あるクラスが別のクラスの機能を引き継ぐ仕組みを何と呼びますか？",
+    "choices": [
+      "合成 (Composition)",
+      "集約 (Aggregation)",
+      "継承 (Inheritance)",
+      "インスタンス化 (Instantiation)"
+    ],
+    "correct": 3,
+    "category": 9,
+    "hint": "継承の概念をサポートしない言語機能は「クラス」と呼ぶに値しません。Pythonはクラスの継承をサポートしており、派生クラスは基底クラスの機能を継承します。",
+    "url": "https://docs.python.org/ja/3/tutorial/classes.html"
+  },
+  {
+    "question": "クラス `MyClass` のインスタンスを生成するための正しい構文はどれですか？",
+    "choices": [
+      "new MyClass",
+      "MyClass.create()",
+      "MyClass()",
+      "instance(MyClass)"
+    ],
+    "correct": 3,
+    "category": 9,
+    "hint": "クラスのインスタンス化には関数記法を使います。`x = MyClass()` は、クラスの新しいインスタンスを生成し、そのオブジェクトをローカル変数 `x` へ代入します。",
+    "url": "https://docs.python.org/ja/3/tutorial/classes.html"
+  },
+  {
+    "question": "`for` 文でオブジェクトの要素を一つずつ取り出せるようにするための仕組みを何と呼びますか？",
+    "choices": [
+      "ジェネレータ",
+      "イテレータ",
+      "シーケンス",
+      "コレクション"
+    ],
+    "correct": 2,
+    "category": 9,
+    "hint": "`for` 文はコンテナオブジェクトに対して `iter()` 関数を呼び、イテレータオブジェクトを取得します。イテレータは `__next__()` メソッドで要素を一つずつ返します。",
+    "url": "https://docs.python.org/ja/3/tutorial/classes.html"
+  },
+  {
+    "question": "通常の関数のように書かれ、値を返す際に `yield` 文を使うことでイテレータを生成するものを何と呼びますか？",
+    "choices": [
+      "メソッド",
+      "デコレータ",
+      "ジェネレータ",
+      "ラムダ"
+    ],
+    "correct": 3,
+    "category": 9,
+    "hint": "ジェネレータは、イテレータを作成するための簡潔で強力なツールです。通常の関数のように書かれますが、何らかのデータを返すときには `yield` 文を使います。",
+    "url": "https://docs.python.org/ja/3/tutorial/classes.html"
+  },
+  {
+    "question": "リスト内包表記に似た構文で、角括弧 `[]` の代わりに丸括弧 `()` を使うことで生成されるものは何ですか？",
+    "choices": [
+      "タプル内包表記",
+      "集合内包表記",
+      "ジェネレータ式",
+      "辞書内包表記"
+    ],
+    "correct": 3,
+    "category": 9,
+    "hint": "単純なジェネレータならジェネレータ式として簡潔にコーディングできます。その式はリスト内包表記に似た構文を使いますが、角括弧ではなく丸括弧で囲います。",
+    "url": "https://docs.python.org/ja/3/tutorial/classes.html"
+  },
+  {
+    "question": "名前からオブジェクトへの対応付け（マッピング）を何と呼びますか？",
+    "choices": [
+      "スコープ",
+      "名前空間",
+      "属性",
+      "コンテキスト"
+    ],
+    "correct": 2,
+    "category": 9,
+    "hint": "名前空間とは、名前からオブジェクトへの対応付けです。例として、組み込み名の集合、モジュール内のグローバルな名前、関数呼び出し時のローカルな名前などがあります。",
+    "url": "https://docs.python.org/ja/3/tutorial/classes.html"
+  },
+  {
+    "question": "`global spam` 文が関数内で使われた場合、`spam` への代入はどのスコープに影響しますか？",
+    "choices": [
+      "ローカルスコープ",
+      "外側の関数のスコープ",
+      "モジュールのグローバルスコープ",
+      "組み込みスコープ"
+    ],
+    "correct": 3,
+    "category": 9,
+    "hint": "`global` 文を使うと、特定の変数がグローバルスコープに存在し、そこで再束縛されることを指示できます。代入はそのモジュールのグローバルな名前空間に対して行われます。",
+    "url": "https://docs.python.org/ja/3/tutorial/classes.html"
+  },
+  {
+    "question": "ネストした関数内で、直近の外側の関数のスコープにある変数に再束縛するために使用する文は何ですか？",
+    "choices": [
+      "global",
+      "outer",
+      "parent",
+      "nonlocal"
+    ],
+    "correct": 4,
+    "category": 9,
+    "hint": "最内スコープの外側にある変数に再束縛するには、`nonlocal` 文が使えます。`nonlocal` と宣言された変数は外側のスコープで探され、再束縛されます。",
+    "url": "https://docs.python.org/ja/3/tutorial/classes.html"
+  },
+  {
+    "question": "クラス属性 `__spam` のように、アンダースコア2つで始まる名前は、Pythonによってどのように扱われますか？",
+    "choices": [
+      "完全にプライベートになり、外部からアクセスできなくなる",
+      "名前マングリングにより `_classname__spam` のように変形される",
+      "予約語として扱われ、エラーになる",
+      "通常の属性として扱われる"
+    ],
+    "correct": 2,
+    "category": 9,
+    "hint": "先頭に二個以上の下線文字を持つ `__spam` のような形式の識別子は、名前マングリングにより `_classname__spam` へとテキスト置換されます。これは主にサブクラスでの名前の衝突を避けるためのものです。",
+    "url": "https://docs.python.org/ja/3/tutorial/classes.html"
+  },
+  {
+    "question": "あるクラスが複数の基底クラスを持つことができる機能を何と呼びますか？",
+    "choices": [
+      "多態性 (Polymorphism)",
+      "カプセル化 (Encapsulation)",
+      "多重継承 (Multiple Inheritance)",
+      "抽象化 (Abstraction)"
+    ],
+    "correct": 3,
+    "category": 9,
+    "hint": "Pythonでは、多重継承の形式もサポートしています。クラス定義で複数の基底クラスを指定することができます。例: `class DerivedClassName(Base1, Base2, Base3): ...`",
+    "url": "https://docs.python.org/ja/3/tutorial/classes.html"
+  },
+  {
+    "question": "自作クラスでイテレータプロトコルを実装するために定義する必要がある、2つの特殊メソッドは何ですか？",
+    "choices": [
+      "`__start__()` と `__end__()`",
+      "`__begin__()` と `__next__()`",
+      "`__iter__()` と `__next__()`",
+      "`__loop__()` と `__item__()`"
+    ],
+    "correct": 3,
+    "category": 9,
+    "hint": "自作のクラスにイテレータとしての振舞いを追加するには、`__iter__()` メソッドと `__next__()` メソッドを定義します。`__iter__()` はイテレータオブジェクトを返し、`__next__()` は次の要素を返すか `StopIteration` を送出します。",
+    "url": "https://docs.python.org/ja/3/tutorial/classes.html"
+  },
+  {
+    "question": "ジェネレータが処理を中断し、値を返す際に使用する文は何ですか？",
+    "choices": [
+      "return",
+      "yield",
+      "break",
+      "continue"
+    ],
+    "correct": 2,
+    "category": 9,
+    "hint": "ジェネレータは、何らかのデータを返すときには `yield` 文を使います。`yield` を使うと、その時点で処理を中断し、次の `next()` 呼び出しで中断した箇所から再開します。",
+    "url": "https://docs.python.org/ja/3/tutorial/classes.html"
+  },
+  {
+    "question": "派生クラスのメソッドから、基底クラスの同名のメソッドを呼び出す一般的な方法はどれですか？",
+    "choices": [
+      "`super().methodname(arguments)`",
+      "`BaseClassName.methodname(self, arguments)`",
+      "`self.basemethod(arguments)`",
+      "直接呼び出すことはできない"
+    ],
+    "correct": 2,
+    "category": 9,
+    "hint": "基底クラスのメソッドを直接呼び出す簡単な方法があります。単に `BaseClassName.methodname(self, arguments)` を呼び出すだけです。（注：`super()`も強力な方法ですが、このソーステキストではこの直接的な方法が紹介されています。）",
+    "url": "https://docs.python.org/ja/3/tutorial/classes.html"
+  },
+  {
+    "question": "Pythonのスコープ検索ルール（LEGB）において、名前が検索される順番として正しいものはどれですか？",
+    "choices": [
+      "Global -> Enclosing -> Local -> Built-in",
+      "Built-in -> Global -> Enclosing -> Local",
+      "Local -> Enclosing -> Global -> Built-in",
+      "Local -> Global -> Enclosing -> Built-in"
+    ],
+    "correct": 3,
+    "category": 9,
+    "hint": "名前は、最初に最も内側のローカルスコープ、次に外側の関数のスコープ、その次に現在のモジュールのグローバルスコープ、そして最後に組み込み名を持つ一番外側のスコープの順で検索されます。",
+    "url": "https://docs.python.org/ja/3/tutorial/classes.html"
+  },
+  {
+    "question": "クラスのインスタンス変数とクラス変数の間に名前の衝突がある場合、属性検索はどちらを優先しますか？",
+    "choices": [
+      "クラス変数",
+      "インスタンス変数",
+      "エラーが発生する",
+      "定義された順序による"
+    ],
+    "correct": 2,
+    "category": 9,
+    "hint": "インスタンスとクラスの両方で同じ属性名が使用されている場合、属性検索はインスタンスが優先されます。",
+    "url": "https://docs.python.org/ja/3/tutorial/classes.html"
+  },
+  {
+    "question": "メソッドオブジェクト `m` があるとき、そのメソッドが属するインスタンスオブジェクトと、対応する関数オブジェクトにアクセスするための属性の組み合わせはどれですか？",
+    "choices": [
+      "`m.instance` と `m.function`",
+      "`m.__self__` と `m.__func__`",
+      "`m.object` と `m.code`",
+      "`m.parent` と `m.callable`"
+    ],
+    "correct": 2,
+    "category": 9,
+    "hint": "インスタンスメソッドオブジェクトにも属性があります。`m.__self__` はメソッド `m()` の属しているインスタンスオブジェクトで、`m.__func__` はそのメソッドに対応する関数オブジェクトです。",
+    "url": "https://docs.python.org/ja/3/tutorial/classes.html"
+  } 
 ]

@@ -53,6 +53,8 @@ def read_all_questions():
             print(f"   選択肢４： {q.choice4}")
             print(f"   正解　　： {q.correct}")
             print(f"   区分　　： {q.category}")
+            print(f"   ヒント　： {q.hint}")
+            print(f"   URL　　 ： {q.url}")
             print(f"-" * 40)
 
 if __name__ == "__main__":

@@ -27,6 +27,8 @@ class Question(db.Model):
     choice4 = db.Column(db.String(200))
     correct = db.Column(db.Integer)
     category = db.Column(db.String(50)) # section / practiceなど
+    hint = db.Column(db.String(500))
+    url = db.Column(db.String(500))
     results = db.relationship('QuizResult', backref='question', lazy=True) # Add relationship
 
 class QuizResult(db.Model):

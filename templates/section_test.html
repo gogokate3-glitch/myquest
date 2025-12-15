@@ -63,6 +63,15 @@
                         {% if not res.is_correct %}
                             <p>正解: <span class="correct-answer-text">{{ res.correct_choice_text }}</span></p>
                         {% endif %}
+
+                        <div class="mt-3">
+                            {% if res.question.hint %}
+                                <p><b>解説:</b> {{ res.question.hint }}</p>
+                            {% endif %}
+                            {% if res.question.url %}
+                                <p><b>参考URL:</b> <a href="{{ res.question.url }}" target="_blank">{{ res.question.url }}</a></p>
+                            {% endif %}
+                        </div>
                     </div>
                     {% endfor %}
 
