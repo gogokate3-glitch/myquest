@@ -100,13 +100,19 @@ def section_test(category):
     if "user" not in session:
         return redirect("/")
     
+    # クエリパラメータから問題数を取得、デフォルトは10
+    try:
+        num_questions = int(request.args.get("num_questions", 10))
+    except (ValueError, TypeError):
+        num_questions = 10 # 無効な値の場合はデフォルトの10問
+
     q_list = Question.query.filter_by(category=category).all()
     if not q_list:
         return f"カテゴリ「{category}」の問題がDBにありません"
     
-    # 10問をランダムに選ぶ
-    if len(q_list) > 10:
-        q_list = random.sample(q_list, 10)
+    # 指定された問題数をランダムに選ぶ
+    num_to_sample = min(len(q_list), num_questions)
+    q_list = random.sample(q_list, num_to_sample)
     
     return render_template("section_test.html", questions=q_list, category_name=category)
 
@@ -116,8 +122,10 @@ def section_test_redirect():
         return redirect("/")
     
     category = request.form.get("category")
+    num_questions = request.form.get("num_questions", 10) # デフォルトは10問
+    
     if category:
-        return redirect(url_for("section_test", category=category))
+        return redirect(url_for("section_test", category=category, num_questions=num_questions))
     else:
         return redirect(url_for("home"))
 

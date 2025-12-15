@@ -65,6 +65,14 @@
 
         <form action="/section_test" method="post">
             <h5>章ごとのテストはこちら↓から選択してください</h5>
+            <div class="mb-3">
+                <label for="num_questions" class="form-label">問題数を選択:</label>
+                <select name="num_questions" id="num_questions" class="form-select w-auto">
+                    <option value="5">5問</option>
+                    <option value="10" selected>10問</option>
+                    <option value="20">20問</option>
+                </select>
+            </div>
             <div class="list-group">
                 
                 <div class="list-group-item">
