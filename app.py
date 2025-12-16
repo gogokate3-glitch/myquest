@@ -5,6 +5,24 @@ from model import Question, User, QuizResult
 import random
 from itertools import groupby
 
+# home.html からコピーした章のリスト
+# 順序を維持するためにリスト・オブ・タプルを使用
+CHAPTERS = [
+    (1, "1. やる気を高めよう"),
+    (2, "2. Python インタプリタを使う"),
+    (3, "3. 形式ばらない Python の紹介"),
+    (4, "4. その他の制御フローツール"),
+    (5, "5. データ構造"),
+    (6, "6. モジュール"),
+    (7, "7. 入力と出力"),
+    (8, "8. エラーと例外"),
+    (9, "9. クラス"),
+    (10, "10. 標準ライブラリミニツアー"),
+    (11, "11. 標準ライブラリミニツアー --- その 2"),
+    (12, "12. 仮想環境とパッケージ"),
+    (14, "14. 対話入力編集と履歴置換"),
+]
+
 app = Flask(__name__)
 app.secret_key = "test123"
 
@@ -397,7 +415,85 @@ def result():
 def admin():
     if "user" not in session or session["user"] != "admin@example.com":
         return redirect("/")
-    return render_template("admin.html")
+    return render_template("admin.html", chapters=CHAPTERS)
+
+@app.route("/api/questions/<category>")
+def get_questions_by_category(category):
+    if "user" not in session or session["user"] != "admin@example.com":
+        return jsonify({"error": "Unauthorized"}), 401
+    
+    questions = Question.query.filter_by(category=category).all()
+    
+    # SQLAlchemyオブジェクトを辞書のリストに変換
+    q_list = [
+        {
+            "id": q.id,
+            "question": q.question,
+        }
+        for q in questions
+    ]
+    
+    return jsonify(q_list)
+
+@app.route("/api/question/<int:question_id>")
+def get_question_details(question_id):
+    if "user" not in session or session["user"] != "admin@example.com":
+        return jsonify({"error": "Unauthorized"}), 401
+        
+    question = Question.query.get(question_id)
+    
+    if not question:
+        return jsonify({"error": "Question not found"}), 404
+        
+    # SQLAlchemyオブジェクトを辞書に変換
+    q_data = {
+        "id": question.id,
+        "question": question.question,
+        "choice1": question.choice1,
+        "choice2": question.choice2,
+        "choice3": question.choice3,
+        "choice4": question.choice4,
+        "correct": question.correct,
+        "category": question.category,
+        "hint": question.hint,
+        "url": question.url
+    }
+    
+    return jsonify(q_data)
+
+@app.route("/api/question/update/<int:question_id>", methods=["POST"])
+def update_question(question_id):
+    if "user" not in session or session["user"] != "admin@example.com":
+        return jsonify({"error": "Unauthorized"}), 401
+        
+    question = Question.query.get(question_id)
+    if not question:
+        return jsonify({"error": "Question not found"}), 404
+        
+    data = request.json
+    
+    # フォームデータでquestionオブジェクトを更新
+    question.question = data.get("question", question.question)
+    question.choice1 = data.get("choice1", question.choice1)
+    question.choice2 = data.get("choice2", question.choice2)
+    question.choice3 = data.get("choice3", question.choice3)
+    question.choice4 = data.get("choice4", question.choice4)
+    # correctは整数に変換
+    try:
+        correct_val = int(data.get("correct"))
+        if 1 <= correct_val <= 4:
+            question.correct = correct_val
+    except (ValueError, TypeError):
+        # 不正な値の場合は更新しない
+        pass
+    question.category = data.get("category", question.category)
+    question.hint = data.get("hint", question.hint)
+    question.url = data.get("url", question.url)
+    
+    db.session.commit()
+    
+    return jsonify({"success": True, "message": "Question updated successfully"})
+
 
 #
 if __name__ == "__main__":

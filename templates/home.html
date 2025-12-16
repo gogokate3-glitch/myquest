@@ -23,55 +23,53 @@
         <h2>ホーム画面</h2>
         <p>{{ user }}さん、ようこそ。</p>
 
-        <h5>メニュー</h5>
         <div class="list-group">
-            <a href="/material" class="list-group-item list-group-item-action">教材を見る</a>
-            <div class="list-group-item">
-                <form action="/practice" method="GET" class="d-flex align-items-center">
-                    <span class="me-3">過去問演習（全問題からのランダム出題）</span>
-                    <div>
-                        <select name="num" class="form-select-sm me-2">
-                            <option value="10" selected>10問</option>
-                            <option value="20">20問</option>
-                            <option value="30">30問</option>
-                            <option value="40">40問</option>
-                            <option value="50">50問</option>
-                        </select>
-                        <button type="submit" class="btn btn-primary btn-sm">開始</button>
-                    </div>
-                </form>
-            </div>
-            <div class="list-group-item">
-                <form action="/practice_incorrect" method="GET" class="d-flex align-items-center">
-                    <span class="me-3">過去問演習（直近２回以上正解しなかった問題）</span>
-                    <div>
-                        <select name="num" class="form-select-sm me-2">
-                            <option value="10" selected>10問</option>
-                            <option value="20">20問</option>
-                            <option value="30">30問</option>
-                            <option value="40">40問</option>
-                            <option value="50">50問</option>
-                        </select>
-                        <button type="submit" class="btn btn-primary btn-sm">開始</button>
-                    </div>
-                </form>
-            </div>
             {% if user == "admin@example.com" %}
             <a href="/admin" class="list-group-item list-group-item-action list-group-item-dark">管理者画面</a>
             {% endif %}
+            <a href="/material" class="list-group-item list-group-item-action">教材を見る</a>
+
         </div>
+
+        <hr class="my-4">
+
+        <form action="/practice" method="get">
+            <h5>過去問演習</h5>
+            <div class="d-flex align-items-center mb-3">
+                <label for="practice_num_questions" class="form-label me-2">問題数を選択:</label>
+                <select name="num_questions" id="practice_num_questions" class="form-select w-auto me-2">
+                    <option value="10" selected>10問</option>
+                    <option value="20">20問</option>
+                    <option value="30">30問</option>
+                    <option value="40">40問</option>
+                    <option value="50">50問</option>
+                </select>
+                <button type="submit" class="btn btn-success">テスト開始</button>
+            </div>
+            <div class="list-group">
+                <div class="list-group-item">
+                    <input class="form-check-input" type="radio" name="type" id="practice-all" value="all" checked>
+                    <label class="form-check-label" for="practice-all">全問題からの出題</label>
+                </div>
+                <div class="list-group-item">
+                    <input class="form-check-input" type="radio" name="type" id="practice-exclude-answered" value="exclude_answered">
+                    <label class="form-check-label" for="practice-exclude-answered">前回2回以上正解した問題を除く</label>
+                </div>
+            </div>
+        </form>
 
         <hr class="my-4">
 
         <form action="/section_test" method="post">
             <h5>章ごとのテストはこちら↓から選択してください</h5>
-            <div class="mb-3">
-                <label for="num_questions" class="form-label">問題数を選択:</label>
-                <select name="num_questions" id="num_questions" class="form-select w-auto">
+            <div class="d-flex align-items-center mb-3">
+                <label for="num_questions" class="form-label me-2">問題数を選択:</label>
+                <select name="num_questions" id="num_questions" class="form-select w-auto me-2">
                     <option value="5">5問</option>
                     <option value="10" selected>10問</option>
                     <option value="20">20問</option>
                 </select>
+                <button type="submit" class="btn btn-success">テスト開始</button>
             </div>
             <div class="list-group">
                 
@@ -141,7 +139,6 @@
                 </div>
 
             </div>
-            <button type="submit" class="btn btn-success mt-3">テスト開始</button>
         </form>
     </div>
 

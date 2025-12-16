@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>管理者画面</title>
+    <title>管理者画面 - 問題編集</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -20,18 +20,262 @@
     </nav>
 
     <div class="container mt-4">
-        <h2>管理者画面</h2>
+        <h2>問題編集</h2>
 
-        <div class="list-group">
-            <a href="#" class="list-group-item list-group-item-action">問題登録機能</a>
-            <a href="#" class="list-group-item list-group-item-action">教材管理</a>
+        <!-- Category Dropdown -->
+        <div class="mb-3">
+            <label for="category-select" class="form-label">章を選択してください:</label>
+            <select class="form-select" id="category-select">
+                <option selected>章を選択...</option>
+                {% for chapter_id, chapter_name in chapters %}
+                <option value="{{ chapter_id }}">{{ chapter_name }}</option>
+                {% endfor %}
+            </select>
         </div>
 
+        <!-- Question List -->
+        <div id="question-list-container" style="display: none;">
+            <h4>問題一覧</h4>
+            <ul class="list-group" id="question-list">
+                <!-- Questions will be loaded here by JavaScript -->
+            </ul>
+        </div>
+        
         <div class="mt-4">
             <a href="/home" class="btn btn-primary">ホームに戻る</a>
         </div>
     </div>
 
+    <!-- Edit Question Modal -->
+    <div class="modal fade" id="editQuestionModal" tabindex="-1" aria-labelledby="editQuestionModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editQuestionModalLabel">問題を編集</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="edit-question-form">
+                        <input type="hidden" id="edit-question-id">
+                        <div class="mb-3">
+                            <label for="edit-question-text" class="form-label">問題文</label>
+                            <textarea class="form-control" id="edit-question-text" rows="3"></textarea>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="edit-choice1" class="form-label">選択肢1</label>
+                                <input type="text" class="form-control" id="edit-choice1">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="edit-choice2" class="form-label">選択肢2</label>
+                                <input type="text" class="form-control" id="edit-choice2">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="edit-choice3" class="form-label">選択肢3</label>
+                                <input type="text" class="form-control" id="edit-choice3">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="edit-choice4" class="form-label">選択肢4</label>
+                                <input type="text" class="form-control" id="edit-choice4">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="edit-correct" class="form-label">正解の選択肢番号</label>
+                            <input type="number" class="form-control" id="edit-correct" min="1" max="4">
+                        </div>
+                        <div class="mb-3">
+                            <label for="edit-category" class="form-label">カテゴリ</label>
+                            <input type="text" class="form-control" id="edit-category">
+                        </div>
+                        <div class="mb-3">
+                            <label for="edit-hint" class="form-label">ヒント</label>
+                            <textarea class="form-control" id="edit-hint" rows="2"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="edit-url" class="form-label">URL</label>
+                            <input type="text" class="form-control" id="edit-url">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
+                    <button type="button" class="btn btn-primary" id="save-changes-btn">変更を保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const categorySelect = document.getElementById('category-select');
+            const questionListContainer = document.getElementById('question-list-container');
+            const questionList = document.getElementById('question-list');
+            const editModal = new bootstrap.Modal(document.getElementById('editQuestionModal'));
+            const editForm = document.getElementById('edit-question-form');
+            const saveChangesBtn = document.getElementById('save-changes-btn');
+
+            // --- Event Listeners ---
+
+            // 1. Category selection changes
+            categorySelect.addEventListener('change', async function () {
+                const category = this.value;
+                if (category && category !== '章を選択...') {
+                    await loadQuestions(category);
+                    questionListContainer.style.display = 'block';
+                } else {
+                    questionListContainer.style.display = 'none';
+                    questionList.innerHTML = '';
+                }
+            });
+
+            // 2. Click on a question to edit
+            questionList.addEventListener('click', async function (e) {
+                if (e.target && e.target.matches('button.list-group-item-action')) {
+                    const questionId = e.target.dataset.id;
+                    await openEditModal(questionId);
+                }
+            });
+            
+            // 3. Save changes button is clicked
+            saveChangesBtn.addEventListener('click', async function () {
+                const questionId = document.getElementById('edit-question-id').value;
+                await saveQuestionChanges(questionId);
+            });
+
+
+            // --- Functions ---
+
+            /**
+             * Fetches questions for a given category and populates the list.
+             * @param {string} category The selected category.
+             */
+            async function loadQuestions(category) {
+                try {
+                    const response = await fetch(`/api/questions/${category}`);
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    const questions = await response.json();
+                    
+                    questionList.innerHTML = ''; // Clear existing list
+                    if (questions.length === 0) {
+                        questionList.innerHTML = '<li class="list-group-item">この章には問題がありません。</li>';
+                        return;
+                    }
+
+                    questions.forEach(q => {
+                        const li = document.createElement('li');
+                        li.className = 'list-group-item d-flex justify-content-between align-items-center';
+                        
+                        const questionText = document.createElement('span');
+                        questionText.textContent = q.question.length > 80 ? q.question.substring(0, 80) + '...' : q.question;
+                        li.appendChild(questionText);
+
+                        const editButton = document.createElement('button');
+                        editButton.className = 'btn btn-outline-primary btn-sm';
+                        editButton.textContent = '編集';
+                        editButton.dataset.id = q.id;
+                        // We attach the listener to the parent `ul` (event delegation)
+                        // so we don't need to add an event listener to each button here.
+                        li.appendChild(editButton);
+
+                        questionList.appendChild(li);
+                    });
+                     // Re-attach delegated listener logic if needed, but click on button is better
+                    questionList.querySelectorAll('.btn-outline-primary').forEach(button => {
+                        button.addEventListener('click', async (e) => {
+                             const questionId = e.target.dataset.id;
+                             await openEditModal(questionId);
+                        });
+                    });
+
+
+                } catch (error) {
+                    console.error('Failed to load questions:', error);
+                    questionList.innerHTML = '<li class="list-group-item text-danger">問題の読み込みに失敗しました。</li>';
+                }
+            }
+            
+            /**
+             * Fetches details for a single question and opens the edit modal.
+             * @param {number} questionId The ID of the question to edit.
+             */
+            async function openEditModal(questionId) {
+                try {
+                    const response = await fetch(`/api/question/${questionId}`);
+                    if (!response.ok) {
+                        throw new Error('Failed to fetch question details.');
+                    }
+                    const data = await response.json();
+
+                    // Populate the form fields
+                    document.getElementById('edit-question-id').value = data.id;
+                    document.getElementById('edit-question-text').value = data.question;
+                    document.getElementById('edit-choice1').value = data.choice1;
+                    document.getElementById('edit-choice2').value = data.choice2;
+                    document.getElementById('edit-choice3').value = data.choice3;
+                    document.getElementById('edit-choice4').value = data.choice4;
+                    document.getElementById('edit-correct').value = data.correct;
+                    document.getElementById('edit-category').value = data.category;
+                    document.getElementById('edit-hint').value = data.hint;
+                    document.getElementById('edit-url').value = data.url;
+
+                    editModal.show();
+                } catch (error) {
+                    console.error('Error opening edit modal:', error);
+                    alert('問題データの読み込みに失敗しました。');
+                }
+            }
+
+            /**
+             * Gathers data from the form and sends it to the server to update the question.
+             * @param {number} questionId The ID of the question being updated.
+             */
+            async function saveQuestionChanges(questionId) {
+                const updatedData = {
+                    question: document.getElementById('edit-question-text').value,
+                    choice1: document.getElementById('edit-choice1').value,
+                    choice2: document.getElementById('edit-choice2').value,
+                    choice3: document.getElementById('edit-choice3').value,
+                    choice4: document.getElementById('edit-choice4').value,
+                    correct: document.getElementById('edit-correct').value,
+                    category: document.getElementById('edit-category').value,
+                    hint: document.getElementById('edit-hint').value,
+                    url: document.getElementById('edit-url').value,
+                };
+
+                try {
+                    const response = await fetch(`/api/question/update/${questionId}`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(updatedData),
+                    });
+
+                    if (!response.ok) {
+                        throw new Error('Failed to save changes.');
+                    }
+                    
+                    const result = await response.json();
+
+                    if (result.success) {
+                        editModal.hide();
+                        // Refresh the question list for the currently selected category
+                        await loadQuestions(categorySelect.value);
+                        alert('問題が正常に更新されました。');
+                    } else {
+                         throw new Error(result.message || 'Unknown error occurred.');
+                    }
+                } catch (error) {
+                    console.error('Error saving question changes:', error);
+                    alert(`保存に失敗しました: ${error.message}`);
+                }
+            }
+        });
+    </script>
 </body>
 </html>
