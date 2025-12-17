@@ -21,18 +21,16 @@
 
     <div class="container mt-4">
         <h2>ホーム画面</h2>
-        <p>{{ user }}さん、ようこそ。</p>
+        <p style="color: green;">{{ nickname }}さん、ようこそ。</p>
 
         <div class="list-group">
-            {% if user == "admin@example.com" %}
-            <a href="/admin" class="list-group-item list-group-item-action list-group-item-dark">管理者画面</a>
+            {% if email == "admin@example.com" %}
+            <div class="list-group-item list-group-item-dark">管理者画面</div>
+            <a href="/user_management" class="list-group-item list-group-item-action list-group-item-dark">1. ユーザー管理</a>
+            <a href="/admin" class="list-group-item list-group-item-action list-group-item-dark">2. クイズDBの更新</a>
             {% endif %}
-            <a href="/material" class="list-group-item list-group-item-action">教材を見る</a>
-
         </div>
-
-        <hr class="my-4">
-
+        <br>
         <form action="/practice" method="get">
             <h5>過去問演習</h5>
             <div class="d-flex align-items-center mb-3">

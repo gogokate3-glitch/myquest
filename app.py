@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, request, redirect, url_for, session, jsonify
+from flask import Flask, render_template, request, redirect, url_for, session, jsonify, flash
 from database import db
 from model import Question, User, QuizResult
 import random
@@ -32,10 +32,6 @@ app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///" + os.path.join(basedir, "in
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db.init_app(app)
 
-#起動時にテーブルだけ作成
-with app.app_context():
-    db.create_all()
-
 # ログイン
 @app.route("/")
 def login():
@@ -50,6 +46,7 @@ def try_login():
 
     if user and user.check_password(pw):
         session["user"] = user.email
+        session["nickname"] = user.nickname or user.email.split('@')[0] # ニックネームがなければemailの@より前を使う
         return redirect(url_for("home"))
     else:
         return render_template("login.html", error="ログインに失敗しました")
@@ -58,31 +55,43 @@ def try_login():
 @app.route("/logout")
 def logout():
     session.pop("user", None)
+    session.pop("nickname", None)
     return redirect("/")
 
-@app.route("/change_password", methods=["GET", "POST"])
-def change_password():
+@app.route("/change_user_info", methods=["GET", "POST"])
+def change_user_info():
     if request.method == "POST":
         email = request.form.get("email")
-        current_password = request.form.get("current_password")
+        nickname = request.form.get("nickname")
         new_password = request.form.get("new_password")
         confirm_password = request.form.get("confirm_password")
         
         user = User.query.filter_by(email=email).first()
 
-        if not user or not user.check_password(current_password):
-            return render_template("change_password.html", error="IDまたは現在のパスワードが正しくありません。")
-        
-        if not new_password or new_password != confirm_password:
-            return render_template("change_password.html", error="新しいパスワードが一致しません。")
+        if not user:
+            return render_template("change_password.html", error="指定されたユーザーが見つかりません。", email=email, nickname=nickname)
 
-        user.set_password(new_password)
+        # ニックネームを更新
+        user.nickname = nickname
+
+        # パスワードが入力されている場合のみ更新
+        if new_password:
+            if new_password != confirm_password:
+                return render_template("change_password.html", error="新しいパスワードが一致しません。", email=email, nickname=nickname)
+            user.set_password(new_password)
+        
         db.session.commit()
         
-        # パスワード変更後はログイン画面に戻す
-        return redirect(url_for("login"))
+        return render_template("change_password.html", message="ユーザー情報を更新しました。", email=email, nickname=nickname)
 
     # GET request
+    # email パラメータがあれば、そのユーザーの情報を表示
+    email = request.args.get('email')
+    if email:
+        user = User.query.filter_by(email=email).first()
+        if user:
+            return render_template("change_password.html", email=user.email, nickname=user.nickname)
+
     return render_template("change_password.html")
 
 
@@ -91,7 +100,8 @@ def change_password():
 def home():
     if "user" not in session:
         return redirect("/")
-    return render_template("home.html", user=session["user"])
+    nickname = session.get("nickname", "Guest")
+    return render_template("home.html", nickname=nickname, email=session["user"])
 
 @app.route("/home_action", methods=["POST"])
 def home_action():
@@ -493,6 +503,90 @@ def update_question(question_id):
     db.session.commit()
     
     return jsonify({"success": True, "message": "Question updated successfully"})
+
+# ユーザー管理
+@app.route("/user_management")
+def user_management():
+    if "user" not in session or session["user"] != "admin@example.com":
+        return redirect("/")
+    
+    # admin以外のユーザーを取得
+    users = User.query.filter(User.email != "admin@example.com").all()
+    return render_template("user_management.html", users=users)
+
+@app.route("/add_user", methods=["POST"])
+def add_user():
+    if "user" not in session or session["user"] != "admin@example.com":
+        return redirect("/")
+        
+    email = request.form.get("email")
+    password = request.form.get("password")
+
+    if not email or not password:
+        flash("メールアドレスとパスワードは必須です。", "danger")
+        return redirect(url_for("user_management"))
+
+    existing_user = User.query.filter_by(email=email).first()
+    if existing_user:
+        flash("このメールアドレスは既に使用されています。", "warning")
+        return redirect(url_for("user_management"))
+
+    new_user = User(email=email)
+    new_user.set_password(password)
+    db.session.add(new_user)
+    db.session.commit()
+
+    flash(f"ユーザー「{email}」を登録しました。", "success")
+    return redirect(url_for("user_management"))
+
+@app.route("/delete_user", methods=["POST"])
+def delete_user():
+    if "user" not in session or session["user"] != "admin@example.com":
+        return redirect("/")
+        
+    email = request.form.get("email")
+    if not email:
+        flash("削除するユーザーを選択してください。", "warning")
+        return redirect(url_for("user_management"))
+
+    if email == "admin@example.com":
+        flash("管理者ユーザーは削除できません。", "danger")
+        return redirect(url_for("user_management"))
+
+    user_to_delete = User.query.filter_by(email=email).first()
+    if user_to_delete:
+        # 関連するQuizResultも削除する必要がある場合
+        QuizResult.query.filter_by(user_id=user_to_delete.id).delete()
+        
+        db.session.delete(user_to_delete)
+        db.session.commit()
+        flash(f"ユーザー「{email}」を削除しました。", "success")
+    else:
+        flash("指定されたユーザーが見つかりません。", "danger")
+        
+    return redirect(url_for("user_management"))
+
+@app.route("/admin_change_password", methods=["POST"])
+def admin_change_password():
+    if "user" not in session or session["user"] != "admin@example.com":
+        return redirect("/")
+        
+    email = request.form.get("email")
+    new_password = request.form.get("new_password")
+
+    if not email or not new_password:
+        flash("対象ユーザーと新しいパスワードを入力してください。", "warning")
+        return redirect(url_for("user_management"))
+
+    user_to_change = User.query.filter_by(email=email).first()
+    if user_to_change:
+        user_to_change.set_password(new_password)
+        db.session.commit()
+        flash(f"ユーザー「{email}」のパスワードを変更しました。", "success")
+    else:
+        flash("指定されたユーザーが見つかりません。", "danger")
+        
+    return redirect(url_for("user_management"))
 
 
 #
