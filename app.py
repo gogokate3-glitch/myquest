@@ -60,39 +60,48 @@ def logout():
 
 @app.route("/change_user_info", methods=["GET", "POST"])
 def change_user_info():
+    if "user" not in session:
+        flash("ログインしてください。", "warning")
+        return redirect("/")
+
+    current_user_email = session["user"]
+    user = User.query.filter_by(email=current_user_email).first()
+
+    if not user:
+        session.pop("user", None)
+        session.pop("nickname", None)
+        flash("ユーザーが見つかりません。", "danger")
+        return redirect("/")
+
     if request.method == "POST":
-        email = request.form.get("email")
         nickname = request.form.get("nickname")
         new_password = request.form.get("new_password")
         confirm_password = request.form.get("confirm_password")
         
-        user = User.query.filter_by(email=email).first()
-
-        if not user:
-            return render_template("change_password.html", error="指定されたユーザーが見つかりません。", email=email, nickname=nickname)
-
         # ニックネームを更新
-        user.nickname = nickname
+        if nickname:
+            user.nickname = nickname
+            session["nickname"] = nickname # セッションのニックネームも更新
+            flash("ニックネームを更新しました。", "success")
+        else:
+            flash("ニックネームは空にできません。", "danger")
+            # Return to render_template with current user info
+            return render_template("change_password.html", email=user.email, nickname=user.nickname)
 
         # パスワードが入力されている場合のみ更新
         if new_password:
             if new_password != confirm_password:
-                return render_template("change_password.html", error="新しいパスワードが一致しません。", email=email, nickname=nickname)
+                flash("新しいパスワードが一致しません。", "danger")
+                return render_template("change_password.html", email=user.email, nickname=user.nickname)
             user.set_password(new_password)
+            flash("パスワードを更新しました。", "success")
         
         db.session.commit()
-        
-        return render_template("change_password.html", message="ユーザー情報を更新しました。", email=email, nickname=nickname)
+        flash("ユーザー情報を更新しました。", "success")
+        return redirect(url_for("change_user_info"))
 
     # GET request
-    # email パラメータがあれば、そのユーザーの情報を表示
-    email = request.args.get('email')
-    if email:
-        user = User.query.filter_by(email=email).first()
-        if user:
-            return render_template("change_password.html", email=user.email, nickname=user.nickname)
-
-    return render_template("change_password.html")
+    return render_template("change_password.html", email=user.email, nickname=user.nickname)
 
 
 # ホーム
