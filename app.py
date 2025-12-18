@@ -281,25 +281,30 @@ def check_answer():
         "correct_choice_text": correct_choice_text
     })
 
+from sqlalchemy import desc
+from itertools import groupby
+
+# ... (他のルートは変更なし) ...
+
 # 過去演習
 @app.route("/practice", methods=["GET", "POST"])
 def practice():
     if "user" not in session:
         return redirect("/")
 
+    current_user_email = session.get("user")
+    current_user = User.query.filter_by(email=current_user_email).first()
+    if not current_user:
+        flash("ユーザーが見つかりません。", "danger")
+        return redirect("/")
+
     if request.method == "POST":
-        # --- 回答処理 (submit_section_testのロジックを流用) ---
+        # --- 回答処理 ---
         answers = request.form
         question_ids = [key.split('_')[1] for key in answers.keys() if key.startswith('answer_')]
         
         if not question_ids:
-            return redirect(url_for("practice"))
-
-        # 現在のユーザーのIDを取得
-        current_user_email = session["user"]
-        current_user = User.query.filter_by(email=current_user_email).first()
-        if not current_user:
-            return redirect("/") # ユーザーが見つからない場合はログインページへ
+            return redirect(url_for("practice", **request.args))
 
         results = []
         questions = Question.query.filter(Question.id.in_(question_ids)).all()
@@ -333,8 +338,6 @@ def practice():
                     "is_correct": is_correct
                 })
 
-                # QuizResultを保存
-                from model import QuizResult # Import inside function to avoid circular dependency
                 quiz_result = QuizResult(
                     user_id=current_user.id,
                     question_id=question.id,
@@ -342,7 +345,10 @@ def practice():
                 )
                 db.session.add(quiz_result)
         
-        db.session.commit() # すべての結果をコミット
+        db.session.commit()
+
+        num_questions_for_retry = request.form.get('num_questions')
+        practice_type_for_retry = request.form.get('type')
 
         total = len(questions)
         percentage = (score / total) * 100 if total > 0 else 0
@@ -351,75 +357,47 @@ def practice():
             results=results, 
             score=score,
             total=total,
-            percentage=f"{percentage:.1f}"
+            percentage=f"{percentage:.1f}",
+            num_questions=num_questions_for_retry,
+            practice_type=practice_type_for_retry,
+            title="テスト結果"
         )
 
     # --- 問題表示 (GETリクエスト) ---
-    # クエリパラメータから問題数を取得、デフォルトは10
     try:
-        num_questions = int(request.args.get('num', 10))
+        num_questions = int(request.args.get('num_questions', 10))
     except (ValueError, TypeError):
         num_questions = 10
-
-    # 全ての問題を取得
-    all_questions = Question.query.all()
-    if not all_questions:
-        return render_template("practice.html", questions=[]) # 空のリストを渡す
-
-    # 指定された問題数をランダムに選ぶ
-    num_to_sample = min(len(all_questions), num_questions)
-    q_list = random.sample(all_questions, num_to_sample)
-
-    return render_template("practice.html", questions=q_list)
-
-from itertools import groupby
-
-@app.route("/practice_incorrect", methods=["GET"])
-def practice_incorrect():
-    if "user" not in session:
-        return redirect("/")
-
-    current_user_email = session["user"]
-    current_user = User.query.filter_by(email=current_user_email).first()
-    if not current_user:
-        return redirect("/")
-
-    try:
-        num_questions = int(request.args.get('num', 10))
-    except (ValueError, TypeError):
-        num_questions = 10
-
-    # ユーザーのすべての解答履歴を問題ごと、タイムスタンプ降順で取得
-    all_results = QuizResult.query.filter_by(user_id=current_user.id).order_by(QuizResult.question_id, QuizResult.timestamp.desc()).all()
-
-    incorrect_question_ids = []
-    # question_id でグループ化
-    for q_id, results_group in groupby(all_results, key=lambda r: r.question_id):
-        # グループをリストに変換
-        recent_results = list(results_group)
+    
+    practice_type = request.args.get('type', 'all')
+    
+    question_pool = []
+    title = ""
+    
+    if practice_type == 'exclude_answered':
+        title = "過去問演習（2回以上正解した問題を除く）"
+        all_results = db.session.query(QuizResult).filter_by(user_id=current_user.id).order_by(QuizResult.question_id, desc(QuizResult.timestamp)).all()
         
-        # 解答が2回以上あるかチェック
-        if len(recent_results) >= 2:
-            # 直近2回のうち、少なくとも1回が不正解かチェック
-            if not recent_results[0].is_correct or not recent_results[1].is_correct:
-                incorrect_question_ids.append(q_id)
-        # 解答が1回しかない場合
-        elif len(recent_results) == 1:
-            # その1回が不正解かチェック
-            if not recent_results[0].is_correct:
-                incorrect_question_ids.append(q_id)
+        results_by_question = {k: list(v) for k, v in groupby(all_results, key=lambda r: r.question_id)}
 
-    if not incorrect_question_ids:
-        return render_template("practice.html", questions=[], message="直近2回以上正解しなかった問題はありません。")
+        exclude_question_ids = set()
+        for q_id, results in results_by_question.items():
+            if len(results) >= 2 and results[0].is_correct and results[1].is_correct:
+                exclude_question_ids.add(q_id)
+        
+        question_pool = Question.query.filter(Question.id.notin_(exclude_question_ids)).all()
 
-    # Questionオブジェクトを取得
-    all_incorrect_questions = Question.query.filter(Question.id.in_(incorrect_question_ids)).all()
+    else: # practice_type == 'all'
+        title = "過去問演習（全問題）"
+        question_pool = Question.query.all()
 
-    # 指定された問題数をランダムに選ぶ
-    num_to_sample = min(len(all_incorrect_questions), num_questions)
-    q_list = random.sample(all_incorrect_questions, num_to_sample)
+    if not question_pool:
+        return render_template("practice.html", questions=[], message="対象の問題がありません。", title=title)
 
-    return render_template("practice.html", questions=q_list, title="過去問演習（直近２回以上正解しなかった問題）")
+    num_to_sample = min(len(question_pool), num_questions)
+    q_list = random.sample(question_pool, num_to_sample)
+
+    return render_template("practice.html", questions=q_list, title=title)
 
 # 結果
 @app.route("/result")

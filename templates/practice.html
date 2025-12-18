@@ -38,7 +38,7 @@
     <div class="container mt-4">
         <div class="card">
             <div class="card-header">
-                <h2>過去問演習</h2>
+                <h2>{{ title or '過去問演習' }}</h2>
             </div>
             <div class="card-body">
                 {% if results %}
@@ -75,9 +75,13 @@
                     </div>
                     {% endfor %}
 
+                {% elif message %}
+                    <div class="alert alert-warning">{{ message }}</div>
                 {% else %}
                     {# --- 問題表示 --- #}
                     <form action="{{ url_for('practice') }}" method="post">
+                        <input type="hidden" name="num_questions" value="{{ request.args.get('num_questions', '10') }}">
+                        <input type="hidden" name="type" value="{{ request.args.get('type', 'all') }}">
                         {% for q_obj in questions %}
                         <div class="mb-4">
                             <p class="card-text fw-bold">問{{ loop.index }}: {{ q_obj.question }}</p>
@@ -108,7 +112,7 @@
 
         <div class="mt-4">
             {% if results %}
-                <a href="{{ url_for('practice') }}" class="btn btn-primary">もう一度挑戦する</a>
+                <a href="{{ url_for('practice', num_questions=num_questions, type=practice_type) }}" class="btn btn-primary">もう一度挑戦する</a>
                 <a href="/home" class="btn btn-secondary">ホームに戻る</a>
             {% else %}
                 <a href="/home" class="btn btn-secondary">ホームに戻る</a>
