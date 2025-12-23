@@ -9,9 +9,7 @@
 ## 2. 主な機能
 
 ### 2.1. ユーザー認証
-- **サインアップ**: 新規ユーザー登録
 - **ログイン/ログアウト**: 登録済みユーザーの認証管理
-- **パスワード変更**: ユーザーが自身のパスワードを変更する機能
 
 ### 2.2. クイズ機能
 ユーザーは複数のモードでクイズに挑戦できます。
@@ -32,8 +30,19 @@
 - この履歴は、スコア計算や苦手問題の特定に利用されます。
 
 ### 2.4. 管理画面 (`/admin`)
-- 将来的なコンテンツ管理（問題の追加・編集など）を想定した管理者用ページです。
-- 現状では基本的なテンプレートのみで、具体的な機能は実装されていません。
+`admin@example.com` でログインした際に利用可能な管理者向け機能です。以下の管理を行います。
+
+- **ユーザー管理**:
+  - 新規ユーザー登録
+  - ユーザーのパスワード変更
+  - ユーザーの削除
+- **クイズコンテンツ管理**:
+  - 問題文、選択肢、回答番号、解説文、関連URLの編集
+
+### 2.5. ユーザー自身の情報更新
+ログインしているユーザーは、自身の個人情報を更新できます。
+- **ニックネームの登録・修正**: 表示名として使われるニックネームを登録、または修正します。
+- **パスワードの変更**: 現在のパスワードを確認の上、新しいパスワードに変更します。
 
 ## 3. 技術スタック
 
@@ -58,6 +67,7 @@ ORMにはFlask-SQLAlchemyを使用しており、モデルは `model.py` で定�
 | `id`            | `Integer`         | 主キー                                 | `primary_key=True`    |
 | `email`         | `String(120)`     | ユーザーのメールアドレス（ログインID） | `unique=True`, `nullable=False` |
 | `password_hash` | `String(200)`     | ハッシュ化されたパスワード             | `nullable=False`      |
+| `nickname`      | `String(100)`     | ニックネーム（表示名）                 | `nullable=True`       |
 
 ### 4.2. `questions` テーブル
 
@@ -129,6 +139,7 @@ digraph ERD {
             <TR><TD ALIGN="LEFT" PORT="id"><U>id (PK)</U></TD><TD ALIGN="LEFT">INTEGER</TD></TR>
             <TR><TD ALIGN="LEFT">email</TD><TD ALIGN="LEFT">VARCHAR(120)</TD></TR>
             <TR><TD ALIGN="LEFT">password_hash</TD><TD ALIGN="LEFT">VARCHAR(200)</TD></TR>
+            <TR><TD ALIGN="LEFT">nickname</TD><TD ALIGN="LEFT">VARCHAR(100)</TD></TR>
         </TABLE>> ];
 
     questions [ label = <<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
