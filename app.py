@@ -46,7 +46,7 @@ def try_login():
 
     if user and user.check_password(pw):
         session["user"] = user.email
-        session["nickname"] = user.nickname or user.email.split('@')[0] # ニックネームがなければemailの@より前を使う
+        session["nickname"] = user.nickname # ニックネームがなければそのままNoneまたは空文字列
         return redirect(url_for("home"))
     else:
         return render_template("login.html", error="ログインに失敗しました")
@@ -508,6 +508,7 @@ def add_user():
         
     email = request.form.get("email")
     password = request.form.get("password")
+    nickname = request.form.get("nickname")
 
     if not email or not password:
         flash("メールアドレスとパスワードは必須です。", "danger")
@@ -518,7 +519,7 @@ def add_user():
         flash("このメールアドレスは既に使用されています。", "warning")
         return redirect(url_for("user_management"))
 
-    new_user = User(email=email)
+    new_user = User(email=email, nickname=nickname)
     new_user.set_password(password)
     db.session.add(new_user)
     db.session.commit()
